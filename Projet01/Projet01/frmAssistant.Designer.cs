@@ -58,45 +58,50 @@
             // noAssistantLabel
             // 
             noAssistantLabel.AutoSize = true;
-            noAssistantLabel.Location = new System.Drawing.Point(13, 68);
+            noAssistantLabel.Location = new System.Drawing.Point(17, 84);
+            noAssistantLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             noAssistantLabel.Name = "noAssistantLabel";
-            noAssistantLabel.Size = new System.Drawing.Size(69, 13);
+            noAssistantLabel.Size = new System.Drawing.Size(91, 17);
             noAssistantLabel.TabIndex = 0;
             noAssistantLabel.Text = "No Assistant:";
             // 
             // prenomLabel
             // 
             prenomLabel.AutoSize = true;
-            prenomLabel.Location = new System.Drawing.Point(13, 94);
+            prenomLabel.Location = new System.Drawing.Point(17, 116);
+            prenomLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             prenomLabel.Name = "prenomLabel";
-            prenomLabel.Size = new System.Drawing.Size(46, 13);
+            prenomLabel.Size = new System.Drawing.Size(61, 17);
             prenomLabel.TabIndex = 2;
             prenomLabel.Text = "Prenom:";
             // 
             // nomLabel
             // 
             nomLabel.AutoSize = true;
-            nomLabel.Location = new System.Drawing.Point(13, 120);
+            nomLabel.Location = new System.Drawing.Point(17, 148);
+            nomLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             nomLabel.Name = "nomLabel";
-            nomLabel.Size = new System.Drawing.Size(32, 13);
+            nomLabel.Size = new System.Drawing.Size(41, 17);
             nomLabel.TabIndex = 4;
             nomLabel.Text = "Nom:";
             // 
             // specialitesLabel
             // 
             specialitesLabel.AutoSize = true;
-            specialitesLabel.Location = new System.Drawing.Point(13, 146);
+            specialitesLabel.Location = new System.Drawing.Point(17, 180);
+            specialitesLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             specialitesLabel.Name = "specialitesLabel";
-            specialitesLabel.Size = new System.Drawing.Size(61, 13);
+            specialitesLabel.Size = new System.Drawing.Size(80, 17);
             specialitesLabel.TabIndex = 6;
             specialitesLabel.Text = "Specialites:";
             // 
             // remarquesLabel
             // 
             remarquesLabel.AutoSize = true;
-            remarquesLabel.Location = new System.Drawing.Point(13, 172);
+            remarquesLabel.Location = new System.Drawing.Point(17, 212);
+            remarquesLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             remarquesLabel.Name = "remarquesLabel";
-            remarquesLabel.Size = new System.Drawing.Size(64, 13);
+            remarquesLabel.Size = new System.Drawing.Size(85, 17);
             remarquesLabel.TabIndex = 8;
             remarquesLabel.Text = "Remarques:";
             // 
@@ -117,10 +122,12 @@
             // tableAdapterManager
             // 
             this.tableAdapterManager.BackupDataSetBeforeUpdate = false;
+            this.tableAdapterManager.P01_AssistantSoinTableAdapter = null;
             this.tableAdapterManager.P01_AssistantTableAdapter = this.p01_AssistantTableAdapter;
             this.tableAdapterManager.P01_ChambreTableAdapter = null;
             this.tableAdapterManager.P01_ClientTableAdapter = null;
             this.tableAdapterManager.P01_InviteTableAdapter = null;
+            this.tableAdapterManager.P01_PlanifSoinTableAdapter = null;
             this.tableAdapterManager.P01_ReversationChambreTableAdapter = null;
             this.tableAdapterManager.P01_SoinTableAdapter = null;
             this.tableAdapterManager.P01_TypeChambreTableAdapter = null;
@@ -132,59 +139,67 @@
             // noAssistantTextBox
             // 
             this.noAssistantTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.p01_AssistantBindingSource, "NoAssistant", true));
-            this.noAssistantTextBox.Location = new System.Drawing.Point(111, 65);
+            this.noAssistantTextBox.Location = new System.Drawing.Point(148, 80);
+            this.noAssistantTextBox.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.noAssistantTextBox.Name = "noAssistantTextBox";
-            this.noAssistantTextBox.Size = new System.Drawing.Size(100, 20);
+            this.noAssistantTextBox.ReadOnly = true;
+            this.noAssistantTextBox.Size = new System.Drawing.Size(132, 22);
             this.noAssistantTextBox.TabIndex = 1;
             // 
             // prenomTextBox
             // 
             this.prenomTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.p01_AssistantBindingSource, "Prenom", true));
-            this.prenomTextBox.Location = new System.Drawing.Point(111, 91);
+            this.prenomTextBox.Location = new System.Drawing.Point(148, 112);
+            this.prenomTextBox.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.prenomTextBox.Name = "prenomTextBox";
-            this.prenomTextBox.Size = new System.Drawing.Size(100, 20);
+            this.prenomTextBox.Size = new System.Drawing.Size(132, 22);
             this.prenomTextBox.TabIndex = 3;
             // 
             // nomTextBox
             // 
             this.nomTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.p01_AssistantBindingSource, "Nom", true));
-            this.nomTextBox.Location = new System.Drawing.Point(111, 117);
+            this.nomTextBox.Location = new System.Drawing.Point(148, 144);
+            this.nomTextBox.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.nomTextBox.Name = "nomTextBox";
-            this.nomTextBox.Size = new System.Drawing.Size(100, 20);
+            this.nomTextBox.Size = new System.Drawing.Size(132, 22);
             this.nomTextBox.TabIndex = 5;
             // 
             // specialitesTextBox
             // 
             this.specialitesTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.p01_AssistantBindingSource, "Specialites", true));
-            this.specialitesTextBox.Location = new System.Drawing.Point(111, 143);
+            this.specialitesTextBox.Location = new System.Drawing.Point(148, 176);
+            this.specialitesTextBox.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.specialitesTextBox.Name = "specialitesTextBox";
-            this.specialitesTextBox.Size = new System.Drawing.Size(100, 20);
+            this.specialitesTextBox.Size = new System.Drawing.Size(132, 22);
             this.specialitesTextBox.TabIndex = 7;
             // 
             // remarquesTextBox
             // 
             this.remarquesTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.p01_AssistantBindingSource, "Remarques", true));
-            this.remarquesTextBox.Location = new System.Drawing.Point(111, 169);
+            this.remarquesTextBox.Location = new System.Drawing.Point(148, 208);
+            this.remarquesTextBox.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.remarquesTextBox.Name = "remarquesTextBox";
-            this.remarquesTextBox.Size = new System.Drawing.Size(100, 20);
+            this.remarquesTextBox.Size = new System.Drawing.Size(132, 22);
             this.remarquesTextBox.TabIndex = 9;
             // 
             // lblTitre
             // 
             this.lblTitre.AutoSize = true;
             this.lblTitre.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblTitre.Location = new System.Drawing.Point(12, 9);
+            this.lblTitre.Location = new System.Drawing.Point(16, 11);
+            this.lblTitre.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblTitre.Name = "lblTitre";
-            this.lblTitre.Size = new System.Drawing.Size(47, 20);
+            this.lblTitre.Size = new System.Drawing.Size(58, 25);
             this.lblTitre.TabIndex = 13;
             this.lblTitre.Text = "label";
             // 
             // btnAnnuler
             // 
             this.btnAnnuler.DialogResult = System.Windows.Forms.DialogResult.Cancel;
-            this.btnAnnuler.Location = new System.Drawing.Point(111, 214);
+            this.btnAnnuler.Location = new System.Drawing.Point(148, 263);
+            this.btnAnnuler.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnAnnuler.Name = "btnAnnuler";
-            this.btnAnnuler.Size = new System.Drawing.Size(100, 56);
+            this.btnAnnuler.Size = new System.Drawing.Size(133, 69);
             this.btnAnnuler.TabIndex = 15;
             this.btnAnnuler.Text = "Annuler";
             this.btnAnnuler.UseVisualStyleBackColor = true;
@@ -192,9 +207,10 @@
             // 
             // btnConfirmer
             // 
-            this.btnConfirmer.Location = new System.Drawing.Point(16, 214);
+            this.btnConfirmer.Location = new System.Drawing.Point(21, 263);
+            this.btnConfirmer.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnConfirmer.Name = "btnConfirmer";
-            this.btnConfirmer.Size = new System.Drawing.Size(89, 56);
+            this.btnConfirmer.Size = new System.Drawing.Size(119, 69);
             this.btnConfirmer.TabIndex = 14;
             this.btnConfirmer.Text = "button1";
             this.btnConfirmer.UseVisualStyleBackColor = true;
@@ -202,9 +218,9 @@
             // 
             // frmAssistant
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(233, 282);
+            this.ClientSize = new System.Drawing.Size(311, 347);
             this.Controls.Add(this.btnAnnuler);
             this.Controls.Add(this.btnConfirmer);
             this.Controls.Add(this.lblTitre);
@@ -219,6 +235,7 @@
             this.Controls.Add(remarquesLabel);
             this.Controls.Add(this.remarquesTextBox);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
+            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "frmAssistant";

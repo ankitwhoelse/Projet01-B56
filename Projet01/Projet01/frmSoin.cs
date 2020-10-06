@@ -36,6 +36,36 @@ namespace Projet01
 
             if (booAjout)
             {
+               
+
+                
+                // vider les textBox
+                 Action<Control.ControlCollection> func = null;
+
+                 func = (controls) =>
+                 {
+                     foreach (Control control in controls)
+                         if (control is TextBox)
+                             (control as TextBox).Clear();
+                         else
+                             func(control.Controls);
+                 };
+
+                 func(Controls);
+                int intSoin = 0;
+                SqlConnection maConnexion = new SqlConnection(maChaineDeConnexion);
+                maConnexion.Open();
+                // Création du Id
+                String maRequeteSQL = "select max(NoAssistant) from P01_Assistant ";
+                SqlCommand maCommande = new SqlCommand(maRequeteSQL, maConnexion);
+                Object resultat = maCommande.ExecuteScalar();
+
+                if (resultat.ToString() != "")
+                    intSoin = Convert.ToInt32(resultat);
+
+                intSoin = intSoin + 1;
+                noSoinTextBox.Text = intSoin.ToString();
+                maConnexion.Close();
                 lblTitre.Text = "Ajouter un soin";
                 btnConfirmer.Text = "Ajouter";
                 this.Text = "Ajouter un soin";
@@ -57,14 +87,19 @@ namespace Projet01
         {
             if (booAjout)
             {
-                // AJOUT
-                SqlConnection maConnexion = new SqlConnection(maChaineDeConnexion);
-                maConnexion.Open();
-                String maRequeteSQL = "insert into P01_Soin(NoSoin,Description,Duree,NoTypeSoin,prix) values('" + int.Parse(noSoinTextBox.ToString()) + "','" + descriptionTextBox.ToString() + "','" + int.Parse(dureeTextBox.ToString()) + "','" + int.Parse(noTypeSoinTextBox.ToString()) +"','"+int.Parse(prixTextBox.ToString())+ "')";
-                SqlCommand maCommande = new SqlCommand(maRequeteSQL, maConnexion);
-                maCommande.ExecuteScalar();
-                maConnexion.Close();
-
+                if (this.Controls.OfType<TextBox>().Any(tBox => string.IsNullOrEmpty(tBox.Text)))
+                    MessageBox.Show("empty at least 1");
+                else
+                {
+                    // AJOUT
+                    SqlConnection maConnexion = new SqlConnection(maChaineDeConnexion);
+                    maConnexion.Open();
+                    String maRequeteSQL = "insert into P01_Soin(NoSoin,Description,Duree,NoTypeSoin,prix) values('" + int.Parse(noSoinTextBox.Text.ToString()) + "','" + descriptionTextBox.Text.ToString() + "','" + int.Parse(dureeTextBox.Text.ToString()) + "','" + int.Parse(noTypeSoinTextBox.Text.ToString()) + "','" + int.Parse(prixTextBox.Text.ToString()) + "')";
+                    SqlCommand maCommande = new SqlCommand(maRequeteSQL, maConnexion);
+                    maCommande.ExecuteScalar();
+                    maConnexion.Close();
+                    this.Close();
+                }
             }
             else if (!booAjout)
             {

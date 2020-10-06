@@ -41,10 +41,13 @@
             this.bDB56AnkitDataSet = new Projet01.BDB56AnkitDataSet();
             this.p01_TypeUtilisateurBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.tableAdapterManager = new Projet01.BDB56AnkitDataSetTableAdapters.TableAdapterManager();
-            this.typeUtilisateurComboBox = new System.Windows.Forms.ComboBox();
             this.lblTitre = new System.Windows.Forms.Label();
+            this.p01_TypeUtilisateurBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
+            this.p01_TypeUtilisateurTableAdapter = new Projet01.BDB56AnkitDataSetTableAdapters.P01_TypeUtilisateurTableAdapter();
+            this.typeUtilisateurComboBox = new System.Windows.Forms.ComboBox();
             ((System.ComponentModel.ISupportInitialize)(this.bDB56AnkitDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.p01_TypeUtilisateurBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.p01_TypeUtilisateurBindingSource1)).BeginInit();
             this.SuspendLayout();
             // 
             // btnConfirmer
@@ -162,18 +165,6 @@
             this.tableAdapterManager.P01_UtilisateurTableAdapter = null;
             this.tableAdapterManager.UpdateOrder = Projet01.BDB56AnkitDataSetTableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete;
             // 
-            // typeUtilisateurComboBox
-            // 
-            this.typeUtilisateurComboBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.p01_TypeUtilisateurBindingSource, "Identification", true));
-            this.typeUtilisateurComboBox.DataSource = this.p01_TypeUtilisateurBindingSource;
-            this.typeUtilisateurComboBox.DisplayMember = "Identification";
-            this.typeUtilisateurComboBox.FormattingEnabled = true;
-            this.typeUtilisateurComboBox.Location = new System.Drawing.Point(153, 181);
-            this.typeUtilisateurComboBox.Margin = new System.Windows.Forms.Padding(4);
-            this.typeUtilisateurComboBox.Name = "typeUtilisateurComboBox";
-            this.typeUtilisateurComboBox.Size = new System.Drawing.Size(132, 24);
-            this.typeUtilisateurComboBox.TabIndex = 11;
-            // 
             // lblTitre
             // 
             this.lblTitre.AutoSize = true;
@@ -185,13 +176,33 @@
             this.lblTitre.TabIndex = 12;
             this.lblTitre.Text = "label";
             // 
+            // p01_TypeUtilisateurBindingSource1
+            // 
+            this.p01_TypeUtilisateurBindingSource1.DataMember = "P01_TypeUtilisateur";
+            this.p01_TypeUtilisateurBindingSource1.DataSource = this.bDB56AnkitDataSet;
+            // 
+            // p01_TypeUtilisateurTableAdapter
+            // 
+            this.p01_TypeUtilisateurTableAdapter.ClearBeforeFill = true;
+            // 
+            // typeUtilisateurComboBox
+            // 
+            this.typeUtilisateurComboBox.DataSource = this.p01_TypeUtilisateurBindingSource;
+            this.typeUtilisateurComboBox.DisplayMember = "Identification";
+            this.typeUtilisateurComboBox.FormattingEnabled = true;
+            this.typeUtilisateurComboBox.Location = new System.Drawing.Point(153, 185);
+            this.typeUtilisateurComboBox.Name = "typeUtilisateurComboBox";
+            this.typeUtilisateurComboBox.Size = new System.Drawing.Size(132, 24);
+            this.typeUtilisateurComboBox.TabIndex = 12;
+            this.typeUtilisateurComboBox.ValueMember = "NoType";
+            // 
             // frmUtilisateur
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(315, 337);
-            this.Controls.Add(this.lblTitre);
+            this.ClientSize = new System.Drawing.Size(427, 438);
             this.Controls.Add(this.typeUtilisateurComboBox);
+            this.Controls.Add(this.lblTitre);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.MotDePasseTextBox);
             this.Controls.Add(this.label3);
@@ -210,6 +221,7 @@
             this.Load += new System.EventHandler(this.frmUtilisateur_Load);
             ((System.ComponentModel.ISupportInitialize)(this.bDB56AnkitDataSet)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.p01_TypeUtilisateurBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.p01_TypeUtilisateurBindingSource1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -229,7 +241,9 @@
         private BDB56AnkitDataSet bDB56AnkitDataSet;
         private System.Windows.Forms.BindingSource p01_TypeUtilisateurBindingSource;
         private BDB56AnkitDataSetTableAdapters.TableAdapterManager tableAdapterManager;
-        private System.Windows.Forms.ComboBox typeUtilisateurComboBox;
         private System.Windows.Forms.Label lblTitre;
+        private System.Windows.Forms.BindingSource p01_TypeUtilisateurBindingSource1;
+        private BDB56AnkitDataSetTableAdapters.P01_TypeUtilisateurTableAdapter p01_TypeUtilisateurTableAdapter;
+        private System.Windows.Forms.ComboBox typeUtilisateurComboBox;
     }
 }

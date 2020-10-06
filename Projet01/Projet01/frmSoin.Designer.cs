@@ -55,6 +55,56 @@
             ((System.ComponentModel.ISupportInitialize)(this.p01_SoinBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
+            // noSoinLabel
+            // 
+            noSoinLabel.AutoSize = true;
+            noSoinLabel.Location = new System.Drawing.Point(16, 63);
+            noSoinLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            noSoinLabel.Name = "noSoinLabel";
+            noSoinLabel.Size = new System.Drawing.Size(62, 17);
+            noSoinLabel.TabIndex = 0;
+            noSoinLabel.Text = "No Soin:";
+            // 
+            // descriptionLabel
+            // 
+            descriptionLabel.AutoSize = true;
+            descriptionLabel.Location = new System.Drawing.Point(16, 95);
+            descriptionLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            descriptionLabel.Name = "descriptionLabel";
+            descriptionLabel.Size = new System.Drawing.Size(83, 17);
+            descriptionLabel.TabIndex = 2;
+            descriptionLabel.Text = "Description:";
+            // 
+            // dureeLabel
+            // 
+            dureeLabel.AutoSize = true;
+            dureeLabel.Location = new System.Drawing.Point(16, 127);
+            dureeLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            dureeLabel.Name = "dureeLabel";
+            dureeLabel.Size = new System.Drawing.Size(51, 17);
+            dureeLabel.TabIndex = 4;
+            dureeLabel.Text = "Duree:";
+            // 
+            // noTypeSoinLabel
+            // 
+            noTypeSoinLabel.AutoSize = true;
+            noTypeSoinLabel.Location = new System.Drawing.Point(16, 159);
+            noTypeSoinLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            noTypeSoinLabel.Name = "noTypeSoinLabel";
+            noTypeSoinLabel.Size = new System.Drawing.Size(98, 17);
+            noTypeSoinLabel.TabIndex = 6;
+            noTypeSoinLabel.Text = "No Type Soin:";
+            // 
+            // prixLabel
+            // 
+            prixLabel.AutoSize = true;
+            prixLabel.Location = new System.Drawing.Point(16, 191);
+            prixLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            prixLabel.Name = "prixLabel";
+            prixLabel.Size = new System.Drawing.Size(34, 17);
+            prixLabel.TabIndex = 8;
+            prixLabel.Text = "prix:";
+            // 
             // bDB56AnkitDataSet
             // 
             this.bDB56AnkitDataSet.DataSetName = "BDB56AnkitDataSet";
@@ -72,10 +122,12 @@
             // tableAdapterManager
             // 
             this.tableAdapterManager.BackupDataSetBeforeUpdate = false;
+            this.tableAdapterManager.P01_AssistantSoinTableAdapter = null;
             this.tableAdapterManager.P01_AssistantTableAdapter = null;
             this.tableAdapterManager.P01_ChambreTableAdapter = null;
             this.tableAdapterManager.P01_ClientTableAdapter = null;
             this.tableAdapterManager.P01_InviteTableAdapter = null;
+            this.tableAdapterManager.P01_PlanifSoinTableAdapter = null;
             this.tableAdapterManager.P01_ReversationChambreTableAdapter = null;
             this.tableAdapterManager.P01_SoinTableAdapter = this.p01_SoinTableAdapter;
             this.tableAdapterManager.P01_TypeChambreTableAdapter = null;
@@ -84,107 +136,70 @@
             this.tableAdapterManager.P01_UtilisateurTableAdapter = null;
             this.tableAdapterManager.UpdateOrder = Projet01.BDB56AnkitDataSetTableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete;
             // 
-            // noSoinLabel
-            // 
-            noSoinLabel.AutoSize = true;
-            noSoinLabel.Location = new System.Drawing.Point(12, 51);
-            noSoinLabel.Name = "noSoinLabel";
-            noSoinLabel.Size = new System.Drawing.Size(48, 13);
-            noSoinLabel.TabIndex = 0;
-            noSoinLabel.Text = "No Soin:";
-            // 
             // noSoinTextBox
             // 
             this.noSoinTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.p01_SoinBindingSource, "NoSoin", true));
-            this.noSoinTextBox.Location = new System.Drawing.Point(93, 48);
+            this.noSoinTextBox.Location = new System.Drawing.Point(124, 59);
+            this.noSoinTextBox.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.noSoinTextBox.Name = "noSoinTextBox";
-            this.noSoinTextBox.Size = new System.Drawing.Size(100, 20);
+            this.noSoinTextBox.ReadOnly = true;
+            this.noSoinTextBox.Size = new System.Drawing.Size(132, 22);
             this.noSoinTextBox.TabIndex = 1;
-            // 
-            // descriptionLabel
-            // 
-            descriptionLabel.AutoSize = true;
-            descriptionLabel.Location = new System.Drawing.Point(12, 77);
-            descriptionLabel.Name = "descriptionLabel";
-            descriptionLabel.Size = new System.Drawing.Size(63, 13);
-            descriptionLabel.TabIndex = 2;
-            descriptionLabel.Text = "Description:";
             // 
             // descriptionTextBox
             // 
             this.descriptionTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.p01_SoinBindingSource, "Description", true));
-            this.descriptionTextBox.Location = new System.Drawing.Point(93, 74);
+            this.descriptionTextBox.Location = new System.Drawing.Point(124, 91);
+            this.descriptionTextBox.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.descriptionTextBox.Name = "descriptionTextBox";
-            this.descriptionTextBox.Size = new System.Drawing.Size(100, 20);
+            this.descriptionTextBox.Size = new System.Drawing.Size(132, 22);
             this.descriptionTextBox.TabIndex = 3;
-            // 
-            // dureeLabel
-            // 
-            dureeLabel.AutoSize = true;
-            dureeLabel.Location = new System.Drawing.Point(12, 103);
-            dureeLabel.Name = "dureeLabel";
-            dureeLabel.Size = new System.Drawing.Size(39, 13);
-            dureeLabel.TabIndex = 4;
-            dureeLabel.Text = "Duree:";
             // 
             // dureeTextBox
             // 
             this.dureeTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.p01_SoinBindingSource, "Duree", true));
-            this.dureeTextBox.Location = new System.Drawing.Point(93, 100);
+            this.dureeTextBox.Location = new System.Drawing.Point(124, 123);
+            this.dureeTextBox.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.dureeTextBox.Name = "dureeTextBox";
-            this.dureeTextBox.Size = new System.Drawing.Size(100, 20);
+            this.dureeTextBox.Size = new System.Drawing.Size(132, 22);
             this.dureeTextBox.TabIndex = 5;
-            // 
-            // noTypeSoinLabel
-            // 
-            noTypeSoinLabel.AutoSize = true;
-            noTypeSoinLabel.Location = new System.Drawing.Point(12, 129);
-            noTypeSoinLabel.Name = "noTypeSoinLabel";
-            noTypeSoinLabel.Size = new System.Drawing.Size(75, 13);
-            noTypeSoinLabel.TabIndex = 6;
-            noTypeSoinLabel.Text = "No Type Soin:";
             // 
             // noTypeSoinTextBox
             // 
             this.noTypeSoinTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.p01_SoinBindingSource, "NoTypeSoin", true));
-            this.noTypeSoinTextBox.Location = new System.Drawing.Point(93, 126);
+            this.noTypeSoinTextBox.Location = new System.Drawing.Point(124, 155);
+            this.noTypeSoinTextBox.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.noTypeSoinTextBox.Name = "noTypeSoinTextBox";
-            this.noTypeSoinTextBox.Size = new System.Drawing.Size(100, 20);
+            this.noTypeSoinTextBox.Size = new System.Drawing.Size(132, 22);
             this.noTypeSoinTextBox.TabIndex = 7;
-            // 
-            // prixLabel
-            // 
-            prixLabel.AutoSize = true;
-            prixLabel.Location = new System.Drawing.Point(12, 155);
-            prixLabel.Name = "prixLabel";
-            prixLabel.Size = new System.Drawing.Size(26, 13);
-            prixLabel.TabIndex = 8;
-            prixLabel.Text = "prix:";
             // 
             // prixTextBox
             // 
             this.prixTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.p01_SoinBindingSource, "prix", true));
-            this.prixTextBox.Location = new System.Drawing.Point(93, 152);
+            this.prixTextBox.Location = new System.Drawing.Point(124, 187);
+            this.prixTextBox.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.prixTextBox.Name = "prixTextBox";
-            this.prixTextBox.Size = new System.Drawing.Size(100, 20);
+            this.prixTextBox.Size = new System.Drawing.Size(132, 22);
             this.prixTextBox.TabIndex = 9;
             // 
             // lblTitre
             // 
             this.lblTitre.AutoSize = true;
             this.lblTitre.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblTitre.Location = new System.Drawing.Point(13, 13);
+            this.lblTitre.Location = new System.Drawing.Point(17, 16);
+            this.lblTitre.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblTitre.Name = "lblTitre";
-            this.lblTitre.Size = new System.Drawing.Size(57, 20);
+            this.lblTitre.Size = new System.Drawing.Size(70, 25);
             this.lblTitre.TabIndex = 10;
             this.lblTitre.Text = "label1";
             // 
             // btnAnnuler
             // 
             this.btnAnnuler.DialogResult = System.Windows.Forms.DialogResult.Cancel;
-            this.btnAnnuler.Location = new System.Drawing.Point(129, 203);
+            this.btnAnnuler.Location = new System.Drawing.Point(172, 250);
+            this.btnAnnuler.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnAnnuler.Name = "btnAnnuler";
-            this.btnAnnuler.Size = new System.Drawing.Size(100, 56);
+            this.btnAnnuler.Size = new System.Drawing.Size(133, 69);
             this.btnAnnuler.TabIndex = 16;
             this.btnAnnuler.Text = "Annuler";
             this.btnAnnuler.UseVisualStyleBackColor = true;
@@ -192,9 +207,10 @@
             // 
             // btnConfirmer
             // 
-            this.btnConfirmer.Location = new System.Drawing.Point(15, 203);
+            this.btnConfirmer.Location = new System.Drawing.Point(20, 250);
+            this.btnConfirmer.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnConfirmer.Name = "btnConfirmer";
-            this.btnConfirmer.Size = new System.Drawing.Size(89, 56);
+            this.btnConfirmer.Size = new System.Drawing.Size(119, 69);
             this.btnConfirmer.TabIndex = 15;
             this.btnConfirmer.Text = "button1";
             this.btnConfirmer.UseVisualStyleBackColor = true;
@@ -202,9 +218,9 @@
             // 
             // frmSoin
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(241, 271);
+            this.ClientSize = new System.Drawing.Size(321, 334);
             this.Controls.Add(this.btnAnnuler);
             this.Controls.Add(this.btnConfirmer);
             this.Controls.Add(this.lblTitre);
@@ -218,6 +234,7 @@
             this.Controls.Add(this.noTypeSoinTextBox);
             this.Controls.Add(prixLabel);
             this.Controls.Add(this.prixTextBox);
+            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Name = "frmSoin";
             this.Text = "frmSoin";
             this.Load += new System.EventHandler(this.frmSoin_Load);
