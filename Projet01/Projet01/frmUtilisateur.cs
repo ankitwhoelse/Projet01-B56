@@ -33,6 +33,8 @@ namespace Projet01
 
         private void frmUtilisateur_Load(object sender, EventArgs e)
         {
+            // TODO: cette ligne de code charge les données dans la table 'bDB56AnkitDataSet.P01_TypeSoin'. Vous pouvez la déplacer ou la supprimer selon les besoins.
+            //this.p01_TypeSoinTableAdapter.Fill(this.bDB56AnkitDataSet.P01_TypeSoin);
             // TODO: This line of code loads data into the 'bDB56AnkitDataSet.P01_TypeUtilisateur' table. You can move, or remove it, as needed.
             //this.p01_TypeUtilisateurTableAdapter.Fill(this.bDB56AnkitDataSet.P01_TypeUtilisateur);
 
