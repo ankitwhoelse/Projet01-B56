@@ -64,6 +64,78 @@
             ((System.ComponentModel.ISupportInitialize)(this.p01_ClientBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
+            // noClientLabel
+            // 
+            noClientLabel.AutoSize = true;
+            noClientLabel.Location = new System.Drawing.Point(18, 51);
+            noClientLabel.Name = "noClientLabel";
+            noClientLabel.Size = new System.Drawing.Size(53, 13);
+            noClientLabel.TabIndex = 24;
+            noClientLabel.Text = "No Client:";
+            // 
+            // nomLabel
+            // 
+            nomLabel.AutoSize = true;
+            nomLabel.Location = new System.Drawing.Point(18, 77);
+            nomLabel.Name = "nomLabel";
+            nomLabel.Size = new System.Drawing.Size(32, 13);
+            nomLabel.TabIndex = 26;
+            nomLabel.Text = "Nom:";
+            // 
+            // prenomLabel
+            // 
+            prenomLabel.AutoSize = true;
+            prenomLabel.Location = new System.Drawing.Point(18, 103);
+            prenomLabel.Name = "prenomLabel";
+            prenomLabel.Size = new System.Drawing.Size(46, 13);
+            prenomLabel.TabIndex = 28;
+            prenomLabel.Text = "Prenom:";
+            // 
+            // villeLabel
+            // 
+            villeLabel.AutoSize = true;
+            villeLabel.Location = new System.Drawing.Point(18, 129);
+            villeLabel.Name = "villeLabel";
+            villeLabel.Size = new System.Drawing.Size(29, 13);
+            villeLabel.TabIndex = 30;
+            villeLabel.Text = "Ville:";
+            // 
+            // paysLabel
+            // 
+            paysLabel.AutoSize = true;
+            paysLabel.Location = new System.Drawing.Point(18, 155);
+            paysLabel.Name = "paysLabel";
+            paysLabel.Size = new System.Drawing.Size(33, 13);
+            paysLabel.TabIndex = 32;
+            paysLabel.Text = "Pays:";
+            // 
+            // adresseLabel
+            // 
+            adresseLabel.AutoSize = true;
+            adresseLabel.Location = new System.Drawing.Point(18, 181);
+            adresseLabel.Name = "adresseLabel";
+            adresseLabel.Size = new System.Drawing.Size(48, 13);
+            adresseLabel.TabIndex = 34;
+            adresseLabel.Text = "Adresse:";
+            // 
+            // codePostalLabel
+            // 
+            codePostalLabel.AutoSize = true;
+            codePostalLabel.Location = new System.Drawing.Point(18, 207);
+            codePostalLabel.Name = "codePostalLabel";
+            codePostalLabel.Size = new System.Drawing.Size(67, 13);
+            codePostalLabel.TabIndex = 36;
+            codePostalLabel.Text = "Code Postal:";
+            // 
+            // dateInscriptionLabel
+            // 
+            dateInscriptionLabel.AutoSize = true;
+            dateInscriptionLabel.Location = new System.Drawing.Point(18, 234);
+            dateInscriptionLabel.Name = "dateInscriptionLabel";
+            dateInscriptionLabel.Size = new System.Drawing.Size(84, 13);
+            dateInscriptionLabel.TabIndex = 38;
+            dateInscriptionLabel.Text = "Date Inscription:";
+            // 
             // lblTitre
             // 
             this.lblTitre.AutoSize = true;
@@ -95,30 +167,12 @@
             this.btnConfirmer.UseVisualStyleBackColor = true;
             this.btnConfirmer.Click += new System.EventHandler(this.btnConfirmer_Click);
             // 
-            // noClientLabel
-            // 
-            noClientLabel.AutoSize = true;
-            noClientLabel.Location = new System.Drawing.Point(18, 51);
-            noClientLabel.Name = "noClientLabel";
-            noClientLabel.Size = new System.Drawing.Size(53, 13);
-            noClientLabel.TabIndex = 24;
-            noClientLabel.Text = "No Client:";
-            // 
             // noClientTextBox
             // 
             this.noClientTextBox.Location = new System.Drawing.Point(108, 48);
             this.noClientTextBox.Name = "noClientTextBox";
             this.noClientTextBox.Size = new System.Drawing.Size(200, 20);
             this.noClientTextBox.TabIndex = 25;
-            // 
-            // nomLabel
-            // 
-            nomLabel.AutoSize = true;
-            nomLabel.Location = new System.Drawing.Point(18, 77);
-            nomLabel.Name = "nomLabel";
-            nomLabel.Size = new System.Drawing.Size(32, 13);
-            nomLabel.TabIndex = 26;
-            nomLabel.Text = "Nom:";
             // 
             // nomTextBox
             // 
@@ -127,30 +181,12 @@
             this.nomTextBox.Size = new System.Drawing.Size(200, 20);
             this.nomTextBox.TabIndex = 27;
             // 
-            // prenomLabel
-            // 
-            prenomLabel.AutoSize = true;
-            prenomLabel.Location = new System.Drawing.Point(18, 103);
-            prenomLabel.Name = "prenomLabel";
-            prenomLabel.Size = new System.Drawing.Size(46, 13);
-            prenomLabel.TabIndex = 28;
-            prenomLabel.Text = "Prenom:";
-            // 
             // prenomTextBox
             // 
             this.prenomTextBox.Location = new System.Drawing.Point(108, 100);
             this.prenomTextBox.Name = "prenomTextBox";
             this.prenomTextBox.Size = new System.Drawing.Size(200, 20);
             this.prenomTextBox.TabIndex = 29;
-            // 
-            // villeLabel
-            // 
-            villeLabel.AutoSize = true;
-            villeLabel.Location = new System.Drawing.Point(18, 129);
-            villeLabel.Name = "villeLabel";
-            villeLabel.Size = new System.Drawing.Size(29, 13);
-            villeLabel.TabIndex = 30;
-            villeLabel.Text = "Ville:";
             // 
             // villeTextBox
             // 
@@ -159,30 +195,12 @@
             this.villeTextBox.Size = new System.Drawing.Size(200, 20);
             this.villeTextBox.TabIndex = 31;
             // 
-            // paysLabel
-            // 
-            paysLabel.AutoSize = true;
-            paysLabel.Location = new System.Drawing.Point(18, 155);
-            paysLabel.Name = "paysLabel";
-            paysLabel.Size = new System.Drawing.Size(33, 13);
-            paysLabel.TabIndex = 32;
-            paysLabel.Text = "Pays:";
-            // 
             // paysTextBox
             // 
             this.paysTextBox.Location = new System.Drawing.Point(108, 152);
             this.paysTextBox.Name = "paysTextBox";
             this.paysTextBox.Size = new System.Drawing.Size(200, 20);
             this.paysTextBox.TabIndex = 33;
-            // 
-            // adresseLabel
-            // 
-            adresseLabel.AutoSize = true;
-            adresseLabel.Location = new System.Drawing.Point(18, 181);
-            adresseLabel.Name = "adresseLabel";
-            adresseLabel.Size = new System.Drawing.Size(48, 13);
-            adresseLabel.TabIndex = 34;
-            adresseLabel.Text = "Adresse:";
             // 
             // adresseTextBox
             // 
@@ -191,15 +209,6 @@
             this.adresseTextBox.Size = new System.Drawing.Size(200, 20);
             this.adresseTextBox.TabIndex = 35;
             // 
-            // codePostalLabel
-            // 
-            codePostalLabel.AutoSize = true;
-            codePostalLabel.Location = new System.Drawing.Point(18, 207);
-            codePostalLabel.Name = "codePostalLabel";
-            codePostalLabel.Size = new System.Drawing.Size(67, 13);
-            codePostalLabel.TabIndex = 36;
-            codePostalLabel.Text = "Code Postal:";
-            // 
             // codePostalTextBox
             // 
             this.codePostalTextBox.Location = new System.Drawing.Point(108, 204);
@@ -207,17 +216,9 @@
             this.codePostalTextBox.Size = new System.Drawing.Size(200, 20);
             this.codePostalTextBox.TabIndex = 37;
             // 
-            // dateInscriptionLabel
-            // 
-            dateInscriptionLabel.AutoSize = true;
-            dateInscriptionLabel.Location = new System.Drawing.Point(18, 234);
-            dateInscriptionLabel.Name = "dateInscriptionLabel";
-            dateInscriptionLabel.Size = new System.Drawing.Size(84, 13);
-            dateInscriptionLabel.TabIndex = 38;
-            dateInscriptionLabel.Text = "Date Inscription:";
-            // 
             // dateInscriptionDateTimePicker
             // 
+            this.dateInscriptionDateTimePicker.Enabled = false;
             this.dateInscriptionDateTimePicker.Location = new System.Drawing.Point(108, 230);
             this.dateInscriptionDateTimePicker.Name = "dateInscriptionDateTimePicker";
             this.dateInscriptionDateTimePicker.Size = new System.Drawing.Size(200, 20);
@@ -236,10 +237,12 @@
             // tableAdapterManager
             // 
             this.tableAdapterManager.BackupDataSetBeforeUpdate = false;
+            this.tableAdapterManager.P01_AssistantSoinTableAdapter = null;
             this.tableAdapterManager.P01_AssistantTableAdapter = null;
             this.tableAdapterManager.P01_ChambreTableAdapter = null;
             this.tableAdapterManager.P01_ClientTableAdapter = this.p01_ClientTableAdapter;
             this.tableAdapterManager.P01_InviteTableAdapter = null;
+            this.tableAdapterManager.P01_PlanifSoinTableAdapter = null;
             this.tableAdapterManager.P01_ReversationChambreTableAdapter = null;
             this.tableAdapterManager.P01_SoinTableAdapter = null;
             this.tableAdapterManager.P01_TypeChambreTableAdapter = null;
