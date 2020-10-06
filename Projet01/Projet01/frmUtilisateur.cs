@@ -59,12 +59,12 @@ namespace Projet01
         {
             if (booAjout)
             {
-                /*// AJOUTER UN UTILISATEUR
+               /* // AJOUTER UN UTILISATEUR
                 SqlConnection maConnexion = new SqlConnection(maChaineDeConnexion);
                 maConnexion.Open();
                String maRequeteSQL = "insert into P01_Utilisateurs(NoUtilisateur,Nomutilisateur,MotDepasse,NoType) values("++")"
                SqlCommand maCommande = new SqlCommand(maRequeteSQL, maConnexion);
-                maCommande.ExecuteScalar();  */     
+                maCommande.ExecuteScalar();      */
 
             }
             else if (!booAjout)
