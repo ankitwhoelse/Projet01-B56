@@ -166,7 +166,7 @@
             // 
             this.typeUtilisateurComboBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.p01_TypeUtilisateurBindingSource, "Identification", true));
             this.typeUtilisateurComboBox.DataSource = this.p01_TypeUtilisateurBindingSource;
-            this.typeUtilisateurComboBox.DisplayMember = "NoType";
+            this.typeUtilisateurComboBox.DisplayMember = "Identification";
             this.typeUtilisateurComboBox.FormattingEnabled = true;
             this.typeUtilisateurComboBox.Location = new System.Drawing.Point(153, 181);
             this.typeUtilisateurComboBox.Margin = new System.Windows.Forms.Padding(4);

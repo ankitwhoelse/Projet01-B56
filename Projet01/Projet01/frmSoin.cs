@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Data.SqlClient;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -14,7 +15,7 @@ namespace Projet01
     {
         public bool booAjout;
         public dynamic NoSoin;
-
+        String maChaineDeConnexion = "Data Source=tcp:424sql.cgodin.qc.ca,5433;Initial Catalog=BDB56Ankit;Persist Security Info=True;User ID=B56Ankit;Password=Summit11g";
         public frmSoin()
         {
             InitializeComponent();
@@ -57,6 +58,13 @@ namespace Projet01
             if (booAjout)
             {
                 // AJOUT
+                SqlConnection maConnexion = new SqlConnection(maChaineDeConnexion);
+                maConnexion.Open();
+                String maRequeteSQL = "insert into P01_Soin(NoSoin,Description,Duree,NoTypeSoin,prix) values('" + int.Parse(noSoinTextBox.ToString()) + "','" + descriptionTextBox.ToString() + "','" + int.Parse(dureeTextBox.ToString()) + "','" + int.Parse(noTypeSoinTextBox.ToString()) +"','"+int.Parse(prixTextBox.ToString())+ "')";
+                SqlCommand maCommande = new SqlCommand(maRequeteSQL, maConnexion);
+                maCommande.ExecuteScalar();
+                maConnexion.Close();
+
             }
             else if (!booAjout)
             {
