@@ -40,7 +40,6 @@
             this.label4 = new System.Windows.Forms.Label();
             this.bDB56AnkitDataSet = new Projet01.BDB56AnkitDataSet();
             this.p01_TypeUtilisateurBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.p01_TypeUtilisateurTableAdapter = new Projet01.BDB56AnkitDataSetTableAdapters.P01_TypeUtilisateurTableAdapter();
             this.tableAdapterManager = new Projet01.BDB56AnkitDataSetTableAdapters.TableAdapterManager();
             this.typeUtilisateurComboBox = new System.Windows.Forms.ComboBox();
             this.lblTitre = new System.Windows.Forms.Label();
@@ -50,9 +49,10 @@
             // 
             // btnConfirmer
             // 
-            this.btnConfirmer.Location = new System.Drawing.Point(15, 204);
+            this.btnConfirmer.Location = new System.Drawing.Point(20, 251);
+            this.btnConfirmer.Margin = new System.Windows.Forms.Padding(4);
             this.btnConfirmer.Name = "btnConfirmer";
-            this.btnConfirmer.Size = new System.Drawing.Size(89, 56);
+            this.btnConfirmer.Size = new System.Drawing.Size(119, 69);
             this.btnConfirmer.TabIndex = 0;
             this.btnConfirmer.Text = "button1";
             this.btnConfirmer.UseVisualStyleBackColor = true;
@@ -61,9 +61,10 @@
             // btnAnnuler
             // 
             this.btnAnnuler.DialogResult = System.Windows.Forms.DialogResult.Cancel;
-            this.btnAnnuler.Location = new System.Drawing.Point(110, 204);
+            this.btnAnnuler.Location = new System.Drawing.Point(147, 251);
+            this.btnAnnuler.Margin = new System.Windows.Forms.Padding(4);
             this.btnAnnuler.Name = "btnAnnuler";
-            this.btnAnnuler.Size = new System.Drawing.Size(100, 56);
+            this.btnAnnuler.Size = new System.Drawing.Size(133, 69);
             this.btnAnnuler.TabIndex = 1;
             this.btnAnnuler.Text = "Annuler";
             this.btnAnnuler.UseVisualStyleBackColor = true;
@@ -72,57 +73,64 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(12, 72);
+            this.label1.Location = new System.Drawing.Point(16, 89);
+            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(71, 13);
+            this.label1.Size = new System.Drawing.Size(95, 17);
             this.label1.TabIndex = 2;
             this.label1.Text = "No utilisateur:";
             // 
             // noUtilisateurTextBox
             // 
-            this.noUtilisateurTextBox.Location = new System.Drawing.Point(115, 65);
+            this.noUtilisateurTextBox.Location = new System.Drawing.Point(153, 80);
+            this.noUtilisateurTextBox.Margin = new System.Windows.Forms.Padding(4);
             this.noUtilisateurTextBox.Name = "noUtilisateurTextBox";
-            this.noUtilisateurTextBox.Size = new System.Drawing.Size(100, 20);
+            this.noUtilisateurTextBox.Size = new System.Drawing.Size(132, 22);
             this.noUtilisateurTextBox.TabIndex = 3;
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(12, 98);
+            this.label2.Location = new System.Drawing.Point(16, 121);
+            this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(79, 13);
+            this.label2.Size = new System.Drawing.Size(106, 17);
             this.label2.TabIndex = 2;
             this.label2.Text = "Nom utilisateur:";
             // 
             // nomUtilisateurTextBox
             // 
-            this.nomUtilisateurTextBox.Location = new System.Drawing.Point(115, 91);
+            this.nomUtilisateurTextBox.Location = new System.Drawing.Point(153, 112);
+            this.nomUtilisateurTextBox.Margin = new System.Windows.Forms.Padding(4);
             this.nomUtilisateurTextBox.Name = "nomUtilisateurTextBox";
-            this.nomUtilisateurTextBox.Size = new System.Drawing.Size(100, 20);
+            this.nomUtilisateurTextBox.Size = new System.Drawing.Size(132, 22);
             this.nomUtilisateurTextBox.TabIndex = 3;
             // 
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(12, 124);
+            this.label3.Location = new System.Drawing.Point(16, 153);
+            this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(74, 13);
+            this.label3.Size = new System.Drawing.Size(97, 17);
             this.label3.TabIndex = 2;
             this.label3.Text = "Mot de passe:";
             // 
             // MotDePasseTextBox
             // 
-            this.MotDePasseTextBox.Location = new System.Drawing.Point(115, 117);
+            this.MotDePasseTextBox.Location = new System.Drawing.Point(153, 144);
+            this.MotDePasseTextBox.Margin = new System.Windows.Forms.Padding(4);
             this.MotDePasseTextBox.Name = "MotDePasseTextBox";
-            this.MotDePasseTextBox.Size = new System.Drawing.Size(100, 20);
+            this.MotDePasseTextBox.Size = new System.Drawing.Size(132, 22);
             this.MotDePasseTextBox.TabIndex = 3;
             // 
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(12, 150);
+            this.label4.Location = new System.Drawing.Point(16, 185);
+            this.label4.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(89, 13);
+            this.label4.Size = new System.Drawing.Size(120, 17);
             this.label4.TabIndex = 2;
             this.label4.Text = "Type d\'utilisateur:";
             // 
@@ -136,13 +144,10 @@
             this.p01_TypeUtilisateurBindingSource.DataMember = "P01_TypeUtilisateur";
             this.p01_TypeUtilisateurBindingSource.DataSource = this.bDB56AnkitDataSet;
             // 
-            // p01_TypeUtilisateurTableAdapter
-            // 
-            this.p01_TypeUtilisateurTableAdapter.ClearBeforeFill = true;
-            // 
             // tableAdapterManager
             // 
             this.tableAdapterManager.BackupDataSetBeforeUpdate = false;
+            this.tableAdapterManager.Connection = null;
             this.tableAdapterManager.P01_AssistantSoinTableAdapter = null;
             this.tableAdapterManager.P01_AssistantTableAdapter = null;
             this.tableAdapterManager.P01_ChambreTableAdapter = null;
@@ -153,34 +158,38 @@
             this.tableAdapterManager.P01_SoinTableAdapter = null;
             this.tableAdapterManager.P01_TypeChambreTableAdapter = null;
             this.tableAdapterManager.P01_TypeSoinTableAdapter = null;
-            this.tableAdapterManager.P01_TypeUtilisateurTableAdapter = this.p01_TypeUtilisateurTableAdapter;
+            this.tableAdapterManager.P01_TypeUtilisateurTableAdapter = null;
             this.tableAdapterManager.P01_UtilisateurTableAdapter = null;
             this.tableAdapterManager.UpdateOrder = Projet01.BDB56AnkitDataSetTableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete;
             // 
             // typeUtilisateurComboBox
             // 
             this.typeUtilisateurComboBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.p01_TypeUtilisateurBindingSource, "Identification", true));
+            this.typeUtilisateurComboBox.DataSource = this.p01_TypeUtilisateurBindingSource;
+            this.typeUtilisateurComboBox.DisplayMember = "NoType";
             this.typeUtilisateurComboBox.FormattingEnabled = true;
-            this.typeUtilisateurComboBox.Location = new System.Drawing.Point(115, 147);
+            this.typeUtilisateurComboBox.Location = new System.Drawing.Point(153, 181);
+            this.typeUtilisateurComboBox.Margin = new System.Windows.Forms.Padding(4);
             this.typeUtilisateurComboBox.Name = "typeUtilisateurComboBox";
-            this.typeUtilisateurComboBox.Size = new System.Drawing.Size(100, 21);
+            this.typeUtilisateurComboBox.Size = new System.Drawing.Size(132, 24);
             this.typeUtilisateurComboBox.TabIndex = 11;
             // 
             // lblTitre
             // 
             this.lblTitre.AutoSize = true;
             this.lblTitre.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblTitre.Location = new System.Drawing.Point(15, 13);
+            this.lblTitre.Location = new System.Drawing.Point(20, 16);
+            this.lblTitre.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblTitre.Name = "lblTitre";
-            this.lblTitre.Size = new System.Drawing.Size(47, 20);
+            this.lblTitre.Size = new System.Drawing.Size(58, 25);
             this.lblTitre.TabIndex = 12;
             this.lblTitre.Text = "label";
             // 
             // frmUtilisateur
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(236, 274);
+            this.ClientSize = new System.Drawing.Size(315, 337);
             this.Controls.Add(this.lblTitre);
             this.Controls.Add(this.typeUtilisateurComboBox);
             this.Controls.Add(this.label4);
@@ -193,6 +202,7 @@
             this.Controls.Add(this.btnAnnuler);
             this.Controls.Add(this.btnConfirmer);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "frmUtilisateur";
@@ -218,7 +228,6 @@
         private System.Windows.Forms.Label label4;
         private BDB56AnkitDataSet bDB56AnkitDataSet;
         private System.Windows.Forms.BindingSource p01_TypeUtilisateurBindingSource;
-        private BDB56AnkitDataSetTableAdapters.P01_TypeUtilisateurTableAdapter p01_TypeUtilisateurTableAdapter;
         private BDB56AnkitDataSetTableAdapters.TableAdapterManager tableAdapterManager;
         private System.Windows.Forms.ComboBox typeUtilisateurComboBox;
         private System.Windows.Forms.Label lblTitre;

@@ -70,6 +70,7 @@ namespace Projet01
                     frmP.NoUtilisateur = NoUtilisateur;
                     frmP.ShowDialog();
                 }
+                
                 this.Show();
             }
             

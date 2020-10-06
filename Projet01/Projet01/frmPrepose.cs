@@ -38,7 +38,7 @@ namespace Projet01
 
         private void btnQuitter_Click(object sender, EventArgs e)
         {
-            Application.Exit();
+            Environment.Exit(1);
         }
 
         private void p01_ClientBindingNavigatorSaveItem_Click(object sender, EventArgs e)
