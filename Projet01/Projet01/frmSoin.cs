@@ -20,6 +20,16 @@ namespace Projet01
         {
             InitializeComponent();
         }
+        static void ClearControls<CTRL>(Control parent, Action<CTRL> clearMethod) where CTRL : Control
+        {
+            foreach (Control child in parent.Controls)
+            {
+                CTRL targetChild = child as CTRL;
+                if (targetChild != null)
+                    clearMethod(targetChild);
+                ClearControls(child, clearMethod);
+            } //loop
+        }
 
         private void p01_SoinBindingNavigatorSaveItem_Click(object sender, EventArgs e)
         {
@@ -32,26 +42,32 @@ namespace Projet01
         private void frmSoin_Load(object sender, EventArgs e)
         {
             // TODO: This line of code loads data into the 'bDB56AnkitDataSet.P01_Soin' table. You can move, or remove it, as needed.
-            this.p01_SoinTableAdapter.Fill(this.bDB56AnkitDataSet.P01_Soin);
+          
 
             if (booAjout)
             {
-               
 
-                
+
+
                 // vider les textBox
-                 Action<Control.ControlCollection> func = null;
+                   Action<Control.ControlCollection> func = null;
 
-                 func = (controls) =>
-                 {
-                     foreach (Control control in controls)
-                         if (control is TextBox)
-                             (control as TextBox).Clear();
-                         else
-                             func(control.Controls);
-                 };
+                   func = (controls) =>
+                   {
+                       foreach (Control control in controls)
+                           if (control is TextBox)
+                               (control as TextBox).Clear();
+                           else
+                               func(control.Controls);
+                   };
 
-                 func(Controls);
+                   func(Controls);
+              /*  Control parent=this;
+                ClearControls<TextBox>(parent, new Action<TextBox>((child) => {
+                    child.Text = string.Empty;
+                }));*/
+                
+                
                 int intSoin = 0;
                 SqlConnection maConnexion = new SqlConnection(maChaineDeConnexion);
                 maConnexion.Open();
@@ -71,7 +87,8 @@ namespace Projet01
                 this.Text = "Ajouter un soin";
             }
             else if (!booAjout)
-            {
+            {  
+                this.p01_SoinTableAdapter.Fill(this.bDB56AnkitDataSet.P01_Soin);
                 lblTitre.Text = "Modifier un soin";
                 btnConfirmer.Text = "Modifier";
                 this.Text = "Modifier un soin";
@@ -81,6 +98,7 @@ namespace Projet01
         private void btnAnnuler_Click(object sender, EventArgs e)
         {
             this.Close();
+           
         }
 
         private void btnConfirmer_Click(object sender, EventArgs e)
@@ -98,12 +116,28 @@ namespace Projet01
                     SqlCommand maCommande = new SqlCommand(maRequeteSQL, maConnexion);
                     maCommande.ExecuteScalar();
                     maConnexion.Close();
+                    
                     this.Close();
                 }
             }
             else if (!booAjout)
             {
                 // MODIF
+                if (this.Controls.OfType<TextBox>().Any(tBox => string.IsNullOrEmpty(tBox.Text)))
+                    MessageBox.Show("empty at least 1");
+                else
+                {
+                    // MODIF
+                    SqlConnection maConnexion = new SqlConnection(maChaineDeConnexion);
+                    maConnexion.Open();
+                    String maRequeteSQL = "update P01_Soin set Description = '" + descriptionTextBox.Text.ToString() + "', Duree = " + int.Parse(dureeTextBox.Text.ToString()) + ", NoTypeSoin = " + int.Parse(noTypeSoinTextBox.Text.ToString()) + ", prix = " + Math.Round(double.Parse(prixTextBox.Text.ToString()))  + " where NoSoin ="+ noSoinTextBox.Text.ToString();
+                    SqlCommand maCommande = new SqlCommand(maRequeteSQL, maConnexion);
+                    maCommande.ExecuteScalar();
+                    maConnexion.Close();
+                    this.Close();
+                    //Update bd not sure?? 
+                   // this.p01_SoinBindingSource.ResetBindings(false);
+                }
             }
         }
     }
