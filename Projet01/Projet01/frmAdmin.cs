@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Data.SqlClient;
 
 namespace Projet01
 {
@@ -14,6 +15,7 @@ namespace Projet01
     {
         public dynamic NoUtilisateur;
         public dynamic NoClient;
+        public dynamic NoInvite;
         public dynamic NoAssistant;
         public dynamic NoSoin;
         public dynamic NoChambre;
@@ -23,9 +25,12 @@ namespace Projet01
 
         frmUtilisateur frmU = new frmUtilisateur();
         frmClient frmCl = new frmClient();
+        frmInvite frmI = new frmInvite();
         frmAssistant frmAss = new frmAssistant();
         frmSoin frmS = new frmSoin();
         frmChambre frmCh = new frmChambre();
+
+        String maChaineDeConnexion = "Data Source=tcp:424sql.cgodin.qc.ca,5433;Initial Catalog=BDB56Ankit;Persist Security Info=True;User ID=B56Ankit;Password=Summit11g";
 
 
         public frmAdmin()
@@ -54,6 +59,8 @@ namespace Projet01
 
         private void frmAdmin_Load(object sender, EventArgs e)
         {
+            // TODO: This line of code loads data into the 'bDB56AnkitDataSet.P01_Invite' table. You can move, or remove it, as needed.
+            this.p01_InviteTableAdapter.Fill(this.bDB56AnkitDataSet.P01_Invite);
             // TODO: This line of code loads data into the 'bDB56AnkitDataSet.P01_Soin' table. You can move, or remove it, as needed.
             this.p01_SoinTableAdapter.Fill(this.bDB56AnkitDataSet.P01_Soin);
             // TODO: This line of code loads data into the 'bDB56AnkitDataSet.P01_Assistant' table. You can move, or remove it, as needed.
@@ -229,6 +236,32 @@ namespace Projet01
             gbInfoUtilisateur.Visible = false;
         }
 
+        //  Recuperer le NoClient
+        private void cboClients_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            gbInfoInvite.Visible = true;
+            NoClient = cboClients.SelectedValue.ToString();
+            
+        }
 
+        private void btnAjoutInvite_Click(object sender, EventArgs e)
+        {
+            frmI.NoClient = NoClient;
+            frmI.booAjout = true;
+            frmI.ShowDialog();
+        }
+
+        private void btnModifInvite_Click(object sender, EventArgs e)
+        {
+            frmI.NoClient = NoClient;
+            frmI.booAjout = false;
+            frmI.NoInvite = NoInvite;
+            frmI.ShowDialog();
+        }
+
+        private void cboInvite_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            NoInvite = cboInvite.SelectedValue.ToString();
+        }
     }
 }
