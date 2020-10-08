@@ -772,6 +772,26 @@ SELECT NoUtilisateur, NomUtilisateur, MotDePasse, NoType FROM P01_Utilisateur WH
             </Mappings>
             <Sources />
           </TableAdapter>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="NoEtNomComplet_ClientTableAdapter" GeneratorDataComponentClassName="NoEtNomComplet_ClientTableAdapter" Name="NoEtNomComplet_Client" UserDataComponentName="NoEtNomComplet_ClientTableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="BDB56AnkitConnectionString (Settings)" DbObjectType="Unknown" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>SELECT        P01_Client.Nom, P01_Client.Prenom, P01_Invite.NoClient
+FROM            P01_Client FULL OUTER JOIN
+                         P01_Invite ON P01_Client.NoClient = P01_Invite.NoClient</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="NoClient" DataSetColumn="NoClient" />
+              <Mapping SourceColumn="Nom" DataSetColumn="Nom" />
+              <Mapping SourceColumn="Prenom" DataSetColumn="Prenom" />
+            </Mappings>
+            <Sources />
+          </TableAdapter>
         </Tables>
         <Sources />
       </DataSource>
@@ -1015,6 +1035,27 @@ SELECT NoUtilisateur, NomUtilisateur, MotDePasse, NoType FROM P01_Utilisateur WH
             </xs:sequence>
           </xs:complexType>
         </xs:element>
+        <xs:element name="NoEtNomComplet_Client" msprop:Generator_TableClassName="NoEtNomComplet_ClientDataTable" msprop:Generator_TableVarName="tableNoEtNomComplet_Client" msprop:Generator_RowChangedName="NoEtNomComplet_ClientRowChanged" msprop:Generator_TablePropName="NoEtNomComplet_Client" msprop:Generator_RowDeletingName="NoEtNomComplet_ClientRowDeleting" msprop:Generator_RowChangingName="NoEtNomComplet_ClientRowChanging" msprop:Generator_RowEvHandlerName="NoEtNomComplet_ClientRowChangeEventHandler" msprop:Generator_RowDeletedName="NoEtNomComplet_ClientRowDeleted" msprop:Generator_RowClassName="NoEtNomComplet_ClientRow" msprop:Generator_UserTableName="NoEtNomComplet_Client" msprop:Generator_RowEvArgName="NoEtNomComplet_ClientRowChangeEvent">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="NoClient" msprop:Generator_ColumnVarNameInTable="columnNoClient" msprop:Generator_ColumnPropNameInRow="NoClient" msprop:Generator_ColumnPropNameInTable="NoClientColumn" msprop:Generator_UserColumnName="NoClient" type="xs:short" minOccurs="0" />
+              <xs:element name="Nom" msprop:Generator_ColumnVarNameInTable="columnNom" msprop:Generator_ColumnPropNameInRow="Nom" msprop:Generator_ColumnPropNameInTable="NomColumn" msprop:Generator_UserColumnName="Nom" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="15" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Prenom" msprop:Generator_ColumnVarNameInTable="columnPrenom" msprop:Generator_ColumnPropNameInRow="Prenom" msprop:Generator_ColumnPropNameInTable="PrenomColumn" msprop:Generator_UserColumnName="Prenom" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="15" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
       </xs:choice>
     </xs:complexType>
     <xs:unique name="Constraint1" msdata:PrimaryKey="true">
@@ -1070,6 +1111,10 @@ SELECT NoUtilisateur, NomUtilisateur, MotDePasse, NoType FROM P01_Utilisateur WH
       <xs:selector xpath=".//mstns:P01_TypeUtilisateur" />
       <xs:field xpath="mstns:NoType" />
     </xs:unique>
+    <xs:unique name="NoEtNomComplet_Client_Constraint1" msdata:ConstraintName="Constraint1" msdata:PrimaryKey="true">
+      <xs:selector xpath=".//mstns:NoEtNomComplet_Client" />
+      <xs:field xpath="mstns:NoClient" />
+    </xs:unique>
   </xs:element>
   <xs:annotation>
     <xs:appinfo>
@@ -1083,6 +1128,8 @@ SELECT NoUtilisateur, NomUtilisateur, MotDePasse, NoType FROM P01_Utilisateur WH
       <msdata:Relationship name="fk_RC_Client" msdata:parent="P01_Client" msdata:child="P01_ReversationChambre" msdata:parentkey="NoClient" msdata:childkey="NoClient" msprop:Generator_UserChildTable="P01_ReversationChambre" msprop:Generator_ChildPropName="GetP01_ReversationChambreRows" msprop:Generator_UserRelationName="fk_RC_Client" msprop:Generator_ParentPropName="P01_ClientRow" msprop:Generator_RelationVarName="relationfk_RC_Client" msprop:Generator_UserParentTable="P01_Client" />
       <msdata:Relationship name="fk_NoTypeSoin" msdata:parent="P01_TypeSoin" msdata:child="P01_Soin" msdata:parentkey="NoTypeSoin" msdata:childkey="NoTypeSoin" msprop:Generator_UserChildTable="P01_Soin" msprop:Generator_ChildPropName="GetP01_SoinRows" msprop:Generator_UserRelationName="fk_NoTypeSoin" msprop:Generator_RelationVarName="relationfk_NoTypeSoin" msprop:Generator_UserParentTable="P01_TypeSoin" msprop:Generator_ParentPropName="P01_TypeSoinRow" />
       <msdata:Relationship name="fk_UTIL_TypeUtil" msdata:parent="P01_TypeUtilisateur" msdata:child="P01_Utilisateur" msdata:parentkey="NoType" msdata:childkey="NoType" msprop:Generator_UserChildTable="P01_Utilisateur" msprop:Generator_ChildPropName="GetP01_UtilisateurRows" msprop:Generator_UserRelationName="fk_UTIL_TypeUtil" msprop:Generator_ParentPropName="P01_TypeUtilisateurRow" msprop:Generator_RelationVarName="relationfk_UTIL_TypeUtil" msprop:Generator_UserParentTable="P01_TypeUtilisateur" />
+      <msdata:Relationship name="fk_INV_client1" msdata:parent="NoEtNomComplet_Client" msdata:child="P01_Invite" msdata:parentkey="NoClient" msdata:childkey="NoClient" msprop:Generator_UserChildTable="P01_Invite" msprop:Generator_ChildPropName="GetP01_InviteRows" msprop:Generator_UserRelationName="fk_INV_client1" msprop:Generator_ParentPropName="NoEtNomComplet_ClientRow" msprop:Generator_RelationVarName="relationfk_INV_client1" msprop:Generator_UserParentTable="NoEtNomComplet_Client" />
+      <msdata:Relationship name="fk_RC_Client1" msdata:parent="NoEtNomComplet_Client" msdata:child="P01_ReversationChambre" msdata:parentkey="NoClient" msdata:childkey="NoClient" msprop:Generator_UserChildTable="P01_ReversationChambre" msprop:Generator_ChildPropName="GetP01_ReversationChambreRows" msprop:Generator_UserRelationName="fk_RC_Client1" msprop:Generator_ParentPropName="NoEtNomComplet_ClientRow" msprop:Generator_RelationVarName="relationfk_RC_Client1" msprop:Generator_UserParentTable="NoEtNomComplet_Client" />
     </xs:appinfo>
   </xs:annotation>
 </xs:schema>

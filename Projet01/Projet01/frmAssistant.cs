@@ -90,10 +90,10 @@ namespace Projet01
                     maConnexion.Open();
                     String maRequeteSQL = "insert into P01_Assistant(NoAssistant,Prenom,Nom,Specialites,Remarques) values(" + int.Parse(noAssistantTextBox.Text.ToString()) + ",'" + prenomTextBox.Text.ToString() + "','" + nomTextBox.Text.ToString() + "','" + specialitesTextBox.Text.ToString() + "','" + remarquesTextBox.Text.ToString() + "')";
                     SqlCommand maCommande = new SqlCommand(maRequeteSQL, maConnexion);
-                maCommande.ExecuteScalar();
-                maConnexion.Close();
-                this.Close();
-            }
+                    maCommande.ExecuteScalar();
+                    maConnexion.Close();
+                    this.Close();
+                }
             }
             else if (!booAjout)
             {

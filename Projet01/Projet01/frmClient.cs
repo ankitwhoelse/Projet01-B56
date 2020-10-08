@@ -16,7 +16,7 @@ namespace Projet01
         public bool booAjout;
         public dynamic NoClient;
 
-        String maChaineDeConnexion = "Data Source=tcp:424sql.cgodin.qc.ca,5433;Initial Catalog=BDB56TP11;User ID=B56TP11;Password=B56Password";
+        String maChaineDeConnexion = "Data Source=tcp:424sql.cgodin.qc.ca,5433;Initial Catalog=BDB56Ankit;Persist Security Info=True;User ID=B56Ankit;Password=Summit11g";
 
         public frmClient()
         {
@@ -67,7 +67,7 @@ namespace Projet01
                     string requete = "SELECT * FROM P01_Client WHERE NoClient = " + NoClient;
                     SqlCommand com = new SqlCommand(requete, con);
                     con.Open();
-
+                    // pause ?
                     SqlDataReader dr = com.ExecuteReader();
                     while (dr.Read()) {
 
@@ -82,10 +82,10 @@ namespace Projet01
         {
             if (booAjout)
             {           // AJOUT
-                // Creer un nouveau contrat en memoire
+                // Creer un nouveau client en memoire
                 BDB56AnkitDataSet.P01_ClientRow unClient = bDB56AnkitDataSet.P01_Client.NewP01_ClientRow();
                 
-                // Ajout des autres donnees
+                // Ajout des donnees
                 unClient.NoClient = (short) int.Parse(noClientTextBox.Text);
                 unClient.Nom = nomTextBox.Text;
                 unClient.Prenom = prenomTextBox.Text;

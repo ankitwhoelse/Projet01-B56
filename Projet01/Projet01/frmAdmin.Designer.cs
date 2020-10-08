@@ -55,6 +55,8 @@
             System.Windows.Forms.Label emplacementLabel;
             System.Windows.Forms.Label decorationsLabel;
             System.Windows.Forms.Label noTypeChambreLabel;
+            System.Windows.Forms.Label nomPrenomLabel;
+            System.Windows.Forms.Label noInviteLabel;
             this.btnQuitter = new System.Windows.Forms.Button();
             this.btnDeconnexion = new System.Windows.Forms.Button();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
@@ -119,6 +121,15 @@
             this.emplacementTextBox = new System.Windows.Forms.TextBox();
             this.decorationsTextBox = new System.Windows.Forms.TextBox();
             this.noTypeChambreTextBox = new System.Windows.Forms.TextBox();
+            this.p01_InviteBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.p01_InviteTableAdapter = new Projet01.BDB56AnkitDataSetTableAdapters.P01_InviteTableAdapter();
+            this.cboInvite = new System.Windows.Forms.ComboBox();
+            this.nomPrenomTextBox = new System.Windows.Forms.TextBox();
+            this.noInviteTextBox = new System.Windows.Forms.TextBox();
+            this.gbInfoInvite = new System.Windows.Forms.GroupBox();
+            this.btnSupprimeInvite = new System.Windows.Forms.Button();
+            this.btnModifInvite = new System.Windows.Forms.Button();
+            this.btnAjoutInvite = new System.Windows.Forms.Button();
             noUtilisateurLabel = new System.Windows.Forms.Label();
             nomUtilisateurLabel = new System.Windows.Forms.Label();
             motDePasseLabel = new System.Windows.Forms.Label();
@@ -145,6 +156,8 @@
             emplacementLabel = new System.Windows.Forms.Label();
             decorationsLabel = new System.Windows.Forms.Label();
             noTypeChambreLabel = new System.Windows.Forms.Label();
+            nomPrenomLabel = new System.Windows.Forms.Label();
+            noInviteLabel = new System.Windows.Forms.Label();
             this.menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.bDB56AnkitDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.p01_UtilisateurBindingSource)).BeginInit();
@@ -157,6 +170,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.p01_SoinBindingSource)).BeginInit();
             this.gbInfoSoins.SuspendLayout();
             this.gbInfoChambre.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.p01_InviteBindingSource)).BeginInit();
+            this.gbInfoInvite.SuspendLayout();
             this.SuspendLayout();
             // 
             // noUtilisateurLabel
@@ -393,6 +408,24 @@
             noTypeChambreLabel.TabIndex = 6;
             noTypeChambreLabel.Text = "No Type Chambre:";
             // 
+            // nomPrenomLabel
+            // 
+            nomPrenomLabel.AutoSize = true;
+            nomPrenomLabel.Location = new System.Drawing.Point(6, 42);
+            nomPrenomLabel.Name = "nomPrenomLabel";
+            nomPrenomLabel.Size = new System.Drawing.Size(71, 13);
+            nomPrenomLabel.TabIndex = 2;
+            nomPrenomLabel.Text = "Nom Prenom:";
+            // 
+            // noInviteLabel
+            // 
+            noInviteLabel.AutoSize = true;
+            noInviteLabel.Location = new System.Drawing.Point(6, 16);
+            noInviteLabel.Name = "noInviteLabel";
+            noInviteLabel.Size = new System.Drawing.Size(53, 13);
+            noInviteLabel.TabIndex = 0;
+            noInviteLabel.Text = "No Invite:";
+            // 
             // btnQuitter
             // 
             this.btnQuitter.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -422,7 +455,7 @@
             this.visualiserToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(948, 24);
+            this.menuStrip1.Size = new System.Drawing.Size(1033, 24);
             this.menuStrip1.TabIndex = 1;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -504,10 +537,12 @@
             // tableAdapterManager
             // 
             this.tableAdapterManager.BackupDataSetBeforeUpdate = false;
+            this.tableAdapterManager.P01_AssistantSoinTableAdapter = null;
             this.tableAdapterManager.P01_AssistantTableAdapter = null;
             this.tableAdapterManager.P01_ChambreTableAdapter = null;
             this.tableAdapterManager.P01_ClientTableAdapter = null;
             this.tableAdapterManager.P01_InviteTableAdapter = null;
+            this.tableAdapterManager.P01_PlanifSoinTableAdapter = null;
             this.tableAdapterManager.P01_ReversationChambreTableAdapter = null;
             this.tableAdapterManager.P01_SoinTableAdapter = null;
             this.tableAdapterManager.P01_TypeChambreTableAdapter = null;
@@ -606,6 +641,7 @@
             this.cboClients.Size = new System.Drawing.Size(133, 21);
             this.cboClients.TabIndex = 9;
             this.cboClients.ValueMember = "NoClient";
+            this.cboClients.SelectedIndexChanged += new System.EventHandler(this.cboClients_SelectedIndexChanged);
             // 
             // noUtilisateurTextBox
             // 
@@ -680,7 +716,6 @@
             this.gbInfoClient.TabIndex = 34;
             this.gbInfoClient.TabStop = false;
             this.gbInfoClient.Text = "Informations sur le client";
-            this.gbInfoClient.Visible = false;
             // 
             // villeTextBox
             // 
@@ -967,11 +1002,98 @@
             this.noTypeChambreTextBox.Size = new System.Drawing.Size(100, 20);
             this.noTypeChambreTextBox.TabIndex = 7;
             // 
+            // p01_InviteBindingSource
+            // 
+            this.p01_InviteBindingSource.DataMember = "P01_Invite";
+            this.p01_InviteBindingSource.DataSource = this.bDB56AnkitDataSet;
+            // 
+            // p01_InviteTableAdapter
+            // 
+            this.p01_InviteTableAdapter.ClearBeforeFill = true;
+            // 
+            // cboInvite
+            // 
+            this.cboInvite.DataSource = this.p01_InviteBindingSource;
+            this.cboInvite.DisplayMember = "NomPrenom";
+            this.cboInvite.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cboInvite.FormattingEnabled = true;
+            this.cboInvite.Location = new System.Drawing.Point(16, 250);
+            this.cboInvite.Name = "cboInvite";
+            this.cboInvite.Size = new System.Drawing.Size(134, 21);
+            this.cboInvite.TabIndex = 38;
+            this.cboInvite.ValueMember = "NoInvite";
+            this.cboInvite.SelectedIndexChanged += new System.EventHandler(this.cboInvite_SelectedIndexChanged);
+            // 
+            // nomPrenomTextBox
+            // 
+            this.nomPrenomTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.p01_InviteBindingSource, "NomPrenom", true));
+            this.nomPrenomTextBox.Location = new System.Drawing.Point(83, 39);
+            this.nomPrenomTextBox.Name = "nomPrenomTextBox";
+            this.nomPrenomTextBox.Size = new System.Drawing.Size(100, 20);
+            this.nomPrenomTextBox.TabIndex = 3;
+            // 
+            // noInviteTextBox
+            // 
+            this.noInviteTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.p01_InviteBindingSource, "NoInvite", true));
+            this.noInviteTextBox.Enabled = false;
+            this.noInviteTextBox.Location = new System.Drawing.Point(83, 13);
+            this.noInviteTextBox.Name = "noInviteTextBox";
+            this.noInviteTextBox.Size = new System.Drawing.Size(100, 20);
+            this.noInviteTextBox.TabIndex = 1;
+            // 
+            // gbInfoInvite
+            // 
+            this.gbInfoInvite.Controls.Add(this.btnSupprimeInvite);
+            this.gbInfoInvite.Controls.Add(noInviteLabel);
+            this.gbInfoInvite.Controls.Add(this.btnModifInvite);
+            this.gbInfoInvite.Controls.Add(this.noInviteTextBox);
+            this.gbInfoInvite.Controls.Add(this.btnAjoutInvite);
+            this.gbInfoInvite.Controls.Add(nomPrenomLabel);
+            this.gbInfoInvite.Controls.Add(this.nomPrenomTextBox);
+            this.gbInfoInvite.Location = new System.Drawing.Point(765, 87);
+            this.gbInfoInvite.Name = "gbInfoInvite";
+            this.gbInfoInvite.Size = new System.Drawing.Size(196, 137);
+            this.gbInfoInvite.TabIndex = 38;
+            this.gbInfoInvite.TabStop = false;
+            this.gbInfoInvite.Text = "Information sur l\'invite";
+            this.gbInfoInvite.Visible = false;
+            // 
+            // btnSupprimeInvite
+            // 
+            this.btnSupprimeInvite.Location = new System.Drawing.Point(18, 101);
+            this.btnSupprimeInvite.Name = "btnSupprimeInvite";
+            this.btnSupprimeInvite.Size = new System.Drawing.Size(75, 23);
+            this.btnSupprimeInvite.TabIndex = 41;
+            this.btnSupprimeInvite.Text = "Supprimer";
+            this.btnSupprimeInvite.UseVisualStyleBackColor = true;
+            // 
+            // btnModifInvite
+            // 
+            this.btnModifInvite.Location = new System.Drawing.Point(99, 101);
+            this.btnModifInvite.Name = "btnModifInvite";
+            this.btnModifInvite.Size = new System.Drawing.Size(75, 23);
+            this.btnModifInvite.TabIndex = 40;
+            this.btnModifInvite.Text = "Modifier";
+            this.btnModifInvite.UseVisualStyleBackColor = true;
+            this.btnModifInvite.Click += new System.EventHandler(this.btnModifInvite_Click);
+            // 
+            // btnAjoutInvite
+            // 
+            this.btnAjoutInvite.Location = new System.Drawing.Point(18, 72);
+            this.btnAjoutInvite.Name = "btnAjoutInvite";
+            this.btnAjoutInvite.Size = new System.Drawing.Size(156, 23);
+            this.btnAjoutInvite.TabIndex = 39;
+            this.btnAjoutInvite.Text = "Ajouter";
+            this.btnAjoutInvite.UseVisualStyleBackColor = true;
+            this.btnAjoutInvite.Click += new System.EventHandler(this.btnAjoutInvite_Click);
+            // 
             // frmAdmin
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(948, 551);
+            this.ClientSize = new System.Drawing.Size(1033, 551);
+            this.Controls.Add(this.cboInvite);
+            this.Controls.Add(this.gbInfoInvite);
             this.Controls.Add(this.gbInfoChambre);
             this.Controls.Add(this.cboChambres);
             this.Controls.Add(this.gbInfoSoins);
@@ -1015,6 +1137,9 @@
             this.gbInfoSoins.PerformLayout();
             this.gbInfoChambre.ResumeLayout(false);
             this.gbInfoChambre.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.p01_InviteBindingSource)).EndInit();
+            this.gbInfoInvite.ResumeLayout(false);
+            this.gbInfoInvite.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -1086,5 +1211,14 @@
         private System.Windows.Forms.TextBox emplacementTextBox;
         private System.Windows.Forms.TextBox decorationsTextBox;
         private System.Windows.Forms.TextBox noTypeChambreTextBox;
+        private System.Windows.Forms.BindingSource p01_InviteBindingSource;
+        private BDB56AnkitDataSetTableAdapters.P01_InviteTableAdapter p01_InviteTableAdapter;
+        private System.Windows.Forms.ComboBox cboInvite;
+        private System.Windows.Forms.TextBox nomPrenomTextBox;
+        private System.Windows.Forms.TextBox noInviteTextBox;
+        private System.Windows.Forms.GroupBox gbInfoInvite;
+        private System.Windows.Forms.Button btnSupprimeInvite;
+        private System.Windows.Forms.Button btnModifInvite;
+        private System.Windows.Forms.Button btnAjoutInvite;
     }
 }
