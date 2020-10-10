@@ -22,34 +22,17 @@ namespace Projet01
         {
             InitializeComponent();
         }
-
-        private void p01_ClientBindingNavigatorSaveItem_Click(object sender, EventArgs e)
-        {
-            this.Validate();
-            this.p01_ClientBindingSource.EndEdit();
-            this.tableAdapterManager.UpdateAll(this.bDB56AnkitDataSet);
-
-        }
-
+        
         private void frmClient_Load(object sender, EventArgs e)
         {
             // TODO: This line of code loads data into the 'bDB56AnkitDataSet.P01_Client' table. You can move, or remove it, as needed.
             this.p01_ClientTableAdapter.Fill(this.bDB56AnkitDataSet.P01_Client);
 
-            if (booAjout)
-            {
-                lblTitre.Text = "Ajouter un client";
-                btnConfirmer.Text = "Ajouter";
-                this.Text = "Ajouter un client";
-            }
-            else if (!booAjout)
-            {
-                lblTitre.Text = "Modifier un client";
-                btnConfirmer.Text = "Modifier";
-                this.Text = "Modifier un client";
-            }
+            //  Vider tout les textBox
+            foreach (TextBox textBox in Controls.OfType<TextBox>())
+                textBox.Text = "";
 
-            if (booAjout)
+            if (booAjout)   // AJOUT
             {
                 // Rechercher le plus gros numero client dans la DataTable contrat
                 decimal noClientMax = 0;
@@ -61,20 +44,40 @@ namespace Projet01
 
                 // Date d'aujourd'hui
                 dateInscriptionDateTimePicker.Value = DateTime.Today;
+                
+                lblTitre.Text = "Ajouter un client";
+                btnConfirmer.Text = "Ajouter";
+                this.Text = "Ajouter un client";
             }
-            else if (!booAjout) {
-                using (SqlConnection con = new SqlConnection(maChaineDeConnexion)) {
+            else if (!booAjout) // MODIF
+            {
+                // Remplir automatiquement des champs
+                noClientTextBox.Text = NoClient;
+
+                using (SqlConnection con = new SqlConnection(maChaineDeConnexion))
+                {
+                    con.Open();
                     string requete = "SELECT * FROM P01_Client WHERE NoClient = " + NoClient;
                     SqlCommand com = new SqlCommand(requete, con);
-                    con.Open();
-                    // pause ?
-                    SqlDataReader dr = com.ExecuteReader();
-                    while (dr.Read()) {
 
+                    SqlDataReader dr = com.ExecuteReader();
+                    while (dr.Read())
+                    {
+                        nomTextBox.Text = dr[1].ToString();
+                        prenomTextBox.Text = dr[2].ToString();
+                        villeTextBox.Text = dr[3].ToString();
+                        paysTextBox.Text = dr[4].ToString();
+                        adresseTextBox.Text = dr[5].ToString();
+                        codePostalTextBox.Text = dr[6].ToString();
+                        dateInscriptionDateTimePicker.Text = dr[7].ToString();
                     }
-                    
-                
+
+                    con.Close();
                 }
+
+                lblTitre.Text = "Modifier un client";
+                btnConfirmer.Text = "Modifier";
+                this.Text = "Modifier un client";
             }
         }
 

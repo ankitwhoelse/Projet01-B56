@@ -57,6 +57,11 @@
             System.Windows.Forms.Label noTypeChambreLabel;
             System.Windows.Forms.Label nomPrenomLabel;
             System.Windows.Forms.Label noInviteLabel;
+            System.Windows.Forms.Label noTypeChambreLabel1;
+            System.Windows.Forms.Label descriptionLabel1;
+            System.Windows.Forms.Label prixHautLabel;
+            System.Windows.Forms.Label prixBasLabel;
+            System.Windows.Forms.Label prixMoyenLabel;
             this.btnQuitter = new System.Windows.Forms.Button();
             this.btnDeconnexion = new System.Windows.Forms.Button();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
@@ -86,8 +91,8 @@
             this.noUtilisateurTextBox = new System.Windows.Forms.TextBox();
             this.nomUtilisateurTextBox = new System.Windows.Forms.TextBox();
             this.motDePasseTextBox = new System.Windows.Forms.TextBox();
-            this.noTypeTextBox = new System.Windows.Forms.TextBox();
             this.gbInfoUtilisateur = new System.Windows.Forms.GroupBox();
+            this.p01_TypeUtilisateurBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.gbInfoClient = new System.Windows.Forms.GroupBox();
             this.villeTextBox = new System.Windows.Forms.TextBox();
             this.dateInscriptionDateTimePicker = new System.Windows.Forms.DateTimePicker();
@@ -117,7 +122,9 @@
             this.dureeTextBox = new System.Windows.Forms.TextBox();
             this.cboChambres = new System.Windows.Forms.ComboBox();
             this.gbInfoChambre = new System.Windows.Forms.GroupBox();
+            this.btnAjouterReservation = new System.Windows.Forms.Button();
             this.noChambreTextBox = new System.Windows.Forms.TextBox();
+            this.btnAnnulerReservation = new System.Windows.Forms.Button();
             this.emplacementTextBox = new System.Windows.Forms.TextBox();
             this.decorationsTextBox = new System.Windows.Forms.TextBox();
             this.noTypeChambreTextBox = new System.Windows.Forms.TextBox();
@@ -130,6 +137,24 @@
             this.btnSupprimeInvite = new System.Windows.Forms.Button();
             this.btnModifInvite = new System.Windows.Forms.Button();
             this.btnAjoutInvite = new System.Windows.Forms.Button();
+            this.gbInfoTypeChambre = new System.Windows.Forms.GroupBox();
+            this.cboTypeChambre = new System.Windows.Forms.ComboBox();
+            this.btnSupprTypeChambre = new System.Windows.Forms.Button();
+            this.btnModifTypeChambre = new System.Windows.Forms.Button();
+            this.noTypeChambreTextBox1 = new System.Windows.Forms.TextBox();
+            this.p01_TypeChambreBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.btnAjoutTypeChambre = new System.Windows.Forms.Button();
+            this.descriptionTextBox1 = new System.Windows.Forms.TextBox();
+            this.prixHautTextBox = new System.Windows.Forms.TextBox();
+            this.prixBasTextBox = new System.Windows.Forms.TextBox();
+            this.prixMoyenTextBox = new System.Windows.Forms.TextBox();
+            this.p01_TypeChambreTableAdapter = new Projet01.BDB56AnkitDataSetTableAdapters.P01_TypeChambreTableAdapter();
+            this.p01_TypeUtilisateurTableAdapter = new Projet01.BDB56AnkitDataSetTableAdapters.P01_TypeUtilisateurTableAdapter();
+            this.fkUTILTypeUtilBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.noTypeEtIdentifiactionUtilisateurBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.noTypeEtIdentifiactionUtilisateurTableAdapter = new Projet01.BDB56AnkitDataSetTableAdapters.noTypeEtIdentifiactionUtilisateurTableAdapter();
+            this.noTypeComboBox = new System.Windows.Forms.ComboBox();
+            this.prixMoyenTextBox1 = new System.Windows.Forms.TextBox();
             noUtilisateurLabel = new System.Windows.Forms.Label();
             nomUtilisateurLabel = new System.Windows.Forms.Label();
             motDePasseLabel = new System.Windows.Forms.Label();
@@ -158,12 +183,18 @@
             noTypeChambreLabel = new System.Windows.Forms.Label();
             nomPrenomLabel = new System.Windows.Forms.Label();
             noInviteLabel = new System.Windows.Forms.Label();
+            noTypeChambreLabel1 = new System.Windows.Forms.Label();
+            descriptionLabel1 = new System.Windows.Forms.Label();
+            prixHautLabel = new System.Windows.Forms.Label();
+            prixBasLabel = new System.Windows.Forms.Label();
+            prixMoyenLabel = new System.Windows.Forms.Label();
             this.menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.bDB56AnkitDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.p01_UtilisateurBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.p01_ClientBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.p01_ChambreBindingSource)).BeginInit();
             this.gbInfoUtilisateur.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.p01_TypeUtilisateurBindingSource)).BeginInit();
             this.gbInfoClient.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.p01_AssistantBindingSource)).BeginInit();
             this.gbInfoAssistants.SuspendLayout();
@@ -172,6 +203,10 @@
             this.gbInfoChambre.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.p01_InviteBindingSource)).BeginInit();
             this.gbInfoInvite.SuspendLayout();
+            this.gbInfoTypeChambre.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.p01_TypeChambreBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.fkUTILTypeUtilBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.noTypeEtIdentifiactionUtilisateurBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // noUtilisateurLabel
@@ -411,7 +446,7 @@
             // nomPrenomLabel
             // 
             nomPrenomLabel.AutoSize = true;
-            nomPrenomLabel.Location = new System.Drawing.Point(6, 42);
+            nomPrenomLabel.Location = new System.Drawing.Point(6, 81);
             nomPrenomLabel.Name = "nomPrenomLabel";
             nomPrenomLabel.Size = new System.Drawing.Size(71, 13);
             nomPrenomLabel.TabIndex = 2;
@@ -420,18 +455,63 @@
             // noInviteLabel
             // 
             noInviteLabel.AutoSize = true;
-            noInviteLabel.Location = new System.Drawing.Point(6, 16);
+            noInviteLabel.Location = new System.Drawing.Point(6, 55);
             noInviteLabel.Name = "noInviteLabel";
             noInviteLabel.Size = new System.Drawing.Size(53, 13);
             noInviteLabel.TabIndex = 0;
             noInviteLabel.Text = "No Invite:";
             // 
+            // noTypeChambreLabel1
+            // 
+            noTypeChambreLabel1.AutoSize = true;
+            noTypeChambreLabel1.Location = new System.Drawing.Point(6, 56);
+            noTypeChambreLabel1.Name = "noTypeChambreLabel1";
+            noTypeChambreLabel1.Size = new System.Drawing.Size(96, 13);
+            noTypeChambreLabel1.TabIndex = 0;
+            noTypeChambreLabel1.Text = "No Type Chambre:";
+            // 
+            // descriptionLabel1
+            // 
+            descriptionLabel1.AutoSize = true;
+            descriptionLabel1.Location = new System.Drawing.Point(6, 82);
+            descriptionLabel1.Name = "descriptionLabel1";
+            descriptionLabel1.Size = new System.Drawing.Size(63, 13);
+            descriptionLabel1.TabIndex = 2;
+            descriptionLabel1.Text = "Description:";
+            // 
+            // prixHautLabel
+            // 
+            prixHautLabel.AutoSize = true;
+            prixHautLabel.Location = new System.Drawing.Point(6, 108);
+            prixHautLabel.Name = "prixHautLabel";
+            prixHautLabel.Size = new System.Drawing.Size(53, 13);
+            prixHautLabel.TabIndex = 4;
+            prixHautLabel.Text = "Prix Haut:";
+            // 
+            // prixBasLabel
+            // 
+            prixBasLabel.AutoSize = true;
+            prixBasLabel.Location = new System.Drawing.Point(6, 134);
+            prixBasLabel.Name = "prixBasLabel";
+            prixBasLabel.Size = new System.Drawing.Size(48, 13);
+            prixBasLabel.TabIndex = 6;
+            prixBasLabel.Text = "Prix Bas:";
+            // 
+            // prixMoyenLabel
+            // 
+            prixMoyenLabel.AutoSize = true;
+            prixMoyenLabel.Location = new System.Drawing.Point(6, 160);
+            prixMoyenLabel.Name = "prixMoyenLabel";
+            prixMoyenLabel.Size = new System.Drawing.Size(62, 13);
+            prixMoyenLabel.TabIndex = 8;
+            prixMoyenLabel.Text = "Prix Moyen:";
+            // 
             // btnQuitter
             // 
             this.btnQuitter.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnQuitter.Location = new System.Drawing.Point(441, 308);
+            this.btnQuitter.Location = new System.Drawing.Point(17, 283);
             this.btnQuitter.Name = "btnQuitter";
-            this.btnQuitter.Size = new System.Drawing.Size(129, 33);
+            this.btnQuitter.Size = new System.Drawing.Size(155, 33);
             this.btnQuitter.TabIndex = 0;
             this.btnQuitter.Text = "Quitter";
             this.btnQuitter.UseVisualStyleBackColor = true;
@@ -440,9 +520,9 @@
             // btnDeconnexion
             // 
             this.btnDeconnexion.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnDeconnexion.Location = new System.Drawing.Point(306, 308);
+            this.btnDeconnexion.Location = new System.Drawing.Point(17, 244);
             this.btnDeconnexion.Name = "btnDeconnexion";
-            this.btnDeconnexion.Size = new System.Drawing.Size(129, 33);
+            this.btnDeconnexion.Size = new System.Drawing.Size(155, 33);
             this.btnDeconnexion.TabIndex = 0;
             this.btnDeconnexion.Text = "Deconnexion";
             this.btnDeconnexion.UseVisualStyleBackColor = true;
@@ -455,7 +535,7 @@
             this.visualiserToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(1033, 24);
+            this.menuStrip1.Size = new System.Drawing.Size(985, 24);
             this.menuStrip1.TabIndex = 1;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -577,7 +657,7 @@
             this.cboUtilisateurs.FormattingEnabled = true;
             this.cboUtilisateurs.Location = new System.Drawing.Point(17, 115);
             this.cboUtilisateurs.Name = "cboUtilisateurs";
-            this.cboUtilisateurs.Size = new System.Drawing.Size(133, 21);
+            this.cboUtilisateurs.Size = new System.Drawing.Size(156, 21);
             this.cboUtilisateurs.TabIndex = 3;
             this.cboUtilisateurs.ValueMember = "NoUtilisateur";
             // 
@@ -603,7 +683,7 @@
             // 
             // btnAjouter
             // 
-            this.btnAjouter.Location = new System.Drawing.Point(17, 289);
+            this.btnAjouter.Location = new System.Drawing.Point(16, 162);
             this.btnAjouter.Name = "btnAjouter";
             this.btnAjouter.Size = new System.Drawing.Size(156, 23);
             this.btnAjouter.TabIndex = 6;
@@ -613,7 +693,7 @@
             // 
             // btnModifier
             // 
-            this.btnModifier.Location = new System.Drawing.Point(98, 318);
+            this.btnModifier.Location = new System.Drawing.Point(97, 191);
             this.btnModifier.Name = "btnModifier";
             this.btnModifier.Size = new System.Drawing.Size(75, 23);
             this.btnModifier.TabIndex = 7;
@@ -623,7 +703,7 @@
             // 
             // btnSupprimer
             // 
-            this.btnSupprimer.Location = new System.Drawing.Point(17, 318);
+            this.btnSupprimer.Location = new System.Drawing.Point(16, 191);
             this.btnSupprimer.Name = "btnSupprimer";
             this.btnSupprimer.Size = new System.Drawing.Size(75, 23);
             this.btnSupprimer.TabIndex = 8;
@@ -636,18 +716,18 @@
             this.cboClients.DisplayMember = "Nom";
             this.cboClients.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cboClients.FormattingEnabled = true;
-            this.cboClients.Location = new System.Drawing.Point(17, 142);
+            this.cboClients.Location = new System.Drawing.Point(17, 115);
             this.cboClients.Name = "cboClients";
-            this.cboClients.Size = new System.Drawing.Size(133, 21);
+            this.cboClients.Size = new System.Drawing.Size(156, 21);
             this.cboClients.TabIndex = 9;
             this.cboClients.ValueMember = "NoClient";
-            this.cboClients.SelectedIndexChanged += new System.EventHandler(this.cboClients_SelectedIndexChanged);
             // 
             // noUtilisateurTextBox
             // 
             this.noUtilisateurTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.p01_UtilisateurBindingSource, "NoUtilisateur", true));
             this.noUtilisateurTextBox.Location = new System.Drawing.Point(93, 13);
             this.noUtilisateurTextBox.Name = "noUtilisateurTextBox";
+            this.noUtilisateurTextBox.ReadOnly = true;
             this.noUtilisateurTextBox.Size = new System.Drawing.Size(100, 20);
             this.noUtilisateurTextBox.TabIndex = 11;
             // 
@@ -656,6 +736,7 @@
             this.nomUtilisateurTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.p01_UtilisateurBindingSource, "NomUtilisateur", true));
             this.nomUtilisateurTextBox.Location = new System.Drawing.Point(93, 39);
             this.nomUtilisateurTextBox.Name = "nomUtilisateurTextBox";
+            this.nomUtilisateurTextBox.ReadOnly = true;
             this.nomUtilisateurTextBox.Size = new System.Drawing.Size(100, 20);
             this.nomUtilisateurTextBox.TabIndex = 13;
             // 
@@ -664,33 +745,31 @@
             this.motDePasseTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.p01_UtilisateurBindingSource, "MotDePasse", true));
             this.motDePasseTextBox.Location = new System.Drawing.Point(93, 65);
             this.motDePasseTextBox.Name = "motDePasseTextBox";
+            this.motDePasseTextBox.ReadOnly = true;
             this.motDePasseTextBox.Size = new System.Drawing.Size(100, 20);
             this.motDePasseTextBox.TabIndex = 15;
             // 
-            // noTypeTextBox
-            // 
-            this.noTypeTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.p01_UtilisateurBindingSource, "NoType", true));
-            this.noTypeTextBox.Location = new System.Drawing.Point(93, 91);
-            this.noTypeTextBox.Name = "noTypeTextBox";
-            this.noTypeTextBox.Size = new System.Drawing.Size(100, 20);
-            this.noTypeTextBox.TabIndex = 17;
-            // 
             // gbInfoUtilisateur
             // 
+            this.gbInfoUtilisateur.Controls.Add(this.noTypeComboBox);
             this.gbInfoUtilisateur.Controls.Add(this.nomUtilisateurTextBox);
             this.gbInfoUtilisateur.Controls.Add(noUtilisateurLabel);
-            this.gbInfoUtilisateur.Controls.Add(this.noTypeTextBox);
             this.gbInfoUtilisateur.Controls.Add(this.noUtilisateurTextBox);
             this.gbInfoUtilisateur.Controls.Add(noTypeLabel);
             this.gbInfoUtilisateur.Controls.Add(nomUtilisateurLabel);
             this.gbInfoUtilisateur.Controls.Add(this.motDePasseTextBox);
             this.gbInfoUtilisateur.Controls.Add(motDePasseLabel);
-            this.gbInfoUtilisateur.Location = new System.Drawing.Point(233, 65);
+            this.gbInfoUtilisateur.Location = new System.Drawing.Point(16, 339);
             this.gbInfoUtilisateur.Name = "gbInfoUtilisateur";
             this.gbInfoUtilisateur.Size = new System.Drawing.Size(201, 119);
             this.gbInfoUtilisateur.TabIndex = 18;
             this.gbInfoUtilisateur.TabStop = false;
             this.gbInfoUtilisateur.Text = "Informations sur l\'utilisateur";
+            // 
+            // p01_TypeUtilisateurBindingSource
+            // 
+            this.p01_TypeUtilisateurBindingSource.DataMember = "P01_TypeUtilisateur";
+            this.p01_TypeUtilisateurBindingSource.DataSource = this.bDB56AnkitDataSet;
             // 
             // gbInfoClient
             // 
@@ -710,7 +789,7 @@
             this.gbInfoClient.Controls.Add(villeLabel);
             this.gbInfoClient.Controls.Add(this.paysTextBox);
             this.gbInfoClient.Controls.Add(paysLabel);
-            this.gbInfoClient.Location = new System.Drawing.Point(441, 65);
+            this.gbInfoClient.Location = new System.Drawing.Point(242, 52);
             this.gbInfoClient.Name = "gbInfoClient";
             this.gbInfoClient.Size = new System.Drawing.Size(304, 225);
             this.gbInfoClient.TabIndex = 34;
@@ -722,6 +801,7 @@
             this.villeTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.p01_ClientBindingSource, "Ville", true));
             this.villeTextBox.Location = new System.Drawing.Point(96, 91);
             this.villeTextBox.Name = "villeTextBox";
+            this.villeTextBox.ReadOnly = true;
             this.villeTextBox.Size = new System.Drawing.Size(200, 20);
             this.villeTextBox.TabIndex = 25;
             // 
@@ -738,6 +818,7 @@
             this.noClientTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.p01_ClientBindingSource, "NoClient", true));
             this.noClientTextBox.Location = new System.Drawing.Point(96, 13);
             this.noClientTextBox.Name = "noClientTextBox";
+            this.noClientTextBox.ReadOnly = true;
             this.noClientTextBox.Size = new System.Drawing.Size(200, 20);
             this.noClientTextBox.TabIndex = 19;
             // 
@@ -746,6 +827,7 @@
             this.codePostalTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.p01_ClientBindingSource, "CodePostal", true));
             this.codePostalTextBox.Location = new System.Drawing.Point(96, 169);
             this.codePostalTextBox.Name = "codePostalTextBox";
+            this.codePostalTextBox.ReadOnly = true;
             this.codePostalTextBox.Size = new System.Drawing.Size(200, 20);
             this.codePostalTextBox.TabIndex = 31;
             // 
@@ -754,6 +836,7 @@
             this.nomTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.p01_ClientBindingSource, "Nom", true));
             this.nomTextBox.Location = new System.Drawing.Point(96, 39);
             this.nomTextBox.Name = "nomTextBox";
+            this.nomTextBox.ReadOnly = true;
             this.nomTextBox.Size = new System.Drawing.Size(200, 20);
             this.nomTextBox.TabIndex = 21;
             // 
@@ -762,6 +845,7 @@
             this.adresseTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.p01_ClientBindingSource, "Adresse", true));
             this.adresseTextBox.Location = new System.Drawing.Point(96, 143);
             this.adresseTextBox.Name = "adresseTextBox";
+            this.adresseTextBox.ReadOnly = true;
             this.adresseTextBox.Size = new System.Drawing.Size(200, 20);
             this.adresseTextBox.TabIndex = 29;
             // 
@@ -770,6 +854,7 @@
             this.prenomTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.p01_ClientBindingSource, "Prenom", true));
             this.prenomTextBox.Location = new System.Drawing.Point(96, 65);
             this.prenomTextBox.Name = "prenomTextBox";
+            this.prenomTextBox.ReadOnly = true;
             this.prenomTextBox.Size = new System.Drawing.Size(200, 20);
             this.prenomTextBox.TabIndex = 23;
             // 
@@ -778,6 +863,7 @@
             this.paysTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.p01_ClientBindingSource, "Pays", true));
             this.paysTextBox.Location = new System.Drawing.Point(96, 117);
             this.paysTextBox.Name = "paysTextBox";
+            this.paysTextBox.ReadOnly = true;
             this.paysTextBox.Size = new System.Drawing.Size(200, 20);
             this.paysTextBox.TabIndex = 27;
             // 
@@ -796,9 +882,9 @@
             this.cboAssistants.DisplayMember = "Nom";
             this.cboAssistants.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cboAssistants.FormattingEnabled = true;
-            this.cboAssistants.Location = new System.Drawing.Point(17, 169);
+            this.cboAssistants.Location = new System.Drawing.Point(17, 115);
             this.cboAssistants.Name = "cboAssistants";
-            this.cboAssistants.Size = new System.Drawing.Size(133, 21);
+            this.cboAssistants.Size = new System.Drawing.Size(156, 21);
             this.cboAssistants.TabIndex = 18;
             this.cboAssistants.ValueMember = "NoAssistant";
             // 
@@ -814,7 +900,7 @@
             this.gbInfoAssistants.Controls.Add(nomLabel1);
             this.gbInfoAssistants.Controls.Add(specialitesLabel);
             this.gbInfoAssistants.Controls.Add(this.nomTextBox1);
-            this.gbInfoAssistants.Location = new System.Drawing.Point(233, 347);
+            this.gbInfoAssistants.Location = new System.Drawing.Point(242, 286);
             this.gbInfoAssistants.Name = "gbInfoAssistants";
             this.gbInfoAssistants.Size = new System.Drawing.Size(193, 148);
             this.gbInfoAssistants.TabIndex = 35;
@@ -826,6 +912,7 @@
             this.noAssistantTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.p01_AssistantBindingSource, "NoAssistant", true));
             this.noAssistantTextBox.Location = new System.Drawing.Point(81, 13);
             this.noAssistantTextBox.Name = "noAssistantTextBox";
+            this.noAssistantTextBox.ReadOnly = true;
             this.noAssistantTextBox.Size = new System.Drawing.Size(100, 20);
             this.noAssistantTextBox.TabIndex = 36;
             // 
@@ -834,6 +921,7 @@
             this.remarquesTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.p01_AssistantBindingSource, "Remarques", true));
             this.remarquesTextBox.Location = new System.Drawing.Point(81, 117);
             this.remarquesTextBox.Name = "remarquesTextBox";
+            this.remarquesTextBox.ReadOnly = true;
             this.remarquesTextBox.Size = new System.Drawing.Size(100, 20);
             this.remarquesTextBox.TabIndex = 44;
             // 
@@ -842,6 +930,7 @@
             this.prenomTextBox1.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.p01_AssistantBindingSource, "Prenom", true));
             this.prenomTextBox1.Location = new System.Drawing.Point(81, 39);
             this.prenomTextBox1.Name = "prenomTextBox1";
+            this.prenomTextBox1.ReadOnly = true;
             this.prenomTextBox1.Size = new System.Drawing.Size(100, 20);
             this.prenomTextBox1.TabIndex = 38;
             // 
@@ -850,6 +939,7 @@
             this.specialitesTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.p01_AssistantBindingSource, "Specialites", true));
             this.specialitesTextBox.Location = new System.Drawing.Point(81, 91);
             this.specialitesTextBox.Name = "specialitesTextBox";
+            this.specialitesTextBox.ReadOnly = true;
             this.specialitesTextBox.Size = new System.Drawing.Size(100, 20);
             this.specialitesTextBox.TabIndex = 42;
             // 
@@ -858,6 +948,7 @@
             this.nomTextBox1.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.p01_AssistantBindingSource, "Nom", true));
             this.nomTextBox1.Location = new System.Drawing.Point(81, 65);
             this.nomTextBox1.Name = "nomTextBox1";
+            this.nomTextBox1.ReadOnly = true;
             this.nomTextBox1.Size = new System.Drawing.Size(100, 20);
             this.nomTextBox1.TabIndex = 40;
             // 
@@ -876,9 +967,9 @@
             this.cboSoins.DisplayMember = "Description";
             this.cboSoins.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cboSoins.FormattingEnabled = true;
-            this.cboSoins.Location = new System.Drawing.Point(16, 196);
+            this.cboSoins.Location = new System.Drawing.Point(16, 115);
             this.cboSoins.Name = "cboSoins";
-            this.cboSoins.Size = new System.Drawing.Size(134, 21);
+            this.cboSoins.Size = new System.Drawing.Size(157, 21);
             this.cboSoins.TabIndex = 35;
             this.cboSoins.ValueMember = "NoSoin";
             // 
@@ -894,9 +985,9 @@
             this.gbInfoSoins.Controls.Add(dureeLabel);
             this.gbInfoSoins.Controls.Add(noTypeSoinLabel);
             this.gbInfoSoins.Controls.Add(this.dureeTextBox);
-            this.gbInfoSoins.Location = new System.Drawing.Point(441, 347);
+            this.gbInfoSoins.Location = new System.Drawing.Point(441, 286);
             this.gbInfoSoins.Name = "gbInfoSoins";
-            this.gbInfoSoins.Size = new System.Drawing.Size(200, 148);
+            this.gbInfoSoins.Size = new System.Drawing.Size(204, 148);
             this.gbInfoSoins.TabIndex = 36;
             this.gbInfoSoins.TabStop = false;
             this.gbInfoSoins.Text = "Information sur le soin";
@@ -906,6 +997,7 @@
             this.noSoinTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.p01_SoinBindingSource, "NoSoin", true));
             this.noSoinTextBox.Location = new System.Drawing.Point(87, 13);
             this.noSoinTextBox.Name = "noSoinTextBox";
+            this.noSoinTextBox.ReadOnly = true;
             this.noSoinTextBox.Size = new System.Drawing.Size(100, 20);
             this.noSoinTextBox.TabIndex = 37;
             // 
@@ -914,6 +1006,7 @@
             this.prixTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.p01_SoinBindingSource, "prix", true));
             this.prixTextBox.Location = new System.Drawing.Point(87, 117);
             this.prixTextBox.Name = "prixTextBox";
+            this.prixTextBox.ReadOnly = true;
             this.prixTextBox.Size = new System.Drawing.Size(100, 20);
             this.prixTextBox.TabIndex = 45;
             // 
@@ -922,6 +1015,7 @@
             this.descriptionTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.p01_SoinBindingSource, "Description", true));
             this.descriptionTextBox.Location = new System.Drawing.Point(87, 39);
             this.descriptionTextBox.Name = "descriptionTextBox";
+            this.descriptionTextBox.ReadOnly = true;
             this.descriptionTextBox.Size = new System.Drawing.Size(100, 20);
             this.descriptionTextBox.TabIndex = 39;
             // 
@@ -930,6 +1024,7 @@
             this.noTypeSoinTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.p01_SoinBindingSource, "NoTypeSoin", true));
             this.noTypeSoinTextBox.Location = new System.Drawing.Point(87, 91);
             this.noTypeSoinTextBox.Name = "noTypeSoinTextBox";
+            this.noTypeSoinTextBox.ReadOnly = true;
             this.noTypeSoinTextBox.Size = new System.Drawing.Size(100, 20);
             this.noTypeSoinTextBox.TabIndex = 43;
             // 
@@ -938,6 +1033,7 @@
             this.dureeTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.p01_SoinBindingSource, "Duree", true));
             this.dureeTextBox.Location = new System.Drawing.Point(87, 65);
             this.dureeTextBox.Name = "dureeTextBox";
+            this.dureeTextBox.ReadOnly = true;
             this.dureeTextBox.Size = new System.Drawing.Size(100, 20);
             this.dureeTextBox.TabIndex = 41;
             // 
@@ -947,42 +1043,66 @@
             this.cboChambres.DisplayMember = "NoChambre";
             this.cboChambres.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cboChambres.FormattingEnabled = true;
-            this.cboChambres.Location = new System.Drawing.Point(16, 223);
+            this.cboChambres.Location = new System.Drawing.Point(16, 115);
             this.cboChambres.Name = "cboChambres";
-            this.cboChambres.Size = new System.Drawing.Size(134, 21);
+            this.cboChambres.Size = new System.Drawing.Size(157, 21);
             this.cboChambres.TabIndex = 36;
             this.cboChambres.ValueMember = "NoChambre";
             // 
             // gbInfoChambre
             // 
             this.gbInfoChambre.Controls.Add(noChambreLabel);
+            this.gbInfoChambre.Controls.Add(this.btnAjouterReservation);
             this.gbInfoChambre.Controls.Add(this.noChambreTextBox);
             this.gbInfoChambre.Controls.Add(emplacementLabel);
+            this.gbInfoChambre.Controls.Add(this.btnAnnulerReservation);
             this.gbInfoChambre.Controls.Add(this.emplacementTextBox);
             this.gbInfoChambre.Controls.Add(decorationsLabel);
             this.gbInfoChambre.Controls.Add(this.decorationsTextBox);
             this.gbInfoChambre.Controls.Add(noTypeChambreLabel);
             this.gbInfoChambre.Controls.Add(this.noTypeChambreTextBox);
-            this.gbInfoChambre.Location = new System.Drawing.Point(648, 347);
+            this.gbInfoChambre.Location = new System.Drawing.Point(754, 52);
             this.gbInfoChambre.Name = "gbInfoChambre";
-            this.gbInfoChambre.Size = new System.Drawing.Size(217, 119);
+            this.gbInfoChambre.Size = new System.Drawing.Size(217, 175);
             this.gbInfoChambre.TabIndex = 37;
             this.gbInfoChambre.TabStop = false;
             this.gbInfoChambre.Text = "Information sur une chambre";
+            // 
+            // btnAjouterReservation
+            // 
+            this.btnAjouterReservation.Location = new System.Drawing.Point(27, 124);
+            this.btnAjouterReservation.Name = "btnAjouterReservation";
+            this.btnAjouterReservation.Size = new System.Drawing.Size(75, 35);
+            this.btnAjouterReservation.TabIndex = 41;
+            this.btnAjouterReservation.Text = "Reserver la chambre";
+            this.btnAjouterReservation.UseVisualStyleBackColor = true;
+            this.btnAjouterReservation.Click += new System.EventHandler(this.btnAjouterReservation_Click);
             // 
             // noChambreTextBox
             // 
             this.noChambreTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.p01_ChambreBindingSource, "NoChambre", true));
             this.noChambreTextBox.Location = new System.Drawing.Point(108, 13);
             this.noChambreTextBox.Name = "noChambreTextBox";
+            this.noChambreTextBox.ReadOnly = true;
             this.noChambreTextBox.Size = new System.Drawing.Size(100, 20);
             this.noChambreTextBox.TabIndex = 1;
+            // 
+            // btnAnnulerReservation
+            // 
+            this.btnAnnulerReservation.Location = new System.Drawing.Point(108, 124);
+            this.btnAnnulerReservation.Name = "btnAnnulerReservation";
+            this.btnAnnulerReservation.Size = new System.Drawing.Size(75, 35);
+            this.btnAnnulerReservation.TabIndex = 40;
+            this.btnAnnulerReservation.Text = "Annuler reservation";
+            this.btnAnnulerReservation.UseVisualStyleBackColor = true;
+            this.btnAnnulerReservation.Click += new System.EventHandler(this.btnAnnulerReservation_Click);
             // 
             // emplacementTextBox
             // 
             this.emplacementTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.p01_ChambreBindingSource, "Emplacement", true));
             this.emplacementTextBox.Location = new System.Drawing.Point(108, 39);
             this.emplacementTextBox.Name = "emplacementTextBox";
+            this.emplacementTextBox.ReadOnly = true;
             this.emplacementTextBox.Size = new System.Drawing.Size(100, 20);
             this.emplacementTextBox.TabIndex = 3;
             // 
@@ -991,6 +1111,7 @@
             this.decorationsTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.p01_ChambreBindingSource, "Decorations", true));
             this.decorationsTextBox.Location = new System.Drawing.Point(108, 65);
             this.decorationsTextBox.Name = "decorationsTextBox";
+            this.decorationsTextBox.ReadOnly = true;
             this.decorationsTextBox.Size = new System.Drawing.Size(100, 20);
             this.decorationsTextBox.TabIndex = 5;
             // 
@@ -999,6 +1120,7 @@
             this.noTypeChambreTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.p01_ChambreBindingSource, "NoTypeChambre", true));
             this.noTypeChambreTextBox.Location = new System.Drawing.Point(108, 91);
             this.noTypeChambreTextBox.Name = "noTypeChambreTextBox";
+            this.noTypeChambreTextBox.ReadOnly = true;
             this.noTypeChambreTextBox.Size = new System.Drawing.Size(100, 20);
             this.noTypeChambreTextBox.TabIndex = 7;
             // 
@@ -1015,34 +1137,34 @@
             // 
             this.cboInvite.DataSource = this.p01_InviteBindingSource;
             this.cboInvite.DisplayMember = "NomPrenom";
-            this.cboInvite.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cboInvite.FormattingEnabled = true;
-            this.cboInvite.Location = new System.Drawing.Point(16, 250);
+            this.cboInvite.Location = new System.Drawing.Point(9, 20);
             this.cboInvite.Name = "cboInvite";
             this.cboInvite.Size = new System.Drawing.Size(134, 21);
             this.cboInvite.TabIndex = 38;
             this.cboInvite.ValueMember = "NoInvite";
-            this.cboInvite.SelectedIndexChanged += new System.EventHandler(this.cboInvite_SelectedIndexChanged);
             // 
             // nomPrenomTextBox
             // 
             this.nomPrenomTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.p01_InviteBindingSource, "NomPrenom", true));
-            this.nomPrenomTextBox.Location = new System.Drawing.Point(83, 39);
+            this.nomPrenomTextBox.Location = new System.Drawing.Point(83, 78);
             this.nomPrenomTextBox.Name = "nomPrenomTextBox";
+            this.nomPrenomTextBox.ReadOnly = true;
             this.nomPrenomTextBox.Size = new System.Drawing.Size(100, 20);
             this.nomPrenomTextBox.TabIndex = 3;
             // 
             // noInviteTextBox
             // 
             this.noInviteTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.p01_InviteBindingSource, "NoInvite", true));
-            this.noInviteTextBox.Enabled = false;
-            this.noInviteTextBox.Location = new System.Drawing.Point(83, 13);
+            this.noInviteTextBox.Location = new System.Drawing.Point(83, 52);
             this.noInviteTextBox.Name = "noInviteTextBox";
+            this.noInviteTextBox.ReadOnly = true;
             this.noInviteTextBox.Size = new System.Drawing.Size(100, 20);
             this.noInviteTextBox.TabIndex = 1;
             // 
             // gbInfoInvite
             // 
+            this.gbInfoInvite.Controls.Add(this.cboInvite);
             this.gbInfoInvite.Controls.Add(this.btnSupprimeInvite);
             this.gbInfoInvite.Controls.Add(noInviteLabel);
             this.gbInfoInvite.Controls.Add(this.btnModifInvite);
@@ -1050,9 +1172,9 @@
             this.gbInfoInvite.Controls.Add(this.btnAjoutInvite);
             this.gbInfoInvite.Controls.Add(nomPrenomLabel);
             this.gbInfoInvite.Controls.Add(this.nomPrenomTextBox);
-            this.gbInfoInvite.Location = new System.Drawing.Point(765, 87);
+            this.gbInfoInvite.Location = new System.Drawing.Point(552, 52);
             this.gbInfoInvite.Name = "gbInfoInvite";
-            this.gbInfoInvite.Size = new System.Drawing.Size(196, 137);
+            this.gbInfoInvite.Size = new System.Drawing.Size(196, 175);
             this.gbInfoInvite.TabIndex = 38;
             this.gbInfoInvite.TabStop = false;
             this.gbInfoInvite.Text = "Information sur l\'invite";
@@ -1060,16 +1182,17 @@
             // 
             // btnSupprimeInvite
             // 
-            this.btnSupprimeInvite.Location = new System.Drawing.Point(18, 101);
+            this.btnSupprimeInvite.Location = new System.Drawing.Point(18, 140);
             this.btnSupprimeInvite.Name = "btnSupprimeInvite";
             this.btnSupprimeInvite.Size = new System.Drawing.Size(75, 23);
             this.btnSupprimeInvite.TabIndex = 41;
             this.btnSupprimeInvite.Text = "Supprimer";
             this.btnSupprimeInvite.UseVisualStyleBackColor = true;
+            this.btnSupprimeInvite.Click += new System.EventHandler(this.btnSupprimeInvite_Click);
             // 
             // btnModifInvite
             // 
-            this.btnModifInvite.Location = new System.Drawing.Point(99, 101);
+            this.btnModifInvite.Location = new System.Drawing.Point(99, 140);
             this.btnModifInvite.Name = "btnModifInvite";
             this.btnModifInvite.Size = new System.Drawing.Size(75, 23);
             this.btnModifInvite.TabIndex = 40;
@@ -1079,7 +1202,7 @@
             // 
             // btnAjoutInvite
             // 
-            this.btnAjoutInvite.Location = new System.Drawing.Point(18, 72);
+            this.btnAjoutInvite.Location = new System.Drawing.Point(18, 111);
             this.btnAjoutInvite.Name = "btnAjoutInvite";
             this.btnAjoutInvite.Size = new System.Drawing.Size(156, 23);
             this.btnAjoutInvite.TabIndex = 39;
@@ -1087,12 +1210,167 @@
             this.btnAjoutInvite.UseVisualStyleBackColor = true;
             this.btnAjoutInvite.Click += new System.EventHandler(this.btnAjoutInvite_Click);
             // 
+            // gbInfoTypeChambre
+            // 
+            this.gbInfoTypeChambre.Controls.Add(this.cboTypeChambre);
+            this.gbInfoTypeChambre.Controls.Add(this.btnSupprTypeChambre);
+            this.gbInfoTypeChambre.Controls.Add(noTypeChambreLabel1);
+            this.gbInfoTypeChambre.Controls.Add(this.btnModifTypeChambre);
+            this.gbInfoTypeChambre.Controls.Add(this.noTypeChambreTextBox1);
+            this.gbInfoTypeChambre.Controls.Add(this.btnAjoutTypeChambre);
+            this.gbInfoTypeChambre.Controls.Add(descriptionLabel1);
+            this.gbInfoTypeChambre.Controls.Add(this.descriptionTextBox1);
+            this.gbInfoTypeChambre.Controls.Add(prixHautLabel);
+            this.gbInfoTypeChambre.Controls.Add(this.prixHautTextBox);
+            this.gbInfoTypeChambre.Controls.Add(prixBasLabel);
+            this.gbInfoTypeChambre.Controls.Add(this.prixBasTextBox);
+            this.gbInfoTypeChambre.Controls.Add(prixMoyenLabel);
+            this.gbInfoTypeChambre.Controls.Add(this.prixMoyenTextBox);
+            this.gbInfoTypeChambre.Location = new System.Drawing.Point(754, 233);
+            this.gbInfoTypeChambre.Name = "gbInfoTypeChambre";
+            this.gbInfoTypeChambre.Size = new System.Drawing.Size(217, 252);
+            this.gbInfoTypeChambre.TabIndex = 39;
+            this.gbInfoTypeChambre.TabStop = false;
+            this.gbInfoTypeChambre.Text = "Information sur le type de chambre";
+            // 
+            // cboTypeChambre
+            // 
+            this.cboTypeChambre.DataSource = this.p01_TypeChambreBindingSource;
+            this.cboTypeChambre.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cboTypeChambre.FormattingEnabled = true;
+            this.cboTypeChambre.Location = new System.Drawing.Point(9, 19);
+            this.cboTypeChambre.Name = "cboTypeChambre";
+            this.cboTypeChambre.Size = new System.Drawing.Size(122, 21);
+            this.cboTypeChambre.TabIndex = 44;
+            this.cboTypeChambre.ValueMember = "NoTypeChambre";
+            // 
+            // btnSupprTypeChambre
+            // 
+            this.btnSupprTypeChambre.Location = new System.Drawing.Point(34, 219);
+            this.btnSupprTypeChambre.Name = "btnSupprTypeChambre";
+            this.btnSupprTypeChambre.Size = new System.Drawing.Size(75, 23);
+            this.btnSupprTypeChambre.TabIndex = 44;
+            this.btnSupprTypeChambre.Text = "Supprimer";
+            this.btnSupprTypeChambre.UseVisualStyleBackColor = true;
+            this.btnSupprTypeChambre.Click += new System.EventHandler(this.btnSupprTypeChambre_Click);
+            // 
+            // btnModifTypeChambre
+            // 
+            this.btnModifTypeChambre.Location = new System.Drawing.Point(115, 219);
+            this.btnModifTypeChambre.Name = "btnModifTypeChambre";
+            this.btnModifTypeChambre.Size = new System.Drawing.Size(75, 23);
+            this.btnModifTypeChambre.TabIndex = 43;
+            this.btnModifTypeChambre.Text = "Modifier";
+            this.btnModifTypeChambre.UseVisualStyleBackColor = true;
+            this.btnModifTypeChambre.Click += new System.EventHandler(this.btnModifTypeChambre_Click);
+            // 
+            // noTypeChambreTextBox1
+            // 
+            this.noTypeChambreTextBox1.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.p01_TypeChambreBindingSource, "NoTypeChambre", true));
+            this.noTypeChambreTextBox1.Location = new System.Drawing.Point(108, 53);
+            this.noTypeChambreTextBox1.Name = "noTypeChambreTextBox1";
+            this.noTypeChambreTextBox1.ReadOnly = true;
+            this.noTypeChambreTextBox1.Size = new System.Drawing.Size(100, 20);
+            this.noTypeChambreTextBox1.TabIndex = 1;
+            // 
+            // p01_TypeChambreBindingSource
+            // 
+            this.p01_TypeChambreBindingSource.DataMember = "P01_TypeChambre";
+            this.p01_TypeChambreBindingSource.DataSource = this.bDB56AnkitDataSet;
+            // 
+            // btnAjoutTypeChambre
+            // 
+            this.btnAjoutTypeChambre.Location = new System.Drawing.Point(34, 190);
+            this.btnAjoutTypeChambre.Name = "btnAjoutTypeChambre";
+            this.btnAjoutTypeChambre.Size = new System.Drawing.Size(156, 23);
+            this.btnAjoutTypeChambre.TabIndex = 42;
+            this.btnAjoutTypeChambre.Text = "Ajouter";
+            this.btnAjoutTypeChambre.UseVisualStyleBackColor = true;
+            this.btnAjoutTypeChambre.Click += new System.EventHandler(this.btnAjoutTypeChambre_Click);
+            // 
+            // descriptionTextBox1
+            // 
+            this.descriptionTextBox1.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.p01_TypeChambreBindingSource, "Description", true));
+            this.descriptionTextBox1.Location = new System.Drawing.Point(108, 79);
+            this.descriptionTextBox1.Name = "descriptionTextBox1";
+            this.descriptionTextBox1.ReadOnly = true;
+            this.descriptionTextBox1.Size = new System.Drawing.Size(100, 20);
+            this.descriptionTextBox1.TabIndex = 3;
+            // 
+            // prixHautTextBox
+            // 
+            this.prixHautTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.p01_TypeChambreBindingSource, "PrixHaut", true));
+            this.prixHautTextBox.Location = new System.Drawing.Point(108, 105);
+            this.prixHautTextBox.Name = "prixHautTextBox";
+            this.prixHautTextBox.ReadOnly = true;
+            this.prixHautTextBox.Size = new System.Drawing.Size(100, 20);
+            this.prixHautTextBox.TabIndex = 5;
+            // 
+            // prixBasTextBox
+            // 
+            this.prixBasTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.p01_TypeChambreBindingSource, "PrixBas", true));
+            this.prixBasTextBox.Location = new System.Drawing.Point(108, 131);
+            this.prixBasTextBox.Name = "prixBasTextBox";
+            this.prixBasTextBox.ReadOnly = true;
+            this.prixBasTextBox.Size = new System.Drawing.Size(100, 20);
+            this.prixBasTextBox.TabIndex = 7;
+            // 
+            // prixMoyenTextBox
+            // 
+            this.prixMoyenTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.p01_TypeChambreBindingSource, "PrixMoyen", true));
+            this.prixMoyenTextBox.Location = new System.Drawing.Point(108, 157);
+            this.prixMoyenTextBox.Name = "prixMoyenTextBox";
+            this.prixMoyenTextBox.ReadOnly = true;
+            this.prixMoyenTextBox.Size = new System.Drawing.Size(100, 20);
+            this.prixMoyenTextBox.TabIndex = 9;
+            // 
+            // p01_TypeChambreTableAdapter
+            // 
+            this.p01_TypeChambreTableAdapter.ClearBeforeFill = true;
+            // 
+            // p01_TypeUtilisateurTableAdapter
+            // 
+            this.p01_TypeUtilisateurTableAdapter.ClearBeforeFill = true;
+            // 
+            // fkUTILTypeUtilBindingSource
+            // 
+            this.fkUTILTypeUtilBindingSource.DataMember = "fk_UTIL_TypeUtil";
+            this.fkUTILTypeUtilBindingSource.DataSource = this.p01_TypeUtilisateurBindingSource;
+            // 
+            // noTypeEtIdentifiactionUtilisateurBindingSource
+            // 
+            this.noTypeEtIdentifiactionUtilisateurBindingSource.DataMember = "noTypeEtIdentifiactionUtilisateur";
+            this.noTypeEtIdentifiactionUtilisateurBindingSource.DataSource = this.bDB56AnkitDataSet;
+            // 
+            // noTypeEtIdentifiactionUtilisateurTableAdapter
+            // 
+            this.noTypeEtIdentifiactionUtilisateurTableAdapter.ClearBeforeFill = true;
+            // 
+            // noTypeComboBox
+            // 
+            this.noTypeComboBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.p01_UtilisateurBindingSource, "NoType", true));
+            this.noTypeComboBox.Enabled = false;
+            this.noTypeComboBox.FormattingEnabled = true;
+            this.noTypeComboBox.Location = new System.Drawing.Point(93, 91);
+            this.noTypeComboBox.Name = "noTypeComboBox";
+            this.noTypeComboBox.Size = new System.Drawing.Size(100, 21);
+            this.noTypeComboBox.TabIndex = 40;
+            // 
+            // prixMoyenTextBox1
+            // 
+            this.prixMoyenTextBox1.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.p01_TypeChambreBindingSource, "PrixMoyen", true));
+            this.prixMoyenTextBox1.Location = new System.Drawing.Point(617, 553);
+            this.prixMoyenTextBox1.Name = "prixMoyenTextBox1";
+            this.prixMoyenTextBox1.Size = new System.Drawing.Size(100, 20);
+            this.prixMoyenTextBox1.TabIndex = 48;
+            // 
             // frmAdmin
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1033, 551);
-            this.Controls.Add(this.cboInvite);
+            this.ClientSize = new System.Drawing.Size(985, 558);
+            this.Controls.Add(this.prixMoyenTextBox1);
+            this.Controls.Add(this.gbInfoTypeChambre);
             this.Controls.Add(this.gbInfoInvite);
             this.Controls.Add(this.gbInfoChambre);
             this.Controls.Add(this.cboChambres);
@@ -1127,6 +1405,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.p01_ChambreBindingSource)).EndInit();
             this.gbInfoUtilisateur.ResumeLayout(false);
             this.gbInfoUtilisateur.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.p01_TypeUtilisateurBindingSource)).EndInit();
             this.gbInfoClient.ResumeLayout(false);
             this.gbInfoClient.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.p01_AssistantBindingSource)).EndInit();
@@ -1140,6 +1419,11 @@
             ((System.ComponentModel.ISupportInitialize)(this.p01_InviteBindingSource)).EndInit();
             this.gbInfoInvite.ResumeLayout(false);
             this.gbInfoInvite.PerformLayout();
+            this.gbInfoTypeChambre.ResumeLayout(false);
+            this.gbInfoTypeChambre.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.p01_TypeChambreBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.fkUTILTypeUtilBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.noTypeEtIdentifiactionUtilisateurBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -1176,7 +1460,6 @@
         private System.Windows.Forms.TextBox noUtilisateurTextBox;
         private System.Windows.Forms.TextBox nomUtilisateurTextBox;
         private System.Windows.Forms.TextBox motDePasseTextBox;
-        private System.Windows.Forms.TextBox noTypeTextBox;
         private System.Windows.Forms.GroupBox gbInfoUtilisateur;
         private System.Windows.Forms.GroupBox gbInfoClient;
         private System.Windows.Forms.TextBox villeTextBox;
@@ -1220,5 +1503,26 @@
         private System.Windows.Forms.Button btnSupprimeInvite;
         private System.Windows.Forms.Button btnModifInvite;
         private System.Windows.Forms.Button btnAjoutInvite;
+        private System.Windows.Forms.GroupBox gbInfoTypeChambre;
+        private System.Windows.Forms.BindingSource p01_TypeChambreBindingSource;
+        private BDB56AnkitDataSetTableAdapters.P01_TypeChambreTableAdapter p01_TypeChambreTableAdapter;
+        private System.Windows.Forms.ComboBox cboTypeChambre;
+        private System.Windows.Forms.Button btnSupprTypeChambre;
+        private System.Windows.Forms.Button btnModifTypeChambre;
+        private System.Windows.Forms.TextBox noTypeChambreTextBox1;
+        private System.Windows.Forms.Button btnAjoutTypeChambre;
+        private System.Windows.Forms.TextBox descriptionTextBox1;
+        private System.Windows.Forms.TextBox prixHautTextBox;
+        private System.Windows.Forms.TextBox prixBasTextBox;
+        private System.Windows.Forms.TextBox prixMoyenTextBox;
+        private System.Windows.Forms.Button btnAjouterReservation;
+        private System.Windows.Forms.Button btnAnnulerReservation;
+        private System.Windows.Forms.BindingSource p01_TypeUtilisateurBindingSource;
+        private BDB56AnkitDataSetTableAdapters.P01_TypeUtilisateurTableAdapter p01_TypeUtilisateurTableAdapter;
+        private System.Windows.Forms.BindingSource fkUTILTypeUtilBindingSource;
+        private System.Windows.Forms.BindingSource noTypeEtIdentifiactionUtilisateurBindingSource;
+        private BDB56AnkitDataSetTableAdapters.noTypeEtIdentifiactionUtilisateurTableAdapter noTypeEtIdentifiactionUtilisateurTableAdapter;
+        private System.Windows.Forms.ComboBox noTypeComboBox;
+        private System.Windows.Forms.TextBox prixMoyenTextBox1;
     }
 }

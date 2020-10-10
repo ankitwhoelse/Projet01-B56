@@ -99,6 +99,12 @@
     <Compile Include="frmSoin.Designer.cs">
       <DependentUpon>frmSoin.cs</DependentUpon>
     </Compile>
+    <Compile Include="frmTypeChambre.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmTypeChambre.Designer.cs">
+      <DependentUpon>frmTypeChambre.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmUtilisateur.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -130,6 +136,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="frmSoin.resx">
       <DependentUpon>frmSoin.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmTypeChambre.resx">
+      <DependentUpon>frmTypeChambre.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmUtilisateur.resx">
       <DependentUpon>frmUtilisateur.cs</DependentUpon>

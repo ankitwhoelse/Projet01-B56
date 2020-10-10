@@ -33,19 +33,56 @@ namespace Projet01
 
         private void frmUtilisateur_Load(object sender, EventArgs e)
         {
-            // TODO: cette ligne de code charge les données dans la table 'bDB56AnkitDataSet.P01_TypeSoin'. Vous pouvez la déplacer ou la supprimer selon les besoins.
-            //this.p01_TypeSoinTableAdapter.Fill(this.bDB56AnkitDataSet.P01_TypeSoin);
             // TODO: This line of code loads data into the 'bDB56AnkitDataSet.P01_TypeUtilisateur' table. You can move, or remove it, as needed.
-            //this.p01_TypeUtilisateurTableAdapter.Fill(this.bDB56AnkitDataSet.P01_TypeUtilisateur);
+            this.p01_TypeUtilisateurTableAdapter.Fill(this.bDB56AnkitDataSet.P01_TypeUtilisateur);
+
+            //  Vider tout les textBox
+            foreach (TextBox textBox in Controls.OfType<TextBox>())
+                textBox.Text = "";
 
             if (booAjout)
             {
+                using (SqlConnection con = new SqlConnection(maChaineDeConnexion))
+                {
+                    con.Open();
+                    String requete = "SELECT ISNULL(MAX(NoUtilisateur),0) FROM P01_Utilisateur";
+                    SqlCommand com = new SqlCommand(requete, con);
+
+                    dynamic resultat = com.ExecuteScalar();
+                    resultat++;
+
+                    noUtilisateurTextBox.Text = resultat.ToString();
+                    NoUtilisateur = resultat;
+
+                    con.Close();
+                }
+                
                 lblTitre.Text = "Ajouter un utilisateur";
                 btnConfirmer.Text = "Ajouter";
                 this.Text = "Ajouter un utilisateur";
             }
             else if (!booAjout)
             {
+                // Remplir automatiquement les champs
+                noUtilisateurTextBox.Text = NoUtilisateur.ToString();
+
+                using (SqlConnection con = new SqlConnection(maChaineDeConnexion))
+                {
+                    con.Open();
+                    String requete = "SELECT * FROM P01_Utilisateur WHERE NoUtilisateur = " + NoUtilisateur;
+                    SqlCommand com = new SqlCommand(requete, con);
+
+                    SqlDataReader dr = com.ExecuteReader();
+                    while (dr.Read())
+                    {
+                        nomUtilisateurTextBox.Text = dr[1].ToString();
+                        motDePasseUtilisateurTextBox.Text = dr[2].ToString();
+                        typeUtilisateurComboBox.SelectedValue = dr[3].ToString();
+                    }
+
+                    con.Close();
+                }
+
                 lblTitre.Text = "Modifier un utilisateur";
                 btnConfirmer.Text = "Modifier";
                 this.Text = "Modifier un utilisateur";
@@ -64,15 +101,18 @@ namespace Projet01
                 // AJOUTER UN UTILISATEUR
                 SqlConnection maConnexion = new SqlConnection(maChaineDeConnexion);
                 maConnexion.Open();
-                String maRequeteSQL = "insert into P01_Utilisateur(NoUtilisateur,Nomutilisateur,MotDepasse,NoType) values('" + noUtilisateurTextBox.ToString() + "','" + nomUtilisateurTextBox.ToString() + "','" + MotDePasseTextBox.ToString() +"','"+ typeUtilisateurComboBox.SelectedItem.ToString() + "')";
-               SqlCommand maCommande = new SqlCommand(maRequeteSQL, maConnexion);
+                String maRequeteSQL = "insert into P01_Utilisateur(NoUtilisateur,Nomutilisateur,MotDepasse,NoType) values('" + noUtilisateurTextBox.ToString() + "','" + nomUtilisateurTextBox.ToString() + "','" + motDePasseUtilisateurTextBox.ToString() +"','"+ typeUtilisateurComboBox.SelectedItem.ToString() + "')";
+                SqlCommand maCommande = new SqlCommand(maRequeteSQL, maConnexion);
                 maCommande.ExecuteScalar();
                 maConnexion.Close();
             }
             else if (!booAjout)
             {
                 // MODIFIER UN UTILISATEUR
+
+
             }
         }
+
     }
 }

@@ -35,19 +35,46 @@
             this.btnAnnuler = new System.Windows.Forms.Button();
             this.btnConfirmer = new System.Windows.Forms.Button();
             this.lblTitre = new System.Windows.Forms.Label();
-            this.nomClientTextBox = new System.Windows.Forms.TextBox();
             this.bDB56AnkitDataSet = new Projet01.BDB56AnkitDataSet();
             this.p01_InviteBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.p01_InviteTableAdapter = new Projet01.BDB56AnkitDataSetTableAdapters.P01_InviteTableAdapter();
             this.tableAdapterManager = new Projet01.BDB56AnkitDataSetTableAdapters.TableAdapterManager();
             this.noInviteTextBox = new System.Windows.Forms.TextBox();
             this.nomPrenomTextBox = new System.Windows.Forms.TextBox();
+            this.nomClientTextBox = new System.Windows.Forms.TextBox();
             noClientLabel = new System.Windows.Forms.Label();
             noInviteLabel = new System.Windows.Forms.Label();
             nomPrenomLabel = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.bDB56AnkitDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.p01_InviteBindingSource)).BeginInit();
             this.SuspendLayout();
+            // 
+            // noClientLabel
+            // 
+            noClientLabel.AutoSize = true;
+            noClientLabel.Location = new System.Drawing.Point(9, 115);
+            noClientLabel.Name = "noClientLabel";
+            noClientLabel.Size = new System.Drawing.Size(61, 13);
+            noClientLabel.TabIndex = 22;
+            noClientLabel.Text = "Nom Client:";
+            // 
+            // noInviteLabel
+            // 
+            noInviteLabel.AutoSize = true;
+            noInviteLabel.Location = new System.Drawing.Point(9, 63);
+            noInviteLabel.Name = "noInviteLabel";
+            noInviteLabel.Size = new System.Drawing.Size(53, 13);
+            noInviteLabel.TabIndex = 24;
+            noInviteLabel.Text = "No Invite:";
+            // 
+            // nomPrenomLabel
+            // 
+            nomPrenomLabel.AutoSize = true;
+            nomPrenomLabel.Location = new System.Drawing.Point(9, 89);
+            nomPrenomLabel.Name = "nomPrenomLabel";
+            nomPrenomLabel.Size = new System.Drawing.Size(71, 13);
+            nomPrenomLabel.TabIndex = 26;
+            nomPrenomLabel.Text = "Nom Prenom:";
             // 
             // btnAnnuler
             // 
@@ -80,23 +107,6 @@
             this.lblTitre.TabIndex = 18;
             this.lblTitre.Text = "label1";
             // 
-            // noClientLabel
-            // 
-            noClientLabel.AutoSize = true;
-            noClientLabel.Location = new System.Drawing.Point(9, 115);
-            noClientLabel.Name = "noClientLabel";
-            noClientLabel.Size = new System.Drawing.Size(61, 13);
-            noClientLabel.TabIndex = 22;
-            noClientLabel.Text = "Nom Client:";
-            // 
-            // nomClientTextBox
-            // 
-            this.nomClientTextBox.Enabled = false;
-            this.nomClientTextBox.Location = new System.Drawing.Point(86, 112);
-            this.nomClientTextBox.Name = "nomClientTextBox";
-            this.nomClientTextBox.Size = new System.Drawing.Size(121, 20);
-            this.nomClientTextBox.TabIndex = 23;
-            // 
             // bDB56AnkitDataSet
             // 
             this.bDB56AnkitDataSet.DataSetName = "BDB56AnkitDataSet";
@@ -128,51 +138,38 @@
             this.tableAdapterManager.P01_UtilisateurTableAdapter = null;
             this.tableAdapterManager.UpdateOrder = Projet01.BDB56AnkitDataSetTableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete;
             // 
-            // noInviteLabel
-            // 
-            noInviteLabel.AutoSize = true;
-            noInviteLabel.Location = new System.Drawing.Point(9, 63);
-            noInviteLabel.Name = "noInviteLabel";
-            noInviteLabel.Size = new System.Drawing.Size(53, 13);
-            noInviteLabel.TabIndex = 24;
-            noInviteLabel.Text = "No Invite:";
-            // 
             // noInviteTextBox
             // 
-            this.noInviteTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.p01_InviteBindingSource, "NoInvite", true));
-            this.noInviteTextBox.Location = new System.Drawing.Point(86, 60);
+            this.noInviteTextBox.Location = new System.Drawing.Point(107, 56);
             this.noInviteTextBox.Name = "noInviteTextBox";
-            this.noInviteTextBox.Size = new System.Drawing.Size(121, 20);
-            this.noInviteTextBox.TabIndex = 25;
-            // 
-            // nomPrenomLabel
-            // 
-            nomPrenomLabel.AutoSize = true;
-            nomPrenomLabel.Location = new System.Drawing.Point(9, 89);
-            nomPrenomLabel.Name = "nomPrenomLabel";
-            nomPrenomLabel.Size = new System.Drawing.Size(71, 13);
-            nomPrenomLabel.TabIndex = 26;
-            nomPrenomLabel.Text = "Nom Prenom:";
+            this.noInviteTextBox.Size = new System.Drawing.Size(100, 20);
+            this.noInviteTextBox.TabIndex = 27;
             // 
             // nomPrenomTextBox
             // 
-            this.nomPrenomTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.p01_InviteBindingSource, "NomPrenom", true));
-            this.nomPrenomTextBox.Location = new System.Drawing.Point(86, 86);
+            this.nomPrenomTextBox.Location = new System.Drawing.Point(107, 82);
             this.nomPrenomTextBox.Name = "nomPrenomTextBox";
-            this.nomPrenomTextBox.Size = new System.Drawing.Size(121, 20);
+            this.nomPrenomTextBox.Size = new System.Drawing.Size(100, 20);
             this.nomPrenomTextBox.TabIndex = 27;
+            // 
+            // nomClientTextBox
+            // 
+            this.nomClientTextBox.Location = new System.Drawing.Point(107, 112);
+            this.nomClientTextBox.Name = "nomClientTextBox";
+            this.nomClientTextBox.Size = new System.Drawing.Size(100, 20);
+            this.nomClientTextBox.TabIndex = 27;
             // 
             // frmInvite
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(233, 236);
-            this.Controls.Add(noInviteLabel);
-            this.Controls.Add(this.noInviteTextBox);
-            this.Controls.Add(nomPrenomLabel);
-            this.Controls.Add(this.nomPrenomTextBox);
-            this.Controls.Add(noClientLabel);
             this.Controls.Add(this.nomClientTextBox);
+            this.Controls.Add(this.nomPrenomTextBox);
+            this.Controls.Add(this.noInviteTextBox);
+            this.Controls.Add(noInviteLabel);
+            this.Controls.Add(nomPrenomLabel);
+            this.Controls.Add(noClientLabel);
             this.Controls.Add(this.lblTitre);
             this.Controls.Add(this.btnAnnuler);
             this.Controls.Add(this.btnConfirmer);
@@ -190,12 +187,12 @@
         private System.Windows.Forms.Button btnAnnuler;
         private System.Windows.Forms.Button btnConfirmer;
         private System.Windows.Forms.Label lblTitre;
-        private System.Windows.Forms.TextBox nomClientTextBox;
         private BDB56AnkitDataSet bDB56AnkitDataSet;
         private System.Windows.Forms.BindingSource p01_InviteBindingSource;
         private BDB56AnkitDataSetTableAdapters.P01_InviteTableAdapter p01_InviteTableAdapter;
         private BDB56AnkitDataSetTableAdapters.TableAdapterManager tableAdapterManager;
         private System.Windows.Forms.TextBox noInviteTextBox;
         private System.Windows.Forms.TextBox nomPrenomTextBox;
+        private System.Windows.Forms.TextBox nomClientTextBox;
     }
 }

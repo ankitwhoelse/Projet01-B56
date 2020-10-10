@@ -27,11 +27,6 @@ namespace Projet01
 
         private void btnConnexion_Click(object sender, EventArgs e)
         {
-            this.Hide();
-            frmA.ShowDialog();
-            this.Show();
-
-            
             string strUser = tbUser.Text;
             string strPassword = tbPassword.Text;
             dynamic NoType;
@@ -60,12 +55,12 @@ namespace Projet01
             else {
                 this.Hide();
 
-                if (NoType == 01)
+                if (NoType == 1)
                 {
                     frmA.NoUtilisateur = NoUtilisateur;
                     frmA.ShowDialog();
                 }
-                else
+                else if (NoType == 2)
                 {
                     frmP.NoUtilisateur = NoUtilisateur;
                     frmP.ShowDialog();

@@ -41,9 +41,6 @@ namespace Projet01
 
             if (booAjout)
             {
-                nomClientTextBox.Text = "";
-                nomPrenomTextBox.Text = "";
-                noInviteTextBox.Text = "";
                 lblTitre.Text = "Ajouter un invite";
                 btnConfirmer.Text = "Ajouter";
                 this.Text = "Ajouter un invite";
@@ -66,8 +63,10 @@ namespace Projet01
                 dynamic retour = com.ExecuteScalar();
                 nomClientTextBox.Text = retour.ToString();
 
-                string requete2 = "SELECT MAX(NoInvite) FROM P01_Invite WHERE NoInvite > NoClient AND NoInvite < NoClient+10";
+                string requete2 = "SELECT MAX(NoInvite) FROM P01_Invite WHERE NoInvite > @NoClient AND NoInvite < @NoClient+10";
+                SqlParameter param = new SqlParameter("@NoClient", NoClient);
                 SqlCommand com2 = new SqlCommand(requete2, con);
+                com2.Parameters.Add(param);
 
                 dynamic max = com2.ExecuteScalar();
                 max++;
@@ -112,14 +111,7 @@ namespace Projet01
 
             }
         }
-
-        private void p01_InviteBindingNavigatorSaveItem_Click_1(object sender, EventArgs e)
-        {
-            this.Validate();
-            this.p01_InviteBindingSource.EndEdit();
-            this.tableAdapterManager.UpdateAll(this.bDB56AnkitDataSet);
-
-        }
+        
 
         private void btnAnnuler_Click(object sender, EventArgs e)
         {
