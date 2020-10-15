@@ -531,8 +531,11 @@ namespace Projet01
         private void btnAjoutPlanifSoin_Click(object sender, EventArgs e)
         {
             Planif planif = new Planif();
+            planif.NoSoin = noSoinTextBox.Text.ToString();
+            planif.NomSoin = descriptionTextBox.Text.ToString();
             this.Hide();
-            planif.Show();
+            planif.ShowDialog();
+            this.Show();
         }
         
     }
