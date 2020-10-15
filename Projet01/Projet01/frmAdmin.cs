@@ -483,7 +483,9 @@ namespace Projet01
         //  Ajouter une planif Soins
         private void btnAjoutPlanifSoin_Click(object sender, EventArgs e)
         {
-
+            Planif planif = new Planif();
+            this.Hide();
+            planif.Show();
         }
     }
 }
