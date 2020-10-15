@@ -68,6 +68,11 @@
             System.Windows.Forms.Label dateHeureLabel;
             System.Windows.Forms.Label noAssistantLabel1;
             System.Windows.Forms.Label noPersonneLabel;
+            System.Windows.Forms.Label noClientLabel1;
+            System.Windows.Forms.Label noChambreLabel1;
+            System.Windows.Forms.Label dateArriveeLabel;
+            System.Windows.Forms.Label dateDepartLabel;
+            System.Windows.Forms.Label nbPersonnesLabel;
             this.btnQuitter = new System.Windows.Forms.Button();
             this.btnDeconnexion = new System.Windows.Forms.Button();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
@@ -122,6 +127,7 @@
             this.p01_SoinTableAdapter = new Projet01.BDB56AnkitDataSetTableAdapters.P01_SoinTableAdapter();
             this.cboSoins = new System.Windows.Forms.ComboBox();
             this.gbInfoSoins = new System.Windows.Forms.GroupBox();
+            this.btnAjoutPlanifSoin = new System.Windows.Forms.Button();
             this.noSoinTextBox = new System.Windows.Forms.TextBox();
             this.prixTextBox = new System.Windows.Forms.TextBox();
             this.descriptionTextBox = new System.Windows.Forms.TextBox();
@@ -131,10 +137,10 @@
             this.gbInfoChambre = new System.Windows.Forms.GroupBox();
             this.btnAjouterReservation = new System.Windows.Forms.Button();
             this.noChambreTextBox = new System.Windows.Forms.TextBox();
-            this.btnAnnulerReservation = new System.Windows.Forms.Button();
             this.emplacementTextBox = new System.Windows.Forms.TextBox();
             this.decorationsTextBox = new System.Windows.Forms.TextBox();
             this.noTypeChambreTextBox = new System.Windows.Forms.TextBox();
+            this.btnAnnulerReservation = new System.Windows.Forms.Button();
             this.p01_InviteBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.p01_InviteTableAdapter = new Projet01.BDB56AnkitDataSetTableAdapters.P01_InviteTableAdapter();
             this.cboInvite = new System.Windows.Forms.ComboBox();
@@ -186,8 +192,18 @@
             this.noAssistantTextBox1 = new System.Windows.Forms.TextBox();
             this.noPersonneTextBox = new System.Windows.Forms.TextBox();
             this.gbPlanifSoin = new System.Windows.Forms.GroupBox();
-            this.btnAjoutPlanifSoin = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
+            this.gbReservation = new System.Windows.Forms.GroupBox();
+            this.noClientTextBox1 = new System.Windows.Forms.TextBox();
+            this.p01_ReservationChambreBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
+            this.noChambreTextBox1 = new System.Windows.Forms.TextBox();
+            this.dateArriveeDateTimePicker = new System.Windows.Forms.DateTimePicker();
+            this.dateDepartDateTimePicker = new System.Windows.Forms.DateTimePicker();
+            this.nbPersonnesTextBox = new System.Windows.Forms.TextBox();
+            this.cboReservation = new System.Windows.Forms.ComboBox();
+            this.p01ReservationChambreBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.p01_ReservationChambreBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.p01_ReservationChambreTableAdapter = new Projet01.BDB56AnkitDataSetTableAdapters.P01_ReservationChambreTableAdapter();
             noUtilisateurLabel = new System.Windows.Forms.Label();
             nomUtilisateurLabel = new System.Windows.Forms.Label();
             motDePasseLabel = new System.Windows.Forms.Label();
@@ -227,6 +243,11 @@
             dateHeureLabel = new System.Windows.Forms.Label();
             noAssistantLabel1 = new System.Windows.Forms.Label();
             noPersonneLabel = new System.Windows.Forms.Label();
+            noClientLabel1 = new System.Windows.Forms.Label();
+            noChambreLabel1 = new System.Windows.Forms.Label();
+            dateArriveeLabel = new System.Windows.Forms.Label();
+            dateDepartLabel = new System.Windows.Forms.Label();
+            nbPersonnesLabel = new System.Windows.Forms.Label();
             this.menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.bDB56AnkitDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.p01_UtilisateurBindingSource)).BeginInit();
@@ -254,6 +275,10 @@
             ((System.ComponentModel.ISupportInitialize)(this.p01_AssistantBindingSource1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.p01_PlanifSoinBindingSource)).BeginInit();
             this.gbPlanifSoin.SuspendLayout();
+            this.gbReservation.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.p01_ReservationChambreBindingSource1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.p01ReservationChambreBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.p01_ReservationChambreBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // noUtilisateurLabel
@@ -571,6 +596,87 @@
             descriptionLabel2.TabIndex = 2;
             descriptionLabel2.Text = "Description:";
             // 
+            // noSoinLabel1
+            // 
+            noSoinLabel1.AutoSize = true;
+            noSoinLabel1.Location = new System.Drawing.Point(4, 148);
+            noSoinLabel1.Name = "noSoinLabel1";
+            noSoinLabel1.Size = new System.Drawing.Size(48, 13);
+            noSoinLabel1.TabIndex = 7;
+            noSoinLabel1.Text = "No Soin:";
+            // 
+            // dateHeureLabel
+            // 
+            dateHeureLabel.AutoSize = true;
+            dateHeureLabel.Location = new System.Drawing.Point(4, 123);
+            dateHeureLabel.Name = "dateHeureLabel";
+            dateHeureLabel.Size = new System.Drawing.Size(65, 13);
+            dateHeureLabel.TabIndex = 5;
+            dateHeureLabel.Text = "Date Heure:";
+            // 
+            // noAssistantLabel1
+            // 
+            noAssistantLabel1.AutoSize = true;
+            noAssistantLabel1.Location = new System.Drawing.Point(4, 96);
+            noAssistantLabel1.Name = "noAssistantLabel1";
+            noAssistantLabel1.Size = new System.Drawing.Size(69, 13);
+            noAssistantLabel1.TabIndex = 3;
+            noAssistantLabel1.Text = "No Assistant:";
+            // 
+            // noPersonneLabel
+            // 
+            noPersonneLabel.AutoSize = true;
+            noPersonneLabel.Location = new System.Drawing.Point(4, 70);
+            noPersonneLabel.Name = "noPersonneLabel";
+            noPersonneLabel.Size = new System.Drawing.Size(72, 13);
+            noPersonneLabel.TabIndex = 1;
+            noPersonneLabel.Text = "No Personne:";
+            // 
+            // noClientLabel1
+            // 
+            noClientLabel1.AutoSize = true;
+            noClientLabel1.Location = new System.Drawing.Point(16, 66);
+            noClientLabel1.Name = "noClientLabel1";
+            noClientLabel1.Size = new System.Drawing.Size(53, 13);
+            noClientLabel1.TabIndex = 43;
+            noClientLabel1.Text = "No Client:";
+            // 
+            // noChambreLabel1
+            // 
+            noChambreLabel1.AutoSize = true;
+            noChambreLabel1.Location = new System.Drawing.Point(16, 92);
+            noChambreLabel1.Name = "noChambreLabel1";
+            noChambreLabel1.Size = new System.Drawing.Size(69, 13);
+            noChambreLabel1.TabIndex = 45;
+            noChambreLabel1.Text = "No Chambre:";
+            // 
+            // dateArriveeLabel
+            // 
+            dateArriveeLabel.AutoSize = true;
+            dateArriveeLabel.Location = new System.Drawing.Point(16, 119);
+            dateArriveeLabel.Name = "dateArriveeLabel";
+            dateArriveeLabel.Size = new System.Drawing.Size(69, 13);
+            dateArriveeLabel.TabIndex = 47;
+            dateArriveeLabel.Text = "Date Arrivee:";
+            // 
+            // dateDepartLabel
+            // 
+            dateDepartLabel.AutoSize = true;
+            dateDepartLabel.Location = new System.Drawing.Point(16, 145);
+            dateDepartLabel.Name = "dateDepartLabel";
+            dateDepartLabel.Size = new System.Drawing.Size(68, 13);
+            dateDepartLabel.TabIndex = 49;
+            dateDepartLabel.Text = "Date Depart:";
+            // 
+            // nbPersonnesLabel
+            // 
+            nbPersonnesLabel.AutoSize = true;
+            nbPersonnesLabel.Location = new System.Drawing.Point(16, 170);
+            nbPersonnesLabel.Name = "nbPersonnesLabel";
+            nbPersonnesLabel.Size = new System.Drawing.Size(77, 13);
+            nbPersonnesLabel.TabIndex = 51;
+            nbPersonnesLabel.Text = "Nb Personnes:";
+            // 
             // btnQuitter
             // 
             this.btnQuitter.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -600,7 +706,7 @@
             this.visualiserToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(1067, 24);
+            this.menuStrip1.Size = new System.Drawing.Size(1110, 24);
             this.menuStrip1.TabIndex = 1;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -619,36 +725,36 @@
             // utilisateursToolStripMenuItem
             // 
             this.utilisateursToolStripMenuItem.Name = "utilisateursToolStripMenuItem";
-            this.utilisateursToolStripMenuItem.Size = new System.Drawing.Size(188, 22);
+            this.utilisateursToolStripMenuItem.Size = new System.Drawing.Size(207, 22);
             this.utilisateursToolStripMenuItem.Text = "Utilisateurs";
             this.utilisateursToolStripMenuItem.Click += new System.EventHandler(this.utilisateursToolStripMenuItem_Click);
             // 
             // clientsEtLeursInvitesToolStripMenuItem
             // 
             this.clientsEtLeursInvitesToolStripMenuItem.Name = "clientsEtLeursInvitesToolStripMenuItem";
-            this.clientsEtLeursInvitesToolStripMenuItem.Size = new System.Drawing.Size(188, 22);
+            this.clientsEtLeursInvitesToolStripMenuItem.Size = new System.Drawing.Size(207, 22);
             this.clientsEtLeursInvitesToolStripMenuItem.Text = "Clients et leurs invites";
             this.clientsEtLeursInvitesToolStripMenuItem.Click += new System.EventHandler(this.clientsEtLeursInvitesToolStripMenuItem_Click);
             // 
             // assistantsEtLesSoinsOffertsToolStripMenuItem
             // 
             this.assistantsEtLesSoinsOffertsToolStripMenuItem.Name = "assistantsEtLesSoinsOffertsToolStripMenuItem";
-            this.assistantsEtLesSoinsOffertsToolStripMenuItem.Size = new System.Drawing.Size(188, 22);
+            this.assistantsEtLesSoinsOffertsToolStripMenuItem.Size = new System.Drawing.Size(207, 22);
             this.assistantsEtLesSoinsOffertsToolStripMenuItem.Text = "Assistants";
             this.assistantsEtLesSoinsOffertsToolStripMenuItem.Click += new System.EventHandler(this.assistantsEtLesSoinsOffertsToolStripMenuItem_Click);
             // 
             // soinsToolStripMenuItem
             // 
             this.soinsToolStripMenuItem.Name = "soinsToolStripMenuItem";
-            this.soinsToolStripMenuItem.Size = new System.Drawing.Size(188, 22);
-            this.soinsToolStripMenuItem.Text = "Soins";
+            this.soinsToolStripMenuItem.Size = new System.Drawing.Size(207, 22);
+            this.soinsToolStripMenuItem.Text = "Soins et types";
             this.soinsToolStripMenuItem.Click += new System.EventHandler(this.soinsToolStripMenuItem_Click);
             // 
             // chambresToolStripMenuItem
             // 
             this.chambresToolStripMenuItem.Name = "chambresToolStripMenuItem";
-            this.chambresToolStripMenuItem.Size = new System.Drawing.Size(188, 22);
-            this.chambresToolStripMenuItem.Text = "Chambres";
+            this.chambresToolStripMenuItem.Size = new System.Drawing.Size(207, 22);
+            this.chambresToolStripMenuItem.Text = "Chambres et reservations";
             this.chambresToolStripMenuItem.Click += new System.EventHandler(this.chambresToolStripMenuItem_Click);
             // 
             // visualiserToolStripMenuItem
@@ -688,7 +794,7 @@
             this.tableAdapterManager.P01_ClientTableAdapter = null;
             this.tableAdapterManager.P01_InviteTableAdapter = null;
             this.tableAdapterManager.P01_PlanifSoinTableAdapter = null;
-            this.tableAdapterManager.P01_ReversationChambreTableAdapter = null;
+            this.tableAdapterManager.P01_ReservationChambreTableAdapter = null;
             this.tableAdapterManager.P01_SoinTableAdapter = null;
             this.tableAdapterManager.P01_TypeChambreTableAdapter = null;
             this.tableAdapterManager.P01_TypeSoinTableAdapter = null;
@@ -1068,6 +1174,16 @@
             this.gbInfoSoins.TabStop = false;
             this.gbInfoSoins.Text = "Information sur le soin";
             // 
+            // btnAjoutPlanifSoin
+            // 
+            this.btnAjoutPlanifSoin.Location = new System.Drawing.Point(26, 147);
+            this.btnAjoutPlanifSoin.Name = "btnAjoutPlanifSoin";
+            this.btnAjoutPlanifSoin.Size = new System.Drawing.Size(156, 35);
+            this.btnAjoutPlanifSoin.TabIndex = 43;
+            this.btnAjoutPlanifSoin.Text = "Ajouter une reservation\r\n pour ce soin";
+            this.btnAjoutPlanifSoin.UseVisualStyleBackColor = true;
+            this.btnAjoutPlanifSoin.Click += new System.EventHandler(this.btnAjoutPlanifSoin_Click);
+            // 
             // noSoinTextBox
             // 
             this.noSoinTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.p01_SoinBindingSource, "NoSoin", true));
@@ -1131,7 +1247,6 @@
             this.gbInfoChambre.Controls.Add(this.btnAjouterReservation);
             this.gbInfoChambre.Controls.Add(this.noChambreTextBox);
             this.gbInfoChambre.Controls.Add(emplacementLabel);
-            this.gbInfoChambre.Controls.Add(this.btnAnnulerReservation);
             this.gbInfoChambre.Controls.Add(this.emplacementTextBox);
             this.gbInfoChambre.Controls.Add(decorationsLabel);
             this.gbInfoChambre.Controls.Add(this.decorationsTextBox);
@@ -1148,7 +1263,7 @@
             // 
             this.btnAjouterReservation.Location = new System.Drawing.Point(27, 124);
             this.btnAjouterReservation.Name = "btnAjouterReservation";
-            this.btnAjouterReservation.Size = new System.Drawing.Size(75, 35);
+            this.btnAjouterReservation.Size = new System.Drawing.Size(163, 35);
             this.btnAjouterReservation.TabIndex = 41;
             this.btnAjouterReservation.Text = "Reserver la chambre";
             this.btnAjouterReservation.UseVisualStyleBackColor = true;
@@ -1162,16 +1277,6 @@
             this.noChambreTextBox.ReadOnly = true;
             this.noChambreTextBox.Size = new System.Drawing.Size(100, 20);
             this.noChambreTextBox.TabIndex = 1;
-            // 
-            // btnAnnulerReservation
-            // 
-            this.btnAnnulerReservation.Location = new System.Drawing.Point(108, 124);
-            this.btnAnnulerReservation.Name = "btnAnnulerReservation";
-            this.btnAnnulerReservation.Size = new System.Drawing.Size(75, 35);
-            this.btnAnnulerReservation.TabIndex = 40;
-            this.btnAnnulerReservation.Text = "Annuler reservation";
-            this.btnAnnulerReservation.UseVisualStyleBackColor = true;
-            this.btnAnnulerReservation.Click += new System.EventHandler(this.btnAnnulerReservation_Click);
             // 
             // emplacementTextBox
             // 
@@ -1199,6 +1304,16 @@
             this.noTypeChambreTextBox.ReadOnly = true;
             this.noTypeChambreTextBox.Size = new System.Drawing.Size(100, 20);
             this.noTypeChambreTextBox.TabIndex = 7;
+            // 
+            // btnAnnulerReservation
+            // 
+            this.btnAnnulerReservation.Location = new System.Drawing.Point(214, 19);
+            this.btnAnnulerReservation.Name = "btnAnnulerReservation";
+            this.btnAnnulerReservation.Size = new System.Drawing.Size(75, 35);
+            this.btnAnnulerReservation.TabIndex = 40;
+            this.btnAnnulerReservation.Text = "Annuler reservation";
+            this.btnAnnulerReservation.UseVisualStyleBackColor = true;
+            this.btnAnnulerReservation.Click += new System.EventHandler(this.btnAnnulerReservation_Click);
             // 
             // p01_InviteBindingSource
             // 
@@ -1456,12 +1571,14 @@
             // 
             // cboAssistantSoins
             // 
+            this.cboAssistantSoins.DisplayMember = "NoSoin";
             this.cboAssistantSoins.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cboAssistantSoins.FormattingEnabled = true;
             this.cboAssistantSoins.Location = new System.Drawing.Point(6, 19);
             this.cboAssistantSoins.Name = "cboAssistantSoins";
             this.cboAssistantSoins.Size = new System.Drawing.Size(152, 21);
             this.cboAssistantSoins.TabIndex = 41;
+            this.cboAssistantSoins.ValueMember = "NoSoin";
             // 
             // label1
             // 
@@ -1617,15 +1734,6 @@
             this.noSoinTextBox1.Size = new System.Drawing.Size(138, 20);
             this.noSoinTextBox1.TabIndex = 8;
             // 
-            // noSoinLabel1
-            // 
-            noSoinLabel1.AutoSize = true;
-            noSoinLabel1.Location = new System.Drawing.Point(4, 148);
-            noSoinLabel1.Name = "noSoinLabel1";
-            noSoinLabel1.Size = new System.Drawing.Size(48, 13);
-            noSoinLabel1.TabIndex = 7;
-            noSoinLabel1.Text = "No Soin:";
-            // 
             // dateHeureDateTimePicker
             // 
             this.dateHeureDateTimePicker.DataBindings.Add(new System.Windows.Forms.Binding("Value", this.p01_PlanifSoinBindingSource, "DateHeure", true));
@@ -1633,15 +1741,6 @@
             this.dateHeureDateTimePicker.Name = "dateHeureDateTimePicker";
             this.dateHeureDateTimePicker.Size = new System.Drawing.Size(138, 20);
             this.dateHeureDateTimePicker.TabIndex = 6;
-            // 
-            // dateHeureLabel
-            // 
-            dateHeureLabel.AutoSize = true;
-            dateHeureLabel.Location = new System.Drawing.Point(4, 123);
-            dateHeureLabel.Name = "dateHeureLabel";
-            dateHeureLabel.Size = new System.Drawing.Size(65, 13);
-            dateHeureLabel.TabIndex = 5;
-            dateHeureLabel.Text = "Date Heure:";
             // 
             // noAssistantTextBox1
             // 
@@ -1651,15 +1750,6 @@
             this.noAssistantTextBox1.Size = new System.Drawing.Size(138, 20);
             this.noAssistantTextBox1.TabIndex = 4;
             // 
-            // noAssistantLabel1
-            // 
-            noAssistantLabel1.AutoSize = true;
-            noAssistantLabel1.Location = new System.Drawing.Point(4, 96);
-            noAssistantLabel1.Name = "noAssistantLabel1";
-            noAssistantLabel1.Size = new System.Drawing.Size(69, 13);
-            noAssistantLabel1.TabIndex = 3;
-            noAssistantLabel1.Text = "No Assistant:";
-            // 
             // noPersonneTextBox
             // 
             this.noPersonneTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.p01_PlanifSoinBindingSource, "NoPersonne", true));
@@ -1667,15 +1757,6 @@
             this.noPersonneTextBox.Name = "noPersonneTextBox";
             this.noPersonneTextBox.Size = new System.Drawing.Size(138, 20);
             this.noPersonneTextBox.TabIndex = 2;
-            // 
-            // noPersonneLabel
-            // 
-            noPersonneLabel.AutoSize = true;
-            noPersonneLabel.Location = new System.Drawing.Point(4, 70);
-            noPersonneLabel.Name = "noPersonneLabel";
-            noPersonneLabel.Size = new System.Drawing.Size(72, 13);
-            noPersonneLabel.TabIndex = 1;
-            noPersonneLabel.Text = "No Personne:";
             // 
             // gbPlanifSoin
             // 
@@ -1695,16 +1776,7 @@
             this.gbPlanifSoin.TabIndex = 42;
             this.gbPlanifSoin.TabStop = false;
             this.gbPlanifSoin.Text = "Plannification des soins";
-            // 
-            // btnAjoutPlanifSoin
-            // 
-            this.btnAjoutPlanifSoin.Location = new System.Drawing.Point(26, 147);
-            this.btnAjoutPlanifSoin.Name = "btnAjoutPlanifSoin";
-            this.btnAjoutPlanifSoin.Size = new System.Drawing.Size(156, 35);
-            this.btnAjoutPlanifSoin.TabIndex = 43;
-            this.btnAjoutPlanifSoin.Text = "Ajouter une reservation\r\n pour ce soin";
-            this.btnAjoutPlanifSoin.UseVisualStyleBackColor = true;
-            this.btnAjoutPlanifSoin.Click += new System.EventHandler(this.btnAjoutPlanifSoin_Click);
+            this.gbPlanifSoin.Visible = false;
             // 
             // button2
             // 
@@ -1715,11 +1787,104 @@
             this.button2.Text = "Annuler reservation";
             this.button2.UseVisualStyleBackColor = true;
             // 
+            // gbReservation
+            // 
+            this.gbReservation.Controls.Add(noClientLabel1);
+            this.gbReservation.Controls.Add(this.noClientTextBox1);
+            this.gbReservation.Controls.Add(noChambreLabel1);
+            this.gbReservation.Controls.Add(this.noChambreTextBox1);
+            this.gbReservation.Controls.Add(dateArriveeLabel);
+            this.gbReservation.Controls.Add(this.dateArriveeDateTimePicker);
+            this.gbReservation.Controls.Add(dateDepartLabel);
+            this.gbReservation.Controls.Add(this.dateDepartDateTimePicker);
+            this.gbReservation.Controls.Add(nbPersonnesLabel);
+            this.gbReservation.Controls.Add(this.nbPersonnesTextBox);
+            this.gbReservation.Controls.Add(this.cboReservation);
+            this.gbReservation.Controls.Add(this.btnAnnulerReservation);
+            this.gbReservation.Location = new System.Drawing.Point(763, 491);
+            this.gbReservation.Name = "gbReservation";
+            this.gbReservation.Size = new System.Drawing.Size(319, 207);
+            this.gbReservation.TabIndex = 43;
+            this.gbReservation.TabStop = false;
+            this.gbReservation.Text = "Info sur une reservation";
+            // 
+            // noClientTextBox1
+            // 
+            this.noClientTextBox1.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.p01_ReservationChambreBindingSource1, "NoClient", true));
+            this.noClientTextBox1.Location = new System.Drawing.Point(99, 63);
+            this.noClientTextBox1.Name = "noClientTextBox1";
+            this.noClientTextBox1.Size = new System.Drawing.Size(200, 20);
+            this.noClientTextBox1.TabIndex = 44;
+            // 
+            // p01_ReservationChambreBindingSource1
+            // 
+            this.p01_ReservationChambreBindingSource1.DataMember = "P01_ReservationChambre";
+            this.p01_ReservationChambreBindingSource1.DataSource = this.bDB56AnkitDataSet;
+            // 
+            // noChambreTextBox1
+            // 
+            this.noChambreTextBox1.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.p01_ReservationChambreBindingSource1, "NoChambre", true));
+            this.noChambreTextBox1.Location = new System.Drawing.Point(99, 89);
+            this.noChambreTextBox1.Name = "noChambreTextBox1";
+            this.noChambreTextBox1.Size = new System.Drawing.Size(200, 20);
+            this.noChambreTextBox1.TabIndex = 46;
+            // 
+            // dateArriveeDateTimePicker
+            // 
+            this.dateArriveeDateTimePicker.DataBindings.Add(new System.Windows.Forms.Binding("Value", this.p01_ReservationChambreBindingSource1, "DateArrivee", true));
+            this.dateArriveeDateTimePicker.Location = new System.Drawing.Point(99, 115);
+            this.dateArriveeDateTimePicker.Name = "dateArriveeDateTimePicker";
+            this.dateArriveeDateTimePicker.Size = new System.Drawing.Size(200, 20);
+            this.dateArriveeDateTimePicker.TabIndex = 48;
+            // 
+            // dateDepartDateTimePicker
+            // 
+            this.dateDepartDateTimePicker.DataBindings.Add(new System.Windows.Forms.Binding("Value", this.p01_ReservationChambreBindingSource1, "DateDepart", true));
+            this.dateDepartDateTimePicker.Location = new System.Drawing.Point(99, 141);
+            this.dateDepartDateTimePicker.Name = "dateDepartDateTimePicker";
+            this.dateDepartDateTimePicker.Size = new System.Drawing.Size(200, 20);
+            this.dateDepartDateTimePicker.TabIndex = 50;
+            // 
+            // nbPersonnesTextBox
+            // 
+            this.nbPersonnesTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.p01_ReservationChambreBindingSource1, "NbPersonnes", true));
+            this.nbPersonnesTextBox.Location = new System.Drawing.Point(99, 167);
+            this.nbPersonnesTextBox.Name = "nbPersonnesTextBox";
+            this.nbPersonnesTextBox.Size = new System.Drawing.Size(200, 20);
+            this.nbPersonnesTextBox.TabIndex = 52;
+            // 
+            // cboReservation
+            // 
+            this.cboReservation.DataSource = this.p01ReservationChambreBindingSource;
+            this.cboReservation.DisplayMember = "NoClient";
+            this.cboReservation.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cboReservation.FormattingEnabled = true;
+            this.cboReservation.Location = new System.Drawing.Point(9, 19);
+            this.cboReservation.Name = "cboReservation";
+            this.cboReservation.Size = new System.Drawing.Size(150, 21);
+            this.cboReservation.TabIndex = 43;
+            this.cboReservation.ValueMember = "NoClient";
+            // 
+            // p01ReservationChambreBindingSource
+            // 
+            this.p01ReservationChambreBindingSource.DataMember = "P01_ReservationChambre";
+            this.p01ReservationChambreBindingSource.DataSource = this.bDB56AnkitDataSet;
+            // 
+            // p01_ReservationChambreBindingSource
+            // 
+            this.p01_ReservationChambreBindingSource.DataMember = "P01_ReservationChambre";
+            this.p01_ReservationChambreBindingSource.DataSource = this.bDB56AnkitDataSet;
+            // 
+            // p01_ReservationChambreTableAdapter
+            // 
+            this.p01_ReservationChambreTableAdapter.ClearBeforeFill = true;
+            // 
             // frmAdmin
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1067, 644);
+            this.ClientSize = new System.Drawing.Size(1110, 734);
+            this.Controls.Add(this.gbReservation);
             this.Controls.Add(this.gbPlanifSoin);
             this.Controls.Add(this.gbInfoTypeSoin);
             this.Controls.Add(this.gbAssistantSoin);
@@ -1748,6 +1913,7 @@
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "frmAdmin";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Administrateur";
             this.Load += new System.EventHandler(this.frmAdmin_Load);
             this.menuStrip1.ResumeLayout(false);
@@ -1788,6 +1954,11 @@
             ((System.ComponentModel.ISupportInitialize)(this.p01_PlanifSoinBindingSource)).EndInit();
             this.gbPlanifSoin.ResumeLayout(false);
             this.gbPlanifSoin.PerformLayout();
+            this.gbReservation.ResumeLayout(false);
+            this.gbReservation.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.p01_ReservationChambreBindingSource1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.p01ReservationChambreBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.p01_ReservationChambreBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -1915,5 +2086,16 @@
         private System.Windows.Forms.TextBox noPersonneTextBox;
         private System.Windows.Forms.GroupBox gbPlanifSoin;
         private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.GroupBox gbReservation;
+        private System.Windows.Forms.BindingSource p01_ReservationChambreBindingSource;
+        private BDB56AnkitDataSetTableAdapters.P01_ReservationChambreTableAdapter p01_ReservationChambreTableAdapter;
+        private System.Windows.Forms.ComboBox cboReservation;
+        private System.Windows.Forms.BindingSource p01ReservationChambreBindingSource;
+        private System.Windows.Forms.TextBox noClientTextBox1;
+        private System.Windows.Forms.BindingSource p01_ReservationChambreBindingSource1;
+        private System.Windows.Forms.TextBox noChambreTextBox1;
+        private System.Windows.Forms.DateTimePicker dateArriveeDateTimePicker;
+        private System.Windows.Forms.DateTimePicker dateDepartDateTimePicker;
+        private System.Windows.Forms.TextBox nbPersonnesTextBox;
     }
 }
