@@ -38,7 +38,7 @@ namespace Projet01
                 SqlConnection maConnexion = new SqlConnection(maChaineDeConnexion);
                 maConnexion.Open();
                 // Création du Id
-                String maRequeteSQL = "select max(NoAssistant) from P01_Assistant ";
+                String maRequeteSQL = "select max(NoSoin) from P01_Soin ";
                 SqlCommand maCommande = new SqlCommand(maRequeteSQL, maConnexion);
                 Object resultat = maCommande.ExecuteScalar();
 

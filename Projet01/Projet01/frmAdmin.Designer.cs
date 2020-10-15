@@ -62,6 +62,12 @@
             System.Windows.Forms.Label prixHautLabel;
             System.Windows.Forms.Label prixBasLabel;
             System.Windows.Forms.Label prixMoyenLabel;
+            System.Windows.Forms.Label noTypeSoinLabel1;
+            System.Windows.Forms.Label descriptionLabel2;
+            System.Windows.Forms.Label noSoinLabel1;
+            System.Windows.Forms.Label dateHeureLabel;
+            System.Windows.Forms.Label noAssistantLabel1;
+            System.Windows.Forms.Label noPersonneLabel;
             this.btnQuitter = new System.Windows.Forms.Button();
             this.btnDeconnexion = new System.Windows.Forms.Button();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
@@ -92,6 +98,7 @@
             this.nomUtilisateurTextBox = new System.Windows.Forms.TextBox();
             this.motDePasseTextBox = new System.Windows.Forms.TextBox();
             this.gbInfoUtilisateur = new System.Windows.Forms.GroupBox();
+            this.noTypeComboBox = new System.Windows.Forms.ComboBox();
             this.p01_TypeUtilisateurBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.gbInfoClient = new System.Windows.Forms.GroupBox();
             this.villeTextBox = new System.Windows.Forms.TextBox();
@@ -139,10 +146,10 @@
             this.btnAjoutInvite = new System.Windows.Forms.Button();
             this.gbInfoTypeChambre = new System.Windows.Forms.GroupBox();
             this.cboTypeChambre = new System.Windows.Forms.ComboBox();
+            this.p01_TypeChambreBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.btnSupprTypeChambre = new System.Windows.Forms.Button();
             this.btnModifTypeChambre = new System.Windows.Forms.Button();
             this.noTypeChambreTextBox1 = new System.Windows.Forms.TextBox();
-            this.p01_TypeChambreBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.btnAjoutTypeChambre = new System.Windows.Forms.Button();
             this.descriptionTextBox1 = new System.Windows.Forms.TextBox();
             this.prixHautTextBox = new System.Windows.Forms.TextBox();
@@ -153,8 +160,34 @@
             this.fkUTILTypeUtilBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.noTypeEtIdentifiactionUtilisateurBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.noTypeEtIdentifiactionUtilisateurTableAdapter = new Projet01.BDB56AnkitDataSetTableAdapters.noTypeEtIdentifiactionUtilisateurTableAdapter();
-            this.noTypeComboBox = new System.Windows.Forms.ComboBox();
-            this.prixMoyenTextBox1 = new System.Windows.Forms.TextBox();
+            this.gbAssistantSoin = new System.Windows.Forms.GroupBox();
+            this.cboSoinsPourAssist = new System.Windows.Forms.ComboBox();
+            this.p01_SoinBindingSource2 = new System.Windows.Forms.BindingSource(this.components);
+            this.cboAssistantSoins = new System.Windows.Forms.ComboBox();
+            this.label1 = new System.Windows.Forms.Label();
+            this.btnAjouterSoin = new System.Windows.Forms.Button();
+            this.btnSupprimerSoin = new System.Windows.Forms.Button();
+            this.p01_SoinBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
+            this.gbInfoTypeSoin = new System.Windows.Forms.GroupBox();
+            this.btnSupprimeTypeSoin = new System.Windows.Forms.Button();
+            this.cboTypeSoin = new System.Windows.Forms.ComboBox();
+            this.p01_TypeSoinBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.btnModifTypeSoin = new System.Windows.Forms.Button();
+            this.btnAjoutTypeSoin = new System.Windows.Forms.Button();
+            this.noTypeSoinTextBox1 = new System.Windows.Forms.TextBox();
+            this.descriptionTextBox2 = new System.Windows.Forms.TextBox();
+            this.p01_TypeSoinTableAdapter = new Projet01.BDB56AnkitDataSetTableAdapters.P01_TypeSoinTableAdapter();
+            this.p01_AssistantBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
+            this.p01_PlanifSoinBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.p01_PlanifSoinTableAdapter = new Projet01.BDB56AnkitDataSetTableAdapters.P01_PlanifSoinTableAdapter();
+            this.p01_PlanifSoinComboBox = new System.Windows.Forms.ComboBox();
+            this.noSoinTextBox1 = new System.Windows.Forms.TextBox();
+            this.dateHeureDateTimePicker = new System.Windows.Forms.DateTimePicker();
+            this.noAssistantTextBox1 = new System.Windows.Forms.TextBox();
+            this.noPersonneTextBox = new System.Windows.Forms.TextBox();
+            this.gbPlanifSoin = new System.Windows.Forms.GroupBox();
+            this.btnAjoutPlanifSoin = new System.Windows.Forms.Button();
+            this.button2 = new System.Windows.Forms.Button();
             noUtilisateurLabel = new System.Windows.Forms.Label();
             nomUtilisateurLabel = new System.Windows.Forms.Label();
             motDePasseLabel = new System.Windows.Forms.Label();
@@ -188,6 +221,12 @@
             prixHautLabel = new System.Windows.Forms.Label();
             prixBasLabel = new System.Windows.Forms.Label();
             prixMoyenLabel = new System.Windows.Forms.Label();
+            noTypeSoinLabel1 = new System.Windows.Forms.Label();
+            descriptionLabel2 = new System.Windows.Forms.Label();
+            noSoinLabel1 = new System.Windows.Forms.Label();
+            dateHeureLabel = new System.Windows.Forms.Label();
+            noAssistantLabel1 = new System.Windows.Forms.Label();
+            noPersonneLabel = new System.Windows.Forms.Label();
             this.menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.bDB56AnkitDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.p01_UtilisateurBindingSource)).BeginInit();
@@ -207,6 +246,14 @@
             ((System.ComponentModel.ISupportInitialize)(this.p01_TypeChambreBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.fkUTILTypeUtilBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.noTypeEtIdentifiactionUtilisateurBindingSource)).BeginInit();
+            this.gbAssistantSoin.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.p01_SoinBindingSource2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.p01_SoinBindingSource1)).BeginInit();
+            this.gbInfoTypeSoin.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.p01_TypeSoinBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.p01_AssistantBindingSource1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.p01_PlanifSoinBindingSource)).BeginInit();
+            this.gbPlanifSoin.SuspendLayout();
             this.SuspendLayout();
             // 
             // noUtilisateurLabel
@@ -506,6 +553,24 @@
             prixMoyenLabel.TabIndex = 8;
             prixMoyenLabel.Text = "Prix Moyen:";
             // 
+            // noTypeSoinLabel1
+            // 
+            noTypeSoinLabel1.AutoSize = true;
+            noTypeSoinLabel1.Location = new System.Drawing.Point(6, 49);
+            noTypeSoinLabel1.Name = "noTypeSoinLabel1";
+            noTypeSoinLabel1.Size = new System.Drawing.Size(75, 13);
+            noTypeSoinLabel1.TabIndex = 0;
+            noTypeSoinLabel1.Text = "No Type Soin:";
+            // 
+            // descriptionLabel2
+            // 
+            descriptionLabel2.AutoSize = true;
+            descriptionLabel2.Location = new System.Drawing.Point(6, 75);
+            descriptionLabel2.Name = "descriptionLabel2";
+            descriptionLabel2.Size = new System.Drawing.Size(63, 13);
+            descriptionLabel2.TabIndex = 2;
+            descriptionLabel2.Text = "Description:";
+            // 
             // btnQuitter
             // 
             this.btnQuitter.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -535,7 +600,7 @@
             this.visualiserToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(985, 24);
+            this.menuStrip1.Size = new System.Drawing.Size(1067, 24);
             this.menuStrip1.TabIndex = 1;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -655,7 +720,7 @@
             this.cboUtilisateurs.DisplayMember = "NomUtilisateur";
             this.cboUtilisateurs.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cboUtilisateurs.FormattingEnabled = true;
-            this.cboUtilisateurs.Location = new System.Drawing.Point(17, 115);
+            this.cboUtilisateurs.Location = new System.Drawing.Point(17, 112);
             this.cboUtilisateurs.Name = "cboUtilisateurs";
             this.cboUtilisateurs.Size = new System.Drawing.Size(156, 21);
             this.cboUtilisateurs.TabIndex = 3;
@@ -667,9 +732,9 @@
             this.lblChoix.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblChoix.Location = new System.Drawing.Point(13, 34);
             this.lblChoix.Name = "lblChoix";
-            this.lblChoix.Size = new System.Drawing.Size(71, 20);
+            this.lblChoix.Size = new System.Drawing.Size(380, 20);
             this.lblChoix.TabIndex = 4;
-            this.lblChoix.Text = "lblChoix";
+            this.lblChoix.Text = "Veuillez choisir un option par la barre de menu";
             // 
             // lblSelection
             // 
@@ -677,9 +742,8 @@
             this.lblSelection.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblSelection.Location = new System.Drawing.Point(14, 79);
             this.lblSelection.Name = "lblSelection";
-            this.lblSelection.Size = new System.Drawing.Size(78, 16);
+            this.lblSelection.Size = new System.Drawing.Size(0, 16);
             this.lblSelection.TabIndex = 5;
-            this.lblSelection.Text = "lblSelection";
             // 
             // btnAjouter
             // 
@@ -716,7 +780,7 @@
             this.cboClients.DisplayMember = "Nom";
             this.cboClients.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cboClients.FormattingEnabled = true;
-            this.cboClients.Location = new System.Drawing.Point(17, 115);
+            this.cboClients.Location = new System.Drawing.Point(18, 112);
             this.cboClients.Name = "cboClients";
             this.cboClients.Size = new System.Drawing.Size(156, 21);
             this.cboClients.TabIndex = 9;
@@ -759,12 +823,22 @@
             this.gbInfoUtilisateur.Controls.Add(nomUtilisateurLabel);
             this.gbInfoUtilisateur.Controls.Add(this.motDePasseTextBox);
             this.gbInfoUtilisateur.Controls.Add(motDePasseLabel);
-            this.gbInfoUtilisateur.Location = new System.Drawing.Point(16, 339);
+            this.gbInfoUtilisateur.Location = new System.Drawing.Point(12, 325);
             this.gbInfoUtilisateur.Name = "gbInfoUtilisateur";
             this.gbInfoUtilisateur.Size = new System.Drawing.Size(201, 119);
             this.gbInfoUtilisateur.TabIndex = 18;
             this.gbInfoUtilisateur.TabStop = false;
             this.gbInfoUtilisateur.Text = "Informations sur l\'utilisateur";
+            // 
+            // noTypeComboBox
+            // 
+            this.noTypeComboBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.p01_UtilisateurBindingSource, "NoType", true));
+            this.noTypeComboBox.Enabled = false;
+            this.noTypeComboBox.FormattingEnabled = true;
+            this.noTypeComboBox.Location = new System.Drawing.Point(93, 91);
+            this.noTypeComboBox.Name = "noTypeComboBox";
+            this.noTypeComboBox.Size = new System.Drawing.Size(100, 21);
+            this.noTypeComboBox.TabIndex = 40;
             // 
             // p01_TypeUtilisateurBindingSource
             // 
@@ -882,11 +956,12 @@
             this.cboAssistants.DisplayMember = "Nom";
             this.cboAssistants.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cboAssistants.FormattingEnabled = true;
-            this.cboAssistants.Location = new System.Drawing.Point(17, 115);
+            this.cboAssistants.Location = new System.Drawing.Point(17, 112);
             this.cboAssistants.Name = "cboAssistants";
             this.cboAssistants.Size = new System.Drawing.Size(156, 21);
             this.cboAssistants.TabIndex = 18;
             this.cboAssistants.ValueMember = "NoAssistant";
+            this.cboAssistants.SelectionChangeCommitted += new System.EventHandler(this.cboAssistants_SelectedValueChanged);
             // 
             // gbInfoAssistants
             // 
@@ -900,7 +975,7 @@
             this.gbInfoAssistants.Controls.Add(nomLabel1);
             this.gbInfoAssistants.Controls.Add(specialitesLabel);
             this.gbInfoAssistants.Controls.Add(this.nomTextBox1);
-            this.gbInfoAssistants.Location = new System.Drawing.Point(242, 286);
+            this.gbInfoAssistants.Location = new System.Drawing.Point(345, 289);
             this.gbInfoAssistants.Name = "gbInfoAssistants";
             this.gbInfoAssistants.Size = new System.Drawing.Size(193, 148);
             this.gbInfoAssistants.TabIndex = 35;
@@ -967,7 +1042,7 @@
             this.cboSoins.DisplayMember = "Description";
             this.cboSoins.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cboSoins.FormattingEnabled = true;
-            this.cboSoins.Location = new System.Drawing.Point(16, 115);
+            this.cboSoins.Location = new System.Drawing.Point(17, 112);
             this.cboSoins.Name = "cboSoins";
             this.cboSoins.Size = new System.Drawing.Size(157, 21);
             this.cboSoins.TabIndex = 35;
@@ -975,6 +1050,7 @@
             // 
             // gbInfoSoins
             // 
+            this.gbInfoSoins.Controls.Add(this.btnAjoutPlanifSoin);
             this.gbInfoSoins.Controls.Add(noSoinLabel);
             this.gbInfoSoins.Controls.Add(this.noSoinTextBox);
             this.gbInfoSoins.Controls.Add(this.prixTextBox);
@@ -985,9 +1061,9 @@
             this.gbInfoSoins.Controls.Add(dureeLabel);
             this.gbInfoSoins.Controls.Add(noTypeSoinLabel);
             this.gbInfoSoins.Controls.Add(this.dureeTextBox);
-            this.gbInfoSoins.Location = new System.Drawing.Point(441, 286);
+            this.gbInfoSoins.Location = new System.Drawing.Point(553, 236);
             this.gbInfoSoins.Name = "gbInfoSoins";
-            this.gbInfoSoins.Size = new System.Drawing.Size(204, 148);
+            this.gbInfoSoins.Size = new System.Drawing.Size(204, 196);
             this.gbInfoSoins.TabIndex = 36;
             this.gbInfoSoins.TabStop = false;
             this.gbInfoSoins.Text = "Information sur le soin";
@@ -1043,7 +1119,7 @@
             this.cboChambres.DisplayMember = "NoChambre";
             this.cboChambres.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cboChambres.FormattingEnabled = true;
-            this.cboChambres.Location = new System.Drawing.Point(16, 115);
+            this.cboChambres.Location = new System.Drawing.Point(16, 112);
             this.cboChambres.Name = "cboChambres";
             this.cboChambres.Size = new System.Drawing.Size(157, 21);
             this.cboChambres.TabIndex = 36;
@@ -1061,7 +1137,7 @@
             this.gbInfoChambre.Controls.Add(this.decorationsTextBox);
             this.gbInfoChambre.Controls.Add(noTypeChambreLabel);
             this.gbInfoChambre.Controls.Add(this.noTypeChambreTextBox);
-            this.gbInfoChambre.Location = new System.Drawing.Point(754, 52);
+            this.gbInfoChambre.Location = new System.Drawing.Point(763, 52);
             this.gbInfoChambre.Name = "gbInfoChambre";
             this.gbInfoChambre.Size = new System.Drawing.Size(217, 175);
             this.gbInfoChambre.TabIndex = 37;
@@ -1226,7 +1302,7 @@
             this.gbInfoTypeChambre.Controls.Add(this.prixBasTextBox);
             this.gbInfoTypeChambre.Controls.Add(prixMoyenLabel);
             this.gbInfoTypeChambre.Controls.Add(this.prixMoyenTextBox);
-            this.gbInfoTypeChambre.Location = new System.Drawing.Point(754, 233);
+            this.gbInfoTypeChambre.Location = new System.Drawing.Point(763, 233);
             this.gbInfoTypeChambre.Name = "gbInfoTypeChambre";
             this.gbInfoTypeChambre.Size = new System.Drawing.Size(217, 252);
             this.gbInfoTypeChambre.TabIndex = 39;
@@ -1236,6 +1312,7 @@
             // cboTypeChambre
             // 
             this.cboTypeChambre.DataSource = this.p01_TypeChambreBindingSource;
+            this.cboTypeChambre.DisplayMember = "NoTypeChambre";
             this.cboTypeChambre.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cboTypeChambre.FormattingEnabled = true;
             this.cboTypeChambre.Location = new System.Drawing.Point(9, 19);
@@ -1243,6 +1320,11 @@
             this.cboTypeChambre.Size = new System.Drawing.Size(122, 21);
             this.cboTypeChambre.TabIndex = 44;
             this.cboTypeChambre.ValueMember = "NoTypeChambre";
+            // 
+            // p01_TypeChambreBindingSource
+            // 
+            this.p01_TypeChambreBindingSource.DataMember = "P01_TypeChambre";
+            this.p01_TypeChambreBindingSource.DataSource = this.bDB56AnkitDataSet;
             // 
             // btnSupprTypeChambre
             // 
@@ -1272,11 +1354,6 @@
             this.noTypeChambreTextBox1.ReadOnly = true;
             this.noTypeChambreTextBox1.Size = new System.Drawing.Size(100, 20);
             this.noTypeChambreTextBox1.TabIndex = 1;
-            // 
-            // p01_TypeChambreBindingSource
-            // 
-            this.p01_TypeChambreBindingSource.DataMember = "P01_TypeChambre";
-            this.p01_TypeChambreBindingSource.DataSource = this.bDB56AnkitDataSet;
             // 
             // btnAjoutTypeChambre
             // 
@@ -1346,30 +1423,306 @@
             // 
             this.noTypeEtIdentifiactionUtilisateurTableAdapter.ClearBeforeFill = true;
             // 
-            // noTypeComboBox
+            // gbAssistantSoin
             // 
-            this.noTypeComboBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.p01_UtilisateurBindingSource, "NoType", true));
-            this.noTypeComboBox.Enabled = false;
-            this.noTypeComboBox.FormattingEnabled = true;
-            this.noTypeComboBox.Location = new System.Drawing.Point(93, 91);
-            this.noTypeComboBox.Name = "noTypeComboBox";
-            this.noTypeComboBox.Size = new System.Drawing.Size(100, 21);
-            this.noTypeComboBox.TabIndex = 40;
+            this.gbAssistantSoin.Controls.Add(this.cboSoinsPourAssist);
+            this.gbAssistantSoin.Controls.Add(this.cboAssistantSoins);
+            this.gbAssistantSoin.Controls.Add(this.label1);
+            this.gbAssistantSoin.Controls.Add(this.btnAjouterSoin);
+            this.gbAssistantSoin.Controls.Add(this.btnSupprimerSoin);
+            this.gbAssistantSoin.Location = new System.Drawing.Point(370, 444);
+            this.gbAssistantSoin.Name = "gbAssistantSoin";
+            this.gbAssistantSoin.Size = new System.Drawing.Size(168, 158);
+            this.gbAssistantSoin.TabIndex = 40;
+            this.gbAssistantSoin.TabStop = false;
+            this.gbAssistantSoin.Text = "L\'assistant et ses soins";
             // 
-            // prixMoyenTextBox1
+            // cboSoinsPourAssist
             // 
-            this.prixMoyenTextBox1.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.p01_TypeChambreBindingSource, "PrixMoyen", true));
-            this.prixMoyenTextBox1.Location = new System.Drawing.Point(617, 553);
-            this.prixMoyenTextBox1.Name = "prixMoyenTextBox1";
-            this.prixMoyenTextBox1.Size = new System.Drawing.Size(100, 20);
-            this.prixMoyenTextBox1.TabIndex = 48;
+            this.cboSoinsPourAssist.DataSource = this.p01_SoinBindingSource2;
+            this.cboSoinsPourAssist.DisplayMember = "Description";
+            this.cboSoinsPourAssist.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cboSoinsPourAssist.FormattingEnabled = true;
+            this.cboSoinsPourAssist.Location = new System.Drawing.Point(9, 91);
+            this.cboSoinsPourAssist.Name = "cboSoinsPourAssist";
+            this.cboSoinsPourAssist.Size = new System.Drawing.Size(149, 21);
+            this.cboSoinsPourAssist.TabIndex = 40;
+            this.cboSoinsPourAssist.ValueMember = "NoSoin";
+            // 
+            // p01_SoinBindingSource2
+            // 
+            this.p01_SoinBindingSource2.DataMember = "P01_Soin";
+            this.p01_SoinBindingSource2.DataSource = this.bDB56AnkitDataSet;
+            // 
+            // cboAssistantSoins
+            // 
+            this.cboAssistantSoins.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cboAssistantSoins.FormattingEnabled = true;
+            this.cboAssistantSoins.Location = new System.Drawing.Point(6, 19);
+            this.cboAssistantSoins.Name = "cboAssistantSoins";
+            this.cboAssistantSoins.Size = new System.Drawing.Size(152, 21);
+            this.cboAssistantSoins.TabIndex = 41;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(6, 75);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(106, 13);
+            this.label1.TabIndex = 42;
+            this.label1.Text = "Tous les soins offerts";
+            // 
+            // btnAjouterSoin
+            // 
+            this.btnAjouterSoin.Location = new System.Drawing.Point(6, 118);
+            this.btnAjouterSoin.Name = "btnAjouterSoin";
+            this.btnAjouterSoin.Size = new System.Drawing.Size(75, 34);
+            this.btnAjouterSoin.TabIndex = 41;
+            this.btnAjouterSoin.Text = "Ajouter ce soin";
+            this.btnAjouterSoin.UseVisualStyleBackColor = true;
+            this.btnAjouterSoin.Click += new System.EventHandler(this.btnAjouterSoin_Click);
+            // 
+            // btnSupprimerSoin
+            // 
+            this.btnSupprimerSoin.Location = new System.Drawing.Point(87, 118);
+            this.btnSupprimerSoin.Name = "btnSupprimerSoin";
+            this.btnSupprimerSoin.Size = new System.Drawing.Size(75, 34);
+            this.btnSupprimerSoin.TabIndex = 40;
+            this.btnSupprimerSoin.Text = "Retirer ce soin";
+            this.btnSupprimerSoin.UseVisualStyleBackColor = true;
+            this.btnSupprimerSoin.Click += new System.EventHandler(this.btnSupprimerSoin_Click);
+            // 
+            // p01_SoinBindingSource1
+            // 
+            this.p01_SoinBindingSource1.DataMember = "P01_Soin";
+            this.p01_SoinBindingSource1.DataSource = this.bDB56AnkitDataSet;
+            // 
+            // gbInfoTypeSoin
+            // 
+            this.gbInfoTypeSoin.Controls.Add(this.btnSupprimeTypeSoin);
+            this.gbInfoTypeSoin.Controls.Add(this.cboTypeSoin);
+            this.gbInfoTypeSoin.Controls.Add(this.btnModifTypeSoin);
+            this.gbInfoTypeSoin.Controls.Add(noTypeSoinLabel1);
+            this.gbInfoTypeSoin.Controls.Add(this.btnAjoutTypeSoin);
+            this.gbInfoTypeSoin.Controls.Add(this.noTypeSoinTextBox1);
+            this.gbInfoTypeSoin.Controls.Add(descriptionLabel2);
+            this.gbInfoTypeSoin.Controls.Add(this.descriptionTextBox2);
+            this.gbInfoTypeSoin.Location = new System.Drawing.Point(553, 444);
+            this.gbInfoTypeSoin.Name = "gbInfoTypeSoin";
+            this.gbInfoTypeSoin.Size = new System.Drawing.Size(204, 158);
+            this.gbInfoTypeSoin.TabIndex = 41;
+            this.gbInfoTypeSoin.TabStop = false;
+            this.gbInfoTypeSoin.Text = "Information sur le type de soin";
+            // 
+            // btnSupprimeTypeSoin
+            // 
+            this.btnSupprimeTypeSoin.Location = new System.Drawing.Point(14, 127);
+            this.btnSupprimeTypeSoin.Name = "btnSupprimeTypeSoin";
+            this.btnSupprimeTypeSoin.Size = new System.Drawing.Size(75, 23);
+            this.btnSupprimeTypeSoin.TabIndex = 47;
+            this.btnSupprimeTypeSoin.Text = "Supprimer";
+            this.btnSupprimeTypeSoin.UseVisualStyleBackColor = true;
+            this.btnSupprimeTypeSoin.Click += new System.EventHandler(this.btnSupprimeTypeSoin_Click);
+            // 
+            // cboTypeSoin
+            // 
+            this.cboTypeSoin.DataSource = this.p01_TypeSoinBindingSource;
+            this.cboTypeSoin.DisplayMember = "Description";
+            this.cboTypeSoin.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cboTypeSoin.FormattingEnabled = true;
+            this.cboTypeSoin.Location = new System.Drawing.Point(9, 19);
+            this.cboTypeSoin.Name = "cboTypeSoin";
+            this.cboTypeSoin.Size = new System.Drawing.Size(122, 21);
+            this.cboTypeSoin.TabIndex = 41;
+            this.cboTypeSoin.ValueMember = "NoTypeSoin";
+            // 
+            // p01_TypeSoinBindingSource
+            // 
+            this.p01_TypeSoinBindingSource.DataMember = "P01_TypeSoin";
+            this.p01_TypeSoinBindingSource.DataSource = this.bDB56AnkitDataSet;
+            // 
+            // btnModifTypeSoin
+            // 
+            this.btnModifTypeSoin.Location = new System.Drawing.Point(95, 127);
+            this.btnModifTypeSoin.Name = "btnModifTypeSoin";
+            this.btnModifTypeSoin.Size = new System.Drawing.Size(75, 23);
+            this.btnModifTypeSoin.TabIndex = 46;
+            this.btnModifTypeSoin.Text = "Modifier";
+            this.btnModifTypeSoin.UseVisualStyleBackColor = true;
+            this.btnModifTypeSoin.Click += new System.EventHandler(this.btnModifTypeSoin_Click);
+            // 
+            // btnAjoutTypeSoin
+            // 
+            this.btnAjoutTypeSoin.Location = new System.Drawing.Point(14, 98);
+            this.btnAjoutTypeSoin.Name = "btnAjoutTypeSoin";
+            this.btnAjoutTypeSoin.Size = new System.Drawing.Size(156, 23);
+            this.btnAjoutTypeSoin.TabIndex = 45;
+            this.btnAjoutTypeSoin.Text = "Ajouter";
+            this.btnAjoutTypeSoin.UseVisualStyleBackColor = true;
+            this.btnAjoutTypeSoin.Click += new System.EventHandler(this.btnAjoutTypeSoin_Click);
+            // 
+            // noTypeSoinTextBox1
+            // 
+            this.noTypeSoinTextBox1.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.p01_TypeSoinBindingSource, "NoTypeSoin", true));
+            this.noTypeSoinTextBox1.Location = new System.Drawing.Point(87, 46);
+            this.noTypeSoinTextBox1.Name = "noTypeSoinTextBox1";
+            this.noTypeSoinTextBox1.ReadOnly = true;
+            this.noTypeSoinTextBox1.Size = new System.Drawing.Size(100, 20);
+            this.noTypeSoinTextBox1.TabIndex = 1;
+            // 
+            // descriptionTextBox2
+            // 
+            this.descriptionTextBox2.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.p01_TypeSoinBindingSource, "Description", true));
+            this.descriptionTextBox2.Location = new System.Drawing.Point(87, 72);
+            this.descriptionTextBox2.Name = "descriptionTextBox2";
+            this.descriptionTextBox2.ReadOnly = true;
+            this.descriptionTextBox2.Size = new System.Drawing.Size(100, 20);
+            this.descriptionTextBox2.TabIndex = 3;
+            // 
+            // p01_TypeSoinTableAdapter
+            // 
+            this.p01_TypeSoinTableAdapter.ClearBeforeFill = true;
+            // 
+            // p01_AssistantBindingSource1
+            // 
+            this.p01_AssistantBindingSource1.DataMember = "P01_Assistant";
+            this.p01_AssistantBindingSource1.DataSource = this.bDB56AnkitDataSet;
+            // 
+            // p01_PlanifSoinBindingSource
+            // 
+            this.p01_PlanifSoinBindingSource.DataMember = "P01_PlanifSoin";
+            this.p01_PlanifSoinBindingSource.DataSource = this.bDB56AnkitDataSet;
+            // 
+            // p01_PlanifSoinTableAdapter
+            // 
+            this.p01_PlanifSoinTableAdapter.ClearBeforeFill = true;
+            // 
+            // p01_PlanifSoinComboBox
+            // 
+            this.p01_PlanifSoinComboBox.DataSource = this.p01_PlanifSoinBindingSource;
+            this.p01_PlanifSoinComboBox.DisplayMember = "NoPersonne";
+            this.p01_PlanifSoinComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.p01_PlanifSoinComboBox.FormattingEnabled = true;
+            this.p01_PlanifSoinComboBox.Location = new System.Drawing.Point(6, 19);
+            this.p01_PlanifSoinComboBox.Name = "p01_PlanifSoinComboBox";
+            this.p01_PlanifSoinComboBox.Size = new System.Drawing.Size(116, 21);
+            this.p01_PlanifSoinComboBox.TabIndex = 0;
+            this.p01_PlanifSoinComboBox.ValueMember = "NoPersonne";
+            // 
+            // noSoinTextBox1
+            // 
+            this.noSoinTextBox1.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.p01_PlanifSoinBindingSource, "NoSoin", true));
+            this.noSoinTextBox1.Location = new System.Drawing.Point(82, 145);
+            this.noSoinTextBox1.Name = "noSoinTextBox1";
+            this.noSoinTextBox1.Size = new System.Drawing.Size(138, 20);
+            this.noSoinTextBox1.TabIndex = 8;
+            // 
+            // noSoinLabel1
+            // 
+            noSoinLabel1.AutoSize = true;
+            noSoinLabel1.Location = new System.Drawing.Point(4, 148);
+            noSoinLabel1.Name = "noSoinLabel1";
+            noSoinLabel1.Size = new System.Drawing.Size(48, 13);
+            noSoinLabel1.TabIndex = 7;
+            noSoinLabel1.Text = "No Soin:";
+            // 
+            // dateHeureDateTimePicker
+            // 
+            this.dateHeureDateTimePicker.DataBindings.Add(new System.Windows.Forms.Binding("Value", this.p01_PlanifSoinBindingSource, "DateHeure", true));
+            this.dateHeureDateTimePicker.Location = new System.Drawing.Point(82, 119);
+            this.dateHeureDateTimePicker.Name = "dateHeureDateTimePicker";
+            this.dateHeureDateTimePicker.Size = new System.Drawing.Size(138, 20);
+            this.dateHeureDateTimePicker.TabIndex = 6;
+            // 
+            // dateHeureLabel
+            // 
+            dateHeureLabel.AutoSize = true;
+            dateHeureLabel.Location = new System.Drawing.Point(4, 123);
+            dateHeureLabel.Name = "dateHeureLabel";
+            dateHeureLabel.Size = new System.Drawing.Size(65, 13);
+            dateHeureLabel.TabIndex = 5;
+            dateHeureLabel.Text = "Date Heure:";
+            // 
+            // noAssistantTextBox1
+            // 
+            this.noAssistantTextBox1.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.p01_PlanifSoinBindingSource, "NoAssistant", true));
+            this.noAssistantTextBox1.Location = new System.Drawing.Point(82, 93);
+            this.noAssistantTextBox1.Name = "noAssistantTextBox1";
+            this.noAssistantTextBox1.Size = new System.Drawing.Size(138, 20);
+            this.noAssistantTextBox1.TabIndex = 4;
+            // 
+            // noAssistantLabel1
+            // 
+            noAssistantLabel1.AutoSize = true;
+            noAssistantLabel1.Location = new System.Drawing.Point(4, 96);
+            noAssistantLabel1.Name = "noAssistantLabel1";
+            noAssistantLabel1.Size = new System.Drawing.Size(69, 13);
+            noAssistantLabel1.TabIndex = 3;
+            noAssistantLabel1.Text = "No Assistant:";
+            // 
+            // noPersonneTextBox
+            // 
+            this.noPersonneTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.p01_PlanifSoinBindingSource, "NoPersonne", true));
+            this.noPersonneTextBox.Location = new System.Drawing.Point(82, 67);
+            this.noPersonneTextBox.Name = "noPersonneTextBox";
+            this.noPersonneTextBox.Size = new System.Drawing.Size(138, 20);
+            this.noPersonneTextBox.TabIndex = 2;
+            // 
+            // noPersonneLabel
+            // 
+            noPersonneLabel.AutoSize = true;
+            noPersonneLabel.Location = new System.Drawing.Point(4, 70);
+            noPersonneLabel.Name = "noPersonneLabel";
+            noPersonneLabel.Size = new System.Drawing.Size(72, 13);
+            noPersonneLabel.TabIndex = 1;
+            noPersonneLabel.Text = "No Personne:";
+            // 
+            // gbPlanifSoin
+            // 
+            this.gbPlanifSoin.Controls.Add(noPersonneLabel);
+            this.gbPlanifSoin.Controls.Add(this.button2);
+            this.gbPlanifSoin.Controls.Add(this.noPersonneTextBox);
+            this.gbPlanifSoin.Controls.Add(noAssistantLabel1);
+            this.gbPlanifSoin.Controls.Add(this.noAssistantTextBox1);
+            this.gbPlanifSoin.Controls.Add(dateHeureLabel);
+            this.gbPlanifSoin.Controls.Add(this.dateHeureDateTimePicker);
+            this.gbPlanifSoin.Controls.Add(noSoinLabel1);
+            this.gbPlanifSoin.Controls.Add(this.noSoinTextBox1);
+            this.gbPlanifSoin.Controls.Add(this.p01_PlanifSoinComboBox);
+            this.gbPlanifSoin.Location = new System.Drawing.Point(16, 452);
+            this.gbPlanifSoin.Name = "gbPlanifSoin";
+            this.gbPlanifSoin.Size = new System.Drawing.Size(237, 179);
+            this.gbPlanifSoin.TabIndex = 42;
+            this.gbPlanifSoin.TabStop = false;
+            this.gbPlanifSoin.Text = "Plannification des soins";
+            // 
+            // btnAjoutPlanifSoin
+            // 
+            this.btnAjoutPlanifSoin.Location = new System.Drawing.Point(26, 147);
+            this.btnAjoutPlanifSoin.Name = "btnAjoutPlanifSoin";
+            this.btnAjoutPlanifSoin.Size = new System.Drawing.Size(156, 35);
+            this.btnAjoutPlanifSoin.TabIndex = 43;
+            this.btnAjoutPlanifSoin.Text = "Ajouter une reservation\r\n pour ce soin";
+            this.btnAjoutPlanifSoin.UseVisualStyleBackColor = true;
+            this.btnAjoutPlanifSoin.Click += new System.EventHandler(this.btnAjoutPlanifSoin_Click);
+            // 
+            // button2
+            // 
+            this.button2.Location = new System.Drawing.Point(145, 19);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(75, 35);
+            this.button2.TabIndex = 42;
+            this.button2.Text = "Annuler reservation";
+            this.button2.UseVisualStyleBackColor = true;
             // 
             // frmAdmin
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(985, 558);
-            this.Controls.Add(this.prixMoyenTextBox1);
+            this.ClientSize = new System.Drawing.Size(1067, 644);
+            this.Controls.Add(this.gbPlanifSoin);
+            this.Controls.Add(this.gbInfoTypeSoin);
+            this.Controls.Add(this.gbAssistantSoin);
             this.Controls.Add(this.gbInfoTypeChambre);
             this.Controls.Add(this.gbInfoInvite);
             this.Controls.Add(this.gbInfoChambre);
@@ -1424,6 +1777,17 @@
             ((System.ComponentModel.ISupportInitialize)(this.p01_TypeChambreBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.fkUTILTypeUtilBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.noTypeEtIdentifiactionUtilisateurBindingSource)).EndInit();
+            this.gbAssistantSoin.ResumeLayout(false);
+            this.gbAssistantSoin.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.p01_SoinBindingSource2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.p01_SoinBindingSource1)).EndInit();
+            this.gbInfoTypeSoin.ResumeLayout(false);
+            this.gbInfoTypeSoin.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.p01_TypeSoinBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.p01_AssistantBindingSource1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.p01_PlanifSoinBindingSource)).EndInit();
+            this.gbPlanifSoin.ResumeLayout(false);
+            this.gbPlanifSoin.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -1523,6 +1887,33 @@
         private System.Windows.Forms.BindingSource noTypeEtIdentifiactionUtilisateurBindingSource;
         private BDB56AnkitDataSetTableAdapters.noTypeEtIdentifiactionUtilisateurTableAdapter noTypeEtIdentifiactionUtilisateurTableAdapter;
         private System.Windows.Forms.ComboBox noTypeComboBox;
-        private System.Windows.Forms.TextBox prixMoyenTextBox1;
+        private System.Windows.Forms.GroupBox gbAssistantSoin;
+        private System.Windows.Forms.ComboBox cboSoinsPourAssist;
+        private System.Windows.Forms.BindingSource p01_SoinBindingSource2;
+        private System.Windows.Forms.ComboBox cboAssistantSoins;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Button btnAjouterSoin;
+        private System.Windows.Forms.Button btnSupprimerSoin;
+        private System.Windows.Forms.BindingSource p01_SoinBindingSource1;
+        private System.Windows.Forms.GroupBox gbInfoTypeSoin;
+        private System.Windows.Forms.BindingSource p01_TypeSoinBindingSource;
+        private BDB56AnkitDataSetTableAdapters.P01_TypeSoinTableAdapter p01_TypeSoinTableAdapter;
+        private System.Windows.Forms.TextBox noTypeSoinTextBox1;
+        private System.Windows.Forms.TextBox descriptionTextBox2;
+        private System.Windows.Forms.ComboBox cboTypeSoin;
+        private System.Windows.Forms.Button btnSupprimeTypeSoin;
+        private System.Windows.Forms.Button btnModifTypeSoin;
+        private System.Windows.Forms.Button btnAjoutTypeSoin;
+        private System.Windows.Forms.BindingSource p01_AssistantBindingSource1;
+        private System.Windows.Forms.BindingSource p01_PlanifSoinBindingSource;
+        private BDB56AnkitDataSetTableAdapters.P01_PlanifSoinTableAdapter p01_PlanifSoinTableAdapter;
+        private System.Windows.Forms.Button btnAjoutPlanifSoin;
+        private System.Windows.Forms.ComboBox p01_PlanifSoinComboBox;
+        private System.Windows.Forms.TextBox noSoinTextBox1;
+        private System.Windows.Forms.DateTimePicker dateHeureDateTimePicker;
+        private System.Windows.Forms.TextBox noAssistantTextBox1;
+        private System.Windows.Forms.TextBox noPersonneTextBox;
+        private System.Windows.Forms.GroupBox gbPlanifSoin;
+        private System.Windows.Forms.Button button2;
     }
 }

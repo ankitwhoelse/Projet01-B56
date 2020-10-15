@@ -110,8 +110,17 @@ namespace Projet01
             }
             else if (!booAjout)
             {           // MODIFICATION
-                
-                
+                using (SqlConnection con = new SqlConnection(maChaineDeConnexion))
+                {
+                    con.Open();
+                    string requete = "";
+                    SqlCommand comm = new SqlCommand(requete, con);
+                    comm.ExecuteNonQuery();
+
+                    con.Close();
+                }
+                MessageBox.Show("Le client a été modifié.", "Client modifié", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                this.Close();
             }
         }
 
@@ -119,7 +128,7 @@ namespace Projet01
         {
             if (this.Controls.OfType<TextBox>().Any(tBox => string.IsNullOrEmpty(tBox.Text)))
             {
-                DialogResult resulat = MessageBox.Show("Etes vous certain d'annuler l'ajout?", "Attention", MessageBoxButtons.YesNo, MessageBoxIcon.Exclamation);
+                DialogResult resulat = MessageBox.Show("Etes vous certain d'annuler " + (booAjout ? "l'ajout?" : "la modification?"), "Attention", MessageBoxButtons.YesNo, MessageBoxIcon.Exclamation);
 
                 if (resulat == DialogResult.Yes)
                     this.Close();

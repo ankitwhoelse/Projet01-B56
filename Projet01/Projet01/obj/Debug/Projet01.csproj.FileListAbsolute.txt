@@ -34,3 +34,4 @@ C:\Users\riben\Documents\Base de données III\Projets\Projet1\Projet01\Projet01\
 C:\Users\riben\Documents\Base de données III\Projets\Projet1\Projet01\Projet01\obj\Debug\Projet01.pdb
 C:\Users\Ankit-PC\Documents\Gerald-Godin\Bases de données 3\Travaux\Projet01\Projet01\Projet01\obj\Debug\Projet01.frmInvite.resources
 C:\Users\Ankit-PC\Documents\Gerald-Godin\Bases de données 3\Travaux\Projet01\Projet01\Projet01\obj\Debug\Projet01.frmTypeChambre.resources
+C:\Users\Ankit-PC\Documents\Gerald-Godin\Bases de données 3\Travaux\Projet01\Projet01\Projet01\obj\Debug\Projet01.frmTypeSoin.resources

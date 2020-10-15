@@ -108,6 +108,18 @@ namespace Projet01
             else if (!booAjout)
             {
                 // MODIF
+                using (SqlConnection con = new SqlConnection(maChaineDeConnexion))
+                {
+                    con.Open();
+                    string requete = "UPDATE P01_Assistant SET Prenom = '" + prenomTextBox.Text + "', Nom = '" + nomTextBox.Text + "', Specialites = '" + specialitesTextBox.Text
+                        + "', Remarques = '" + remarquesTextBox.Text + "' WHERE NoAssistant = " + NoAssistant;
+                    SqlCommand comm = new SqlCommand(requete, con);
+                    comm.ExecuteNonQuery();
+
+                    con.Close();
+                }
+                MessageBox.Show("L'assistant a été modifié.", "Assistant modifié", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                this.Close();
             }
         }
 

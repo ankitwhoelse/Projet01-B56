@@ -172,6 +172,7 @@
             this.noClientTextBox.Enabled = false;
             this.noClientTextBox.Location = new System.Drawing.Point(108, 48);
             this.noClientTextBox.Name = "noClientTextBox";
+            this.noClientTextBox.ReadOnly = true;
             this.noClientTextBox.Size = new System.Drawing.Size(200, 20);
             this.noClientTextBox.TabIndex = 25;
             // 

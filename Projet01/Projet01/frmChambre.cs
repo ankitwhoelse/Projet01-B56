@@ -22,14 +22,7 @@ namespace Projet01
         {
             InitializeComponent();
         }
-
-        private void p01_ChambreBindingNavigatorSaveItem_Click(object sender, EventArgs e)
-        {
-            this.Validate();
-            this.p01_ChambreBindingSource.EndEdit();
-            this.tableAdapterManager.UpdateAll(this.bDB56AnkitDataSet);
-        }
-
+        
         private void frmChambre_Load(object sender, EventArgs e)
         {
             // TODO: This line of code loads data into the 'bDB56AnkitDataSet.P01_Chambre' table. You can move, or remove it, as needed.
@@ -115,12 +108,23 @@ namespace Projet01
                     bDB56AnkitDataSet.P01_Chambre.AddP01_ChambreRow(uneChambre);
                     this.p01_ChambreBindingSource.EndEdit();
                     this.p01_ChambreTableAdapter.Update(this.bDB56AnkitDataSet.P01_Chambre);
-                    MessageBox.Show("La nouvelle chambre a ete ajoutee.", "Nouvelle chambre enregistree", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    MessageBox.Show("La nouvelle chambre a été ajoutée.", "Nouvelle chambre enregistrée", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     this.Close();
                 }
                 else if (!booAjout)
                 {           // Modif
-                       
+                    using (SqlConnection con = new SqlConnection(maChaineDeConnexion))
+                    {
+                        con.Open();
+                        string requete = "UPDATE P01_Chambres SET Emplacement = '" + emplacementTextBox.Text + "', Decorations = '" + decorationsTextBox.Text
+                                            + "', NoTypeChambre = " + noTypeChambreTextBox.Text + " WHERE NoChambre = " + NoChambre;
+                        SqlCommand comm = new SqlCommand(requete, con);
+                        comm.ExecuteNonQuery();
+
+                        con.Close();
+                    }
+                    MessageBox.Show("La chambre a été modifiée.", "Chambre modifiée", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    this.Close();
                 }
             }
             

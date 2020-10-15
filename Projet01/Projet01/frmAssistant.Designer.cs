@@ -166,6 +166,7 @@
             // 
             this.noAssistantTextBox.Location = new System.Drawing.Point(111, 65);
             this.noAssistantTextBox.Name = "noAssistantTextBox";
+            this.noAssistantTextBox.ReadOnly = true;
             this.noAssistantTextBox.Size = new System.Drawing.Size(100, 20);
             this.noAssistantTextBox.TabIndex = 16;
             // 
