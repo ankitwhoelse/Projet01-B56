@@ -147,7 +147,7 @@
             this.btnAnnuler.Location = new System.Drawing.Point(111, 214);
             this.btnAnnuler.Name = "btnAnnuler";
             this.btnAnnuler.Size = new System.Drawing.Size(100, 56);
-            this.btnAnnuler.TabIndex = 15;
+            this.btnAnnuler.TabIndex = 5;
             this.btnAnnuler.Text = "Annuler";
             this.btnAnnuler.UseVisualStyleBackColor = true;
             this.btnAnnuler.Click += new System.EventHandler(this.btnAnnuler_Click);
@@ -157,7 +157,7 @@
             this.btnConfirmer.Location = new System.Drawing.Point(16, 214);
             this.btnConfirmer.Name = "btnConfirmer";
             this.btnConfirmer.Size = new System.Drawing.Size(89, 56);
-            this.btnConfirmer.TabIndex = 14;
+            this.btnConfirmer.TabIndex = 4;
             this.btnConfirmer.Text = "button1";
             this.btnConfirmer.UseVisualStyleBackColor = true;
             this.btnConfirmer.Click += new System.EventHandler(this.btnConfirmer_Click);
@@ -168,35 +168,35 @@
             this.noAssistantTextBox.Name = "noAssistantTextBox";
             this.noAssistantTextBox.ReadOnly = true;
             this.noAssistantTextBox.Size = new System.Drawing.Size(100, 20);
-            this.noAssistantTextBox.TabIndex = 16;
+            this.noAssistantTextBox.TabIndex = 0;
             // 
             // prenomTextBox
             // 
             this.prenomTextBox.Location = new System.Drawing.Point(111, 91);
             this.prenomTextBox.Name = "prenomTextBox";
             this.prenomTextBox.Size = new System.Drawing.Size(100, 20);
-            this.prenomTextBox.TabIndex = 16;
+            this.prenomTextBox.TabIndex = 0;
             // 
             // nomTextBox
             // 
             this.nomTextBox.Location = new System.Drawing.Point(111, 117);
             this.nomTextBox.Name = "nomTextBox";
             this.nomTextBox.Size = new System.Drawing.Size(100, 20);
-            this.nomTextBox.TabIndex = 16;
+            this.nomTextBox.TabIndex = 1;
             // 
             // specialitesTextBox
             // 
             this.specialitesTextBox.Location = new System.Drawing.Point(111, 143);
             this.specialitesTextBox.Name = "specialitesTextBox";
             this.specialitesTextBox.Size = new System.Drawing.Size(100, 20);
-            this.specialitesTextBox.TabIndex = 16;
+            this.specialitesTextBox.TabIndex = 2;
             // 
             // remarquesTextBox
             // 
             this.remarquesTextBox.Location = new System.Drawing.Point(111, 169);
             this.remarquesTextBox.Name = "remarquesTextBox";
             this.remarquesTextBox.Size = new System.Drawing.Size(100, 20);
-            this.remarquesTextBox.TabIndex = 16;
+            this.remarquesTextBox.TabIndex = 3;
             // 
             // frmAssistant
             // 

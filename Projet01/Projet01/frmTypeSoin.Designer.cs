@@ -46,6 +46,24 @@
             ((System.ComponentModel.ISupportInitialize)(this.p01_TypeSoinBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
+            // noTypeSoinLabel
+            // 
+            noTypeSoinLabel.AutoSize = true;
+            noTypeSoinLabel.Location = new System.Drawing.Point(13, 81);
+            noTypeSoinLabel.Name = "noTypeSoinLabel";
+            noTypeSoinLabel.Size = new System.Drawing.Size(75, 13);
+            noTypeSoinLabel.TabIndex = 1;
+            noTypeSoinLabel.Text = "No Type Soin:";
+            // 
+            // descriptionLabel
+            // 
+            descriptionLabel.AutoSize = true;
+            descriptionLabel.Location = new System.Drawing.Point(13, 107);
+            descriptionLabel.Name = "descriptionLabel";
+            descriptionLabel.Size = new System.Drawing.Size(63, 13);
+            descriptionLabel.TabIndex = 3;
+            descriptionLabel.Text = "Description:";
+            // 
             // bDB56AnkitDataSet
             // 
             this.bDB56AnkitDataSet.DataSetName = "BDB56AnkitDataSet";
@@ -77,31 +95,13 @@
             this.tableAdapterManager.P01_UtilisateurTableAdapter = null;
             this.tableAdapterManager.UpdateOrder = Projet01.BDB56AnkitDataSetTableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete;
             // 
-            // noTypeSoinLabel
-            // 
-            noTypeSoinLabel.AutoSize = true;
-            noTypeSoinLabel.Location = new System.Drawing.Point(13, 81);
-            noTypeSoinLabel.Name = "noTypeSoinLabel";
-            noTypeSoinLabel.Size = new System.Drawing.Size(75, 13);
-            noTypeSoinLabel.TabIndex = 1;
-            noTypeSoinLabel.Text = "No Type Soin:";
-            // 
-            // descriptionLabel
-            // 
-            descriptionLabel.AutoSize = true;
-            descriptionLabel.Location = new System.Drawing.Point(13, 107);
-            descriptionLabel.Name = "descriptionLabel";
-            descriptionLabel.Size = new System.Drawing.Size(63, 13);
-            descriptionLabel.TabIndex = 3;
-            descriptionLabel.Text = "Description:";
-            // 
             // btnAnnuler
             // 
             this.btnAnnuler.DialogResult = System.Windows.Forms.DialogResult.Cancel;
             this.btnAnnuler.Location = new System.Drawing.Point(118, 148);
             this.btnAnnuler.Name = "btnAnnuler";
             this.btnAnnuler.Size = new System.Drawing.Size(100, 56);
-            this.btnAnnuler.TabIndex = 33;
+            this.btnAnnuler.TabIndex = 2;
             this.btnAnnuler.Text = "Annuler";
             this.btnAnnuler.UseVisualStyleBackColor = true;
             this.btnAnnuler.Click += new System.EventHandler(this.btnAnnuler_Click);
@@ -111,7 +111,7 @@
             this.btnConfirmer.Location = new System.Drawing.Point(16, 148);
             this.btnConfirmer.Name = "btnConfirmer";
             this.btnConfirmer.Size = new System.Drawing.Size(89, 56);
-            this.btnConfirmer.TabIndex = 32;
+            this.btnConfirmer.TabIndex = 1;
             this.btnConfirmer.Text = "button1";
             this.btnConfirmer.UseVisualStyleBackColor = true;
             this.btnConfirmer.Click += new System.EventHandler(this.btnConfirmer_Click);
@@ -139,7 +139,7 @@
             this.descriptionTextBox.Location = new System.Drawing.Point(94, 104);
             this.descriptionTextBox.Name = "descriptionTextBox";
             this.descriptionTextBox.Size = new System.Drawing.Size(124, 20);
-            this.descriptionTextBox.TabIndex = 35;
+            this.descriptionTextBox.TabIndex = 0;
             // 
             // frmTypeSoin
             // 

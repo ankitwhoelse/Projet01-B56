@@ -113,7 +113,9 @@ namespace Projet01
                 using (SqlConnection con = new SqlConnection(maChaineDeConnexion))
                 {
                     con.Open();
-                    string requete = "";
+                    string requete = "UPDATE P01_Client SET Nom = '" +nomTextBox.Text + "', Prenom = '" + prenomTextBox.Text + "', Ville = '" + villeTextBox.Text + 
+                        "', Pays = '" + paysTextBox.Text + "', Adresse = '" + adresseTextBox + "', CodePostal = '" + codePostalTextBox.Text +
+                        "' WHERE NoClient = " + NoClient;
                     SqlCommand comm = new SqlCommand(requete, con);
                     comm.ExecuteNonQuery();
 

@@ -57,7 +57,7 @@
             this.btnConfirmer.Location = new System.Drawing.Point(15, 204);
             this.btnConfirmer.Name = "btnConfirmer";
             this.btnConfirmer.Size = new System.Drawing.Size(89, 56);
-            this.btnConfirmer.TabIndex = 0;
+            this.btnConfirmer.TabIndex = 3;
             this.btnConfirmer.Text = "button1";
             this.btnConfirmer.UseVisualStyleBackColor = true;
             this.btnConfirmer.Click += new System.EventHandler(this.btnConfirmer_Click);
@@ -68,7 +68,7 @@
             this.btnAnnuler.Location = new System.Drawing.Point(110, 204);
             this.btnAnnuler.Name = "btnAnnuler";
             this.btnAnnuler.Size = new System.Drawing.Size(100, 56);
-            this.btnAnnuler.TabIndex = 1;
+            this.btnAnnuler.TabIndex = 4;
             this.btnAnnuler.Text = "Annuler";
             this.btnAnnuler.UseVisualStyleBackColor = true;
             this.btnAnnuler.Click += new System.EventHandler(this.btnAnnuler_Click);
@@ -169,14 +169,14 @@
             this.nomUtilisateurTextBox.Location = new System.Drawing.Point(115, 87);
             this.nomUtilisateurTextBox.Name = "nomUtilisateurTextBox";
             this.nomUtilisateurTextBox.Size = new System.Drawing.Size(100, 20);
-            this.nomUtilisateurTextBox.TabIndex = 13;
+            this.nomUtilisateurTextBox.TabIndex = 0;
             // 
             // motDePasseUtilisateurTextBox
             // 
             this.motDePasseUtilisateurTextBox.Location = new System.Drawing.Point(115, 113);
             this.motDePasseUtilisateurTextBox.Name = "motDePasseUtilisateurTextBox";
             this.motDePasseUtilisateurTextBox.Size = new System.Drawing.Size(100, 20);
-            this.motDePasseUtilisateurTextBox.TabIndex = 13;
+            this.motDePasseUtilisateurTextBox.TabIndex = 1;
             // 
             // p01_TypeUtilisateurBindingSource2
             // 
@@ -191,7 +191,7 @@
             this.typeUtilisateurComboBox.Location = new System.Drawing.Point(115, 139);
             this.typeUtilisateurComboBox.Name = "typeUtilisateurComboBox";
             this.typeUtilisateurComboBox.Size = new System.Drawing.Size(100, 21);
-            this.typeUtilisateurComboBox.TabIndex = 13;
+            this.typeUtilisateurComboBox.TabIndex = 2;
             this.typeUtilisateurComboBox.ValueMember = "NoType";
             // 
             // frmUtilisateur

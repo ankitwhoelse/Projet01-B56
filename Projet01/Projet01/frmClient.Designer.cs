@@ -152,7 +152,7 @@
             this.btnAnnuler.Location = new System.Drawing.Point(208, 292);
             this.btnAnnuler.Name = "btnAnnuler";
             this.btnAnnuler.Size = new System.Drawing.Size(100, 56);
-            this.btnAnnuler.TabIndex = 14;
+            this.btnAnnuler.TabIndex = 8;
             this.btnAnnuler.Text = "Annuler";
             this.btnAnnuler.UseVisualStyleBackColor = true;
             this.btnAnnuler.Click += new System.EventHandler(this.btnAnnuler_Click);
@@ -162,7 +162,7 @@
             this.btnConfirmer.Location = new System.Drawing.Point(108, 292);
             this.btnConfirmer.Name = "btnConfirmer";
             this.btnConfirmer.Size = new System.Drawing.Size(89, 56);
-            this.btnConfirmer.TabIndex = 13;
+            this.btnConfirmer.TabIndex = 7;
             this.btnConfirmer.Text = "button1";
             this.btnConfirmer.UseVisualStyleBackColor = true;
             this.btnConfirmer.Click += new System.EventHandler(this.btnConfirmer_Click);
@@ -174,49 +174,49 @@
             this.noClientTextBox.Name = "noClientTextBox";
             this.noClientTextBox.ReadOnly = true;
             this.noClientTextBox.Size = new System.Drawing.Size(200, 20);
-            this.noClientTextBox.TabIndex = 25;
+            this.noClientTextBox.TabIndex = 0;
             // 
             // nomTextBox
             // 
             this.nomTextBox.Location = new System.Drawing.Point(108, 74);
             this.nomTextBox.Name = "nomTextBox";
             this.nomTextBox.Size = new System.Drawing.Size(200, 20);
-            this.nomTextBox.TabIndex = 27;
+            this.nomTextBox.TabIndex = 0;
             // 
             // prenomTextBox
             // 
             this.prenomTextBox.Location = new System.Drawing.Point(108, 100);
             this.prenomTextBox.Name = "prenomTextBox";
             this.prenomTextBox.Size = new System.Drawing.Size(200, 20);
-            this.prenomTextBox.TabIndex = 29;
+            this.prenomTextBox.TabIndex = 1;
             // 
             // villeTextBox
             // 
             this.villeTextBox.Location = new System.Drawing.Point(108, 126);
             this.villeTextBox.Name = "villeTextBox";
             this.villeTextBox.Size = new System.Drawing.Size(200, 20);
-            this.villeTextBox.TabIndex = 31;
+            this.villeTextBox.TabIndex = 2;
             // 
             // paysTextBox
             // 
             this.paysTextBox.Location = new System.Drawing.Point(108, 152);
             this.paysTextBox.Name = "paysTextBox";
             this.paysTextBox.Size = new System.Drawing.Size(200, 20);
-            this.paysTextBox.TabIndex = 33;
+            this.paysTextBox.TabIndex = 3;
             // 
             // adresseTextBox
             // 
             this.adresseTextBox.Location = new System.Drawing.Point(108, 178);
             this.adresseTextBox.Name = "adresseTextBox";
             this.adresseTextBox.Size = new System.Drawing.Size(200, 20);
-            this.adresseTextBox.TabIndex = 35;
+            this.adresseTextBox.TabIndex = 4;
             // 
             // codePostalTextBox
             // 
             this.codePostalTextBox.Location = new System.Drawing.Point(108, 204);
             this.codePostalTextBox.Name = "codePostalTextBox";
             this.codePostalTextBox.Size = new System.Drawing.Size(200, 20);
-            this.codePostalTextBox.TabIndex = 37;
+            this.codePostalTextBox.TabIndex = 5;
             // 
             // dateInscriptionDateTimePicker
             // 
@@ -224,7 +224,7 @@
             this.dateInscriptionDateTimePicker.Location = new System.Drawing.Point(108, 230);
             this.dateInscriptionDateTimePicker.Name = "dateInscriptionDateTimePicker";
             this.dateInscriptionDateTimePicker.Size = new System.Drawing.Size(200, 20);
-            this.dateInscriptionDateTimePicker.TabIndex = 39;
+            this.dateInscriptionDateTimePicker.TabIndex = 6;
             this.dateInscriptionDateTimePicker.Value = new System.DateTime(2020, 9, 29, 22, 8, 31, 0);
             // 
             // bDB56AnkitDataSet

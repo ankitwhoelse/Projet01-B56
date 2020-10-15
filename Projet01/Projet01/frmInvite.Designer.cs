@@ -82,7 +82,7 @@
             this.btnAnnuler.Location = new System.Drawing.Point(107, 160);
             this.btnAnnuler.Name = "btnAnnuler";
             this.btnAnnuler.Size = new System.Drawing.Size(100, 56);
-            this.btnAnnuler.TabIndex = 17;
+            this.btnAnnuler.TabIndex = 3;
             this.btnAnnuler.Text = "Annuler";
             this.btnAnnuler.UseVisualStyleBackColor = true;
             this.btnAnnuler.Click += new System.EventHandler(this.btnAnnuler_Click);
@@ -92,7 +92,7 @@
             this.btnConfirmer.Location = new System.Drawing.Point(12, 160);
             this.btnConfirmer.Name = "btnConfirmer";
             this.btnConfirmer.Size = new System.Drawing.Size(89, 56);
-            this.btnConfirmer.TabIndex = 16;
+            this.btnConfirmer.TabIndex = 2;
             this.btnConfirmer.Text = "button1";
             this.btnConfirmer.UseVisualStyleBackColor = true;
             this.btnConfirmer.Click += new System.EventHandler(this.btnConfirmer_Click);
@@ -150,14 +150,14 @@
             this.nomPrenomTextBox.Location = new System.Drawing.Point(107, 82);
             this.nomPrenomTextBox.Name = "nomPrenomTextBox";
             this.nomPrenomTextBox.Size = new System.Drawing.Size(100, 20);
-            this.nomPrenomTextBox.TabIndex = 27;
+            this.nomPrenomTextBox.TabIndex = 0;
             // 
             // nomClientTextBox
             // 
             this.nomClientTextBox.Location = new System.Drawing.Point(107, 112);
             this.nomClientTextBox.Name = "nomClientTextBox";
             this.nomClientTextBox.Size = new System.Drawing.Size(100, 20);
-            this.nomClientTextBox.TabIndex = 27;
+            this.nomClientTextBox.TabIndex = 1;
             // 
             // frmInvite
             // 

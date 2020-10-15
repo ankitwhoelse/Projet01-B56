@@ -147,7 +147,7 @@
             this.btnAnnuler.Location = new System.Drawing.Point(129, 203);
             this.btnAnnuler.Name = "btnAnnuler";
             this.btnAnnuler.Size = new System.Drawing.Size(100, 56);
-            this.btnAnnuler.TabIndex = 16;
+            this.btnAnnuler.TabIndex = 5;
             this.btnAnnuler.Text = "Annuler";
             this.btnAnnuler.UseVisualStyleBackColor = true;
             this.btnAnnuler.Click += new System.EventHandler(this.btnAnnuler_Click);
@@ -157,7 +157,7 @@
             this.btnConfirmer.Location = new System.Drawing.Point(15, 203);
             this.btnConfirmer.Name = "btnConfirmer";
             this.btnConfirmer.Size = new System.Drawing.Size(89, 56);
-            this.btnConfirmer.TabIndex = 15;
+            this.btnConfirmer.TabIndex = 4;
             this.btnConfirmer.Text = "button1";
             this.btnConfirmer.UseVisualStyleBackColor = true;
             this.btnConfirmer.Click += new System.EventHandler(this.btnConfirmer_Click);
@@ -174,28 +174,28 @@
             this.descriptionTextBox.Location = new System.Drawing.Point(129, 74);
             this.descriptionTextBox.Name = "descriptionTextBox";
             this.descriptionTextBox.Size = new System.Drawing.Size(100, 20);
-            this.descriptionTextBox.TabIndex = 17;
+            this.descriptionTextBox.TabIndex = 0;
             // 
             // dureeTextBox
             // 
             this.dureeTextBox.Location = new System.Drawing.Point(129, 100);
             this.dureeTextBox.Name = "dureeTextBox";
             this.dureeTextBox.Size = new System.Drawing.Size(100, 20);
-            this.dureeTextBox.TabIndex = 17;
+            this.dureeTextBox.TabIndex = 1;
             // 
             // noTypeSoinTextBox
             // 
             this.noTypeSoinTextBox.Location = new System.Drawing.Point(129, 126);
             this.noTypeSoinTextBox.Name = "noTypeSoinTextBox";
             this.noTypeSoinTextBox.Size = new System.Drawing.Size(100, 20);
-            this.noTypeSoinTextBox.TabIndex = 17;
+            this.noTypeSoinTextBox.TabIndex = 2;
             // 
             // prixTextBox
             // 
             this.prixTextBox.Location = new System.Drawing.Point(129, 152);
             this.prixTextBox.Name = "prixTextBox";
             this.prixTextBox.Size = new System.Drawing.Size(100, 20);
-            this.prixTextBox.TabIndex = 17;
+            this.prixTextBox.TabIndex = 3;
             // 
             // frmSoin
             // 

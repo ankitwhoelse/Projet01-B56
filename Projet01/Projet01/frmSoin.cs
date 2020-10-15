@@ -81,19 +81,14 @@ namespace Projet01
                 this.Text = "Modifier un soin";
             }
         }
-
-        private void btnAnnuler_Click(object sender, EventArgs e)
-        {
-            this.Close();
-        }
-
+                
         private void btnConfirmer_Click(object sender, EventArgs e)
         {
-            if (booAjout)
+            if (this.Controls.OfType<TextBox>().Any(tBox => string.IsNullOrEmpty(tBox.Text)))
+                MessageBox.Show("Veuillez remplir toutes les cases");
+            else
             {
-                if (this.Controls.OfType<TextBox>().Any(tBox => string.IsNullOrEmpty(tBox.Text)))
-                    MessageBox.Show("empty at least 1");
-                else
+                if (booAjout)
                 {
                     // AJOUT
                     SqlConnection maConnexion = new SqlConnection(maChaineDeConnexion);
@@ -102,29 +97,44 @@ namespace Projet01
                     SqlCommand maCommande = new SqlCommand(maRequeteSQL, maConnexion);
                     maCommande.ExecuteScalar();
                     maConnexion.Close();
-                    
+
+                    this.p01_SoinBindingSource.EndEdit();
+                    this.p01_SoinTableAdapter.Update(this.bDB56AnkitDataSet.P01_Soin);
+                    MessageBox.Show("Le nouveau type de soin a été ajouté.", "Nouveau type de soin enregistré", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     this.Close();
                 }
-            }
-            else if (!booAjout)
-            {
-                // MODIF
-                if (this.Controls.OfType<TextBox>().Any(tBox => string.IsNullOrEmpty(tBox.Text)))
-                    MessageBox.Show("empty at least 1");
-                else
+                else if (!booAjout)
                 {
                     // MODIF
                     SqlConnection maConnexion = new SqlConnection(maChaineDeConnexion);
                     maConnexion.Open();
-                    String maRequeteSQL = "update P01_Soin set Description = '" + descriptionTextBox.Text.ToString() + "', Duree = " + int.Parse(dureeTextBox.Text.ToString()) + ", NoTypeSoin = " + int.Parse(noTypeSoinTextBox.Text.ToString()) + ", prix = " + Math.Round(double.Parse(prixTextBox.Text.ToString()))  + " where NoSoin ="+ noSoinTextBox.Text.ToString();
+                    String maRequeteSQL = "update P01_Soin set Description = '" + descriptionTextBox.Text.ToString() + "', Duree = " + int.Parse(dureeTextBox.Text.ToString()) + ", NoTypeSoin = " + int.Parse(noTypeSoinTextBox.Text.ToString()) + ", prix = " + Math.Round(double.Parse(prixTextBox.Text.ToString())) + " where NoSoin =" + noSoinTextBox.Text.ToString();
                     SqlCommand maCommande = new SqlCommand(maRequeteSQL, maConnexion);
                     maCommande.ExecuteScalar();
                     maConnexion.Close();
+
+                    this.p01_SoinBindingSource.EndEdit();
+                    this.p01_SoinTableAdapter.Update(this.bDB56AnkitDataSet.P01_Soin);
+                    MessageBox.Show("Le type de soin a été modifié.", "Type de soin modifié", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     this.Close();
-                    //Update bd not sure?? 
-                   // this.p01_SoinBindingSource.ResetBindings(false);
                 }
             }
         }
+
+        private void btnAnnuler_Click(object sender, EventArgs e)
+        {
+            if (this.Controls.OfType<TextBox>().Any(tBox => string.IsNullOrEmpty(tBox.Text)))
+            {
+                DialogResult resulat = MessageBox.Show("Etes vous certain d'annuler " + (booAjout ? "l'ajout?" : "la modification?"), "Attention", MessageBoxButtons.YesNo, MessageBoxIcon.Exclamation);
+
+                if (resulat == DialogResult.Yes)
+                    this.Close();
+                else if (resulat == DialogResult.No)
+                {
+                    return;
+                }
+            }
+        }
+
     }
 }

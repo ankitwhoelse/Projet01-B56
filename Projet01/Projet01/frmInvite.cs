@@ -41,15 +41,15 @@ namespace Projet01
 
             if (booAjout)
             {
-                lblTitre.Text = "Ajouter un invite";
+                lblTitre.Text = "Ajouter un invité";
                 btnConfirmer.Text = "Ajouter";
-                this.Text = "Ajouter un invite";
+                this.Text = "Ajouter un invité";
             }
             else if (!booAjout)
             {
-                lblTitre.Text = "Modifier un invite";
+                lblTitre.Text = "Modifier un invité";
                 btnConfirmer.Text = "Modifier";
-                this.Text = "Modifier un invite";
+                this.Text = "Modifier un invité";
             }
             
 
@@ -78,7 +78,7 @@ namespace Projet01
                     noInviteTextBox.Enabled = false;
                     nomPrenomTextBox.Enabled = false;
                     btnConfirmer.Enabled = false;
-                    lblTitre.Text = "Nombre maximal d'invite atteint.\nVeuillez quitter ce menu.";
+                    lblTitre.Text = "Nombre maximal d'invité atteint.\nVeuillez quitter ce menu.";
                 }
                 con.Close();
             }
@@ -96,19 +96,30 @@ namespace Projet01
                 unInvite.NoClient = (short) int.Parse(NoClient);
                     
                 if (string.IsNullOrEmpty(nomPrenomTextBox.Text))
-                    MessageBox.Show("Veuillez remplir la case pour le nom de l'invite", "Attention", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                    MessageBox.Show("Veuillez remplir la case pour le nom de l'invité", "Attention", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                 else
                 {
                     bDB56AnkitDataSet.P01_Invite.AddP01_InviteRow(unInvite);
                     this.p01_InviteBindingSource.EndEdit();
                     this.p01_InviteTableAdapter.Update(this.bDB56AnkitDataSet.P01_Invite);
-                    MessageBox.Show("Le nouveau invite a ete ajoute.", "Nouveau invite enregistre", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    MessageBox.Show("Le nouveau invité a été ajouté.", "Nouveau invité enregistré", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     this.Close();
                 }
             }
             else if (!booAjout)
             {           // MODIFICATION
+                using (SqlConnection con = new SqlConnection(maChaineDeConnexion))
+                {
+                    con.Open();
+                    string requete = "UPDATE P01_Invite SET NomPrenom = '" + nomPrenomTextBox.Text + "', NoClient = " + NoClient
+                        + " WHERE NoInvite = " + NoInvite;
+                    SqlCommand comm = new SqlCommand(requete, con);
+                    comm.ExecuteNonQuery();
 
+                    con.Close();
+                }
+                MessageBox.Show("L'invité a été modifié.", "Invité modifié", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                this.Close();
             }
         }
         
@@ -117,7 +128,7 @@ namespace Projet01
         {
             if (this.Controls.OfType<TextBox>().Any(tBox => string.IsNullOrEmpty(tBox.Text)))
             {
-                DialogResult resulat = MessageBox.Show("Etes vous certain d'annuler l'ajout?", "Attention", MessageBoxButtons.YesNo, MessageBoxIcon.Exclamation);
+                DialogResult resulat = MessageBox.Show("Etes vous certain d'annuler " + (booAjout ? "l'ajout?" : "la modification?"), "Attention", MessageBoxButtons.YesNo, MessageBoxIcon.Exclamation);
 
                 if (resulat == DialogResult.Yes)
                 {

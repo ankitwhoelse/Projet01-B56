@@ -115,19 +115,42 @@ namespace Projet01
                     bDB56AnkitDataSet.P01_TypeChambre.AddP01_TypeChambreRow(unType);
                     this.p01_TypeChambreBindingSource.EndEdit();
                     this.p01_TypeChambreTableAdapter.Update(this.bDB56AnkitDataSet.P01_TypeChambre);
-                    MessageBox.Show("Le nouveau type de chambre a ete ajoute.", "Nouveau type de chambre enregistre", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    MessageBox.Show("Le nouveau type de chambre a été ajouté.", "Nouveau type de chambre enregistré", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     this.Close();
                 }
                 else if (!booAjout)
                 {           // Modif
+                    using (SqlConnection con = new SqlConnection(maChaineDeConnexion))
+                    {
+                        con.Open();
+                        string requete = "UPDATE P01_TypeChambre SET Description = '" + descriptionTextBox.Text + "', PrixHaut = " + decimal.Parse(prixHautTextBox.Text) +
+                            ", PrixMoyen = " + decimal.Parse(prixBasTextBox.Text) + ", PrixBas = " + decimal.Parse(prixMoyenTextBox.Text) + " WHERE NoTypeChambre = " + NoTypeChambre;
+                        SqlCommand comm = new SqlCommand(requete, con);
+                        comm.ExecuteNonQuery();
 
+                        con.Close();
+                    }
+                    this.p01_TypeChambreBindingSource.EndEdit();
+                    this.p01_TypeChambreTableAdapter.Update(this.bDB56AnkitDataSet.P01_TypeChambre);
+                    MessageBox.Show("Le type de chambre a été modifié.", "Type de chambre modifié", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    this.Close();
                 }
             }
         }
 
         private void btnAnnuler_Click(object sender, EventArgs e)
         {
-            this.Close();
+            if (this.Controls.OfType<TextBox>().Any(tBox => string.IsNullOrEmpty(tBox.Text)))
+            {
+                DialogResult resulat = MessageBox.Show("Etes vous certain d'annuler " + (booAjout ? "l'ajout?" : "la modification?"), "Attention", MessageBoxButtons.YesNo, MessageBoxIcon.Exclamation);
+
+                if (resulat == DialogResult.Yes)
+                    this.Close();
+                else if (resulat == DialogResult.No)
+                {
+                    return;
+                }
+            }
         }
 
 

@@ -94,7 +94,7 @@
             this.btnAnnuler.Location = new System.Drawing.Point(114, 185);
             this.btnAnnuler.Name = "btnAnnuler";
             this.btnAnnuler.Size = new System.Drawing.Size(100, 56);
-            this.btnAnnuler.TabIndex = 18;
+            this.btnAnnuler.TabIndex = 4;
             this.btnAnnuler.Text = "Annuler";
             this.btnAnnuler.UseVisualStyleBackColor = true;
             this.btnAnnuler.Click += new System.EventHandler(this.btnAnnuler_Click);
@@ -104,7 +104,7 @@
             this.btnConfirmer.Location = new System.Drawing.Point(12, 185);
             this.btnConfirmer.Name = "btnConfirmer";
             this.btnConfirmer.Size = new System.Drawing.Size(89, 56);
-            this.btnConfirmer.TabIndex = 17;
+            this.btnConfirmer.TabIndex = 3;
             this.btnConfirmer.Text = "button1";
             this.btnConfirmer.UseVisualStyleBackColor = true;
             this.btnConfirmer.Click += new System.EventHandler(this.btnConfirmer_Click);
@@ -155,21 +155,21 @@
             this.noTypeChambreTextBox.Location = new System.Drawing.Point(114, 124);
             this.noTypeChambreTextBox.Name = "noTypeChambreTextBox";
             this.noTypeChambreTextBox.Size = new System.Drawing.Size(100, 20);
-            this.noTypeChambreTextBox.TabIndex = 28;
+            this.noTypeChambreTextBox.TabIndex = 2;
             // 
             // decorationsTextBox
             // 
             this.decorationsTextBox.Location = new System.Drawing.Point(114, 98);
             this.decorationsTextBox.Name = "decorationsTextBox";
             this.decorationsTextBox.Size = new System.Drawing.Size(100, 20);
-            this.decorationsTextBox.TabIndex = 28;
+            this.decorationsTextBox.TabIndex = 1;
             // 
             // emplacementTextBox
             // 
             this.emplacementTextBox.Location = new System.Drawing.Point(114, 72);
             this.emplacementTextBox.Name = "emplacementTextBox";
             this.emplacementTextBox.Size = new System.Drawing.Size(100, 20);
-            this.emplacementTextBox.TabIndex = 28;
+            this.emplacementTextBox.TabIndex = 0;
             // 
             // noChambreTextBox
             // 
@@ -177,7 +177,7 @@
             this.noChambreTextBox.Location = new System.Drawing.Point(114, 46);
             this.noChambreTextBox.Name = "noChambreTextBox";
             this.noChambreTextBox.Size = new System.Drawing.Size(100, 20);
-            this.noChambreTextBox.TabIndex = 28;
+            this.noChambreTextBox.TabIndex = 0;
             // 
             // frmChambre
             // 

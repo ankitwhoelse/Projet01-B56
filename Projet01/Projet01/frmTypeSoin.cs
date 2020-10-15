@@ -122,7 +122,17 @@ namespace Projet01
 
         private void btnAnnuler_Click(object sender, EventArgs e)
         {
-            this.Close();
+            if (this.Controls.OfType<TextBox>().Any(tBox => string.IsNullOrEmpty(tBox.Text)))
+            {
+                DialogResult resulat = MessageBox.Show("Etes vous certain d'annuler " + (booAjout ? "l'ajout?" : "la modification?"), "Attention", MessageBoxButtons.YesNo, MessageBoxIcon.Exclamation);
+
+                if (resulat == DialogResult.Yes)
+                    this.Close();
+                else if (resulat == DialogResult.No)
+                {
+                    return;
+                }
+            }
         }
     }
 }

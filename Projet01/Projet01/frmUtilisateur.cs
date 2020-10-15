@@ -17,20 +17,13 @@ namespace Projet01
         public bool booAjout;
 
         String maChaineDeConnexion = "Data Source=tcp:424sql.cgodin.qc.ca,5433;Initial Catalog=BDB56Ankit;Persist Security Info=True;User ID=B56Ankit;Password=Summit11g";
-
-
+        
         public frmUtilisateur()
         {
             InitializeComponent();
         }
 
-        private void p01_TypeUtilisateurBindingNavigatorSaveItem_Click(object sender, EventArgs e)
-        {
-            this.Validate();
-            this.p01_TypeUtilisateurBindingSource.EndEdit();
-            this.tableAdapterManager.UpdateAll(this.bDB56AnkitDataSet);
-        }
-
+       
         private void frmUtilisateur_Load(object sender, EventArgs e)
         {
             // TODO: This line of code loads data into the 'bDB56AnkitDataSet.P01_TypeUtilisateur' table. You can move, or remove it, as needed.
@@ -89,28 +82,47 @@ namespace Projet01
             }
         }
 
-        private void btnAnnuler_Click(object sender, EventArgs e)
-        {
-            this.Close();
-        }
-
         private void btnConfirmer_Click(object sender, EventArgs e)
         {
             if (booAjout)
-            {
-                // AJOUTER UN UTILISATEUR
+            {           // AJOUTER
                 SqlConnection maConnexion = new SqlConnection(maChaineDeConnexion);
                 maConnexion.Open();
                 String maRequeteSQL = "insert into P01_Utilisateur(NoUtilisateur,Nomutilisateur,MotDepasse,NoType) values('" + noUtilisateurTextBox.ToString() + "','" + nomUtilisateurTextBox.ToString() + "','" + motDePasseUtilisateurTextBox.ToString() +"','"+ typeUtilisateurComboBox.SelectedItem.ToString() + "')";
                 SqlCommand maCommande = new SqlCommand(maRequeteSQL, maConnexion);
                 maCommande.ExecuteScalar();
                 maConnexion.Close();
+
+                MessageBox.Show("Le nouveau utilisateur a été ajouté.", "Utilisateur ajouté", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                this.Close();
             }
             else if (!booAjout)
+            {           // MODIFIER
+                using (SqlConnection con = new SqlConnection(maChaineDeConnexion))
+                {
+                    con.Open();
+                    string requete = "UPDATE P01_Utilisateur SET NomUtilisateur = '" + nomUtilisateurTextBox.Text + "', MotDePasse = '" + motDePasseUtilisateurTextBox.Text +
+                        "', NoType = " + typeUtilisateurComboBox.SelectedValue + " WHERE NoUtilisateur = " + NoUtilisateur;
+                    SqlCommand comm = new SqlCommand(requete, con);
+                    comm.ExecuteNonQuery();
+
+                    con.Close();
+                }
+                MessageBox.Show("L'utilisateur a été modifié.", "Utilisateur modifié", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                this.Close();
+
+            }
+        }
+
+        private void btnAnnuler_Click(object sender, EventArgs e)
+        {
+            DialogResult resulat = MessageBox.Show("Etes vous certain d'annuler " + (booAjout ? "l'ajout?" : "la modification?"), "Attention", MessageBoxButtons.YesNo, MessageBoxIcon.Exclamation);
+
+            if (resulat == DialogResult.Yes)
+                this.Close();
+            else if (resulat == DialogResult.No)
             {
-                // MODIFIER UN UTILISATEUR
-
-
+                return;
             }
         }
 

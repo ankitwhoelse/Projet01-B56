@@ -55,37 +55,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.p01_TypeChambreBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
-            // bDB56AnkitDataSet
-            // 
-            this.bDB56AnkitDataSet.DataSetName = "BDB56AnkitDataSet";
-            this.bDB56AnkitDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // p01_TypeChambreBindingSource
-            // 
-            this.p01_TypeChambreBindingSource.DataMember = "P01_TypeChambre";
-            this.p01_TypeChambreBindingSource.DataSource = this.bDB56AnkitDataSet;
-            // 
-            // p01_TypeChambreTableAdapter
-            // 
-            this.p01_TypeChambreTableAdapter.ClearBeforeFill = true;
-            // 
-            // tableAdapterManager
-            // 
-            this.tableAdapterManager.BackupDataSetBeforeUpdate = false;
-            this.tableAdapterManager.P01_AssistantSoinTableAdapter = null;
-            this.tableAdapterManager.P01_AssistantTableAdapter = null;
-            this.tableAdapterManager.P01_ChambreTableAdapter = null;
-            this.tableAdapterManager.P01_ClientTableAdapter = null;
-            this.tableAdapterManager.P01_InviteTableAdapter = null;
-            this.tableAdapterManager.P01_PlanifSoinTableAdapter = null;
-            this.tableAdapterManager.P01_ReversationChambreTableAdapter = null;
-            this.tableAdapterManager.P01_SoinTableAdapter = null;
-            this.tableAdapterManager.P01_TypeChambreTableAdapter = this.p01_TypeChambreTableAdapter;
-            this.tableAdapterManager.P01_TypeSoinTableAdapter = null;
-            this.tableAdapterManager.P01_TypeUtilisateurTableAdapter = null;
-            this.tableAdapterManager.P01_UtilisateurTableAdapter = null;
-            this.tableAdapterManager.UpdateOrder = Projet01.BDB56AnkitDataSetTableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete;
-            // 
             // noTypeChambreLabel
             // 
             noTypeChambreLabel.AutoSize = true;
@@ -131,6 +100,37 @@
             prixMoyenLabel.TabIndex = 9;
             prixMoyenLabel.Text = "Prix Moyen:";
             // 
+            // bDB56AnkitDataSet
+            // 
+            this.bDB56AnkitDataSet.DataSetName = "BDB56AnkitDataSet";
+            this.bDB56AnkitDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // p01_TypeChambreBindingSource
+            // 
+            this.p01_TypeChambreBindingSource.DataMember = "P01_TypeChambre";
+            this.p01_TypeChambreBindingSource.DataSource = this.bDB56AnkitDataSet;
+            // 
+            // p01_TypeChambreTableAdapter
+            // 
+            this.p01_TypeChambreTableAdapter.ClearBeforeFill = true;
+            // 
+            // tableAdapterManager
+            // 
+            this.tableAdapterManager.BackupDataSetBeforeUpdate = false;
+            this.tableAdapterManager.P01_AssistantSoinTableAdapter = null;
+            this.tableAdapterManager.P01_AssistantTableAdapter = null;
+            this.tableAdapterManager.P01_ChambreTableAdapter = null;
+            this.tableAdapterManager.P01_ClientTableAdapter = null;
+            this.tableAdapterManager.P01_InviteTableAdapter = null;
+            this.tableAdapterManager.P01_PlanifSoinTableAdapter = null;
+            this.tableAdapterManager.P01_ReversationChambreTableAdapter = null;
+            this.tableAdapterManager.P01_SoinTableAdapter = null;
+            this.tableAdapterManager.P01_TypeChambreTableAdapter = this.p01_TypeChambreTableAdapter;
+            this.tableAdapterManager.P01_TypeSoinTableAdapter = null;
+            this.tableAdapterManager.P01_TypeUtilisateurTableAdapter = null;
+            this.tableAdapterManager.P01_UtilisateurTableAdapter = null;
+            this.tableAdapterManager.UpdateOrder = Projet01.BDB56AnkitDataSetTableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete;
+            // 
             // lblTitre
             // 
             this.lblTitre.AutoSize = true;
@@ -147,7 +147,7 @@
             this.btnAnnuler.Location = new System.Drawing.Point(114, 206);
             this.btnAnnuler.Name = "btnAnnuler";
             this.btnAnnuler.Size = new System.Drawing.Size(100, 56);
-            this.btnAnnuler.TabIndex = 30;
+            this.btnAnnuler.TabIndex = 5;
             this.btnAnnuler.Text = "Annuler";
             this.btnAnnuler.UseVisualStyleBackColor = true;
             this.btnAnnuler.Click += new System.EventHandler(this.btnAnnuler_Click);
@@ -157,7 +157,7 @@
             this.btnConfirmer.Location = new System.Drawing.Point(12, 206);
             this.btnConfirmer.Name = "btnConfirmer";
             this.btnConfirmer.Size = new System.Drawing.Size(89, 56);
-            this.btnConfirmer.TabIndex = 29;
+            this.btnConfirmer.TabIndex = 4;
             this.btnConfirmer.Text = "button1";
             this.btnConfirmer.UseVisualStyleBackColor = true;
             this.btnConfirmer.Click += new System.EventHandler(this.btnConfirmer_Click);
@@ -167,7 +167,7 @@
             this.prixMoyenTextBox.Location = new System.Drawing.Point(114, 147);
             this.prixMoyenTextBox.Name = "prixMoyenTextBox";
             this.prixMoyenTextBox.Size = new System.Drawing.Size(100, 20);
-            this.prixMoyenTextBox.TabIndex = 31;
+            this.prixMoyenTextBox.TabIndex = 3;
             this.prixMoyenTextBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.prixHautTextBox_KeyPress);
             // 
             // prixBasTextBox
@@ -175,7 +175,7 @@
             this.prixBasTextBox.Location = new System.Drawing.Point(114, 121);
             this.prixBasTextBox.Name = "prixBasTextBox";
             this.prixBasTextBox.Size = new System.Drawing.Size(100, 20);
-            this.prixBasTextBox.TabIndex = 31;
+            this.prixBasTextBox.TabIndex = 2;
             this.prixBasTextBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.prixHautTextBox_KeyPress);
             // 
             // prixHautTextBox
@@ -183,7 +183,7 @@
             this.prixHautTextBox.Location = new System.Drawing.Point(114, 95);
             this.prixHautTextBox.Name = "prixHautTextBox";
             this.prixHautTextBox.Size = new System.Drawing.Size(100, 20);
-            this.prixHautTextBox.TabIndex = 31;
+            this.prixHautTextBox.TabIndex = 1;
             this.prixHautTextBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.prixHautTextBox_KeyPress);
             // 
             // descriptionTextBox
@@ -191,15 +191,16 @@
             this.descriptionTextBox.Location = new System.Drawing.Point(114, 69);
             this.descriptionTextBox.Name = "descriptionTextBox";
             this.descriptionTextBox.Size = new System.Drawing.Size(100, 20);
-            this.descriptionTextBox.TabIndex = 31;
+            this.descriptionTextBox.TabIndex = 0;
             // 
             // noTypeChambreTextBox
             // 
             this.noTypeChambreTextBox.Enabled = false;
             this.noTypeChambreTextBox.Location = new System.Drawing.Point(114, 43);
             this.noTypeChambreTextBox.Name = "noTypeChambreTextBox";
+            this.noTypeChambreTextBox.ReadOnly = true;
             this.noTypeChambreTextBox.Size = new System.Drawing.Size(100, 20);
-            this.noTypeChambreTextBox.TabIndex = 31;
+            this.noTypeChambreTextBox.TabIndex = 10;
             // 
             // frmTypeChambre
             // 
