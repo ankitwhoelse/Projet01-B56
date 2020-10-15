@@ -39,3 +39,4 @@ C:\Users\riben\Documents\Base de données III\Projets\Projet1\Projet01\Projet01\
 C:\Users\riben\Documents\Base de données III\Projets\Projet1\Projet01\Projet01\obj\Debug\Projet01.frmTypeChambre.resources
 C:\Users\riben\Documents\Base de données III\Projets\Projet1\Projet01\Projet01\obj\Debug\Projet01.frmTypeSoin.resources
 C:\Users\riben\Documents\Base de données III\Projets\Projet1\Projet01\Projet01\obj\Debug\Projet01.Planif.resources
+C:\Users\riben\Documents\Base de données III\Projets\Projet1\Projet01\Projet01\obj\Debug\Projet01.frmPlanifSoin.resources
