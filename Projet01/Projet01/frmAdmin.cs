@@ -183,6 +183,7 @@ namespace Projet01
             cboUtilisateurs.Visible = true;
             gbInfoUtilisateur.Visible = true;
 
+            gbPlanifSoin.Visible = false;
             gbInfoTypeSoin.Visible = false;
             gbAssistantSoin.Visible = false;
             gbInfoTypeChambre.Visible = false;
@@ -206,6 +207,7 @@ namespace Projet01
             gbInfoClient.Visible = true;
             gbInfoInvite.Visible = true;
 
+            gbPlanifSoin.Visible = false;
             gbInfoTypeSoin.Visible = false;
             gbAssistantSoin.Visible = false;
             gbInfoTypeChambre.Visible = false;
@@ -228,6 +230,7 @@ namespace Projet01
             gbInfoAssistants.Visible = true;
             gbAssistantSoin.Visible = true;
 
+            gbPlanifSoin.Visible = false;
             gbInfoTypeSoin.Visible = false;
             gbInfoTypeChambre.Visible = false;
             gbInfoInvite.Visible = false;
@@ -242,13 +245,14 @@ namespace Projet01
         }
 
         private void soinsToolStripMenuItem_Click(object sender, EventArgs e)
-        {
+        {               // GESTION DES SOINS
             choixMenu = 4;
             lblChoix.Text = "Gestion des soins";
             lblSelection.Text = "Veuillez selectionnez \nun soin.";
             cboSoins.Visible = true;
             gbInfoSoins.Visible = true;
             gbInfoTypeSoin.Visible = true;
+            gbPlanifSoin.Visible = true;
 
             gbAssistantSoin.Visible = false;
             gbInfoTypeChambre.Visible = false;
@@ -272,6 +276,7 @@ namespace Projet01
             gbInfoChambre.Visible = true;
             gbInfoTypeChambre.Visible = true;
 
+            gbPlanifSoin.Visible = false;
             gbInfoTypeSoin.Visible = false;
             gbAssistantSoin.Visible = false;
             gbInfoInvite.Visible = false;
